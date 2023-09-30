@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bk47qpmiqsfv5"]
+[gd_scene load_steps=4 format=3 uid="uid://bk47qpmiqsfv5"]
 
 [ext_resource type="Texture2D" uid="uid://bj1vd0ditgkx5" path="res://Assets/Textures/icon.svg" id="1_6ja8e"]
+[ext_resource type="Script" path="res://Scenes/SupplyShip/SupplyShip.gd" id="1_7gxqe"]
 
 [sub_resource type="Curve2D" id="Curve2D_cvoip"]
 
 [node name="SupplyShip" type="Path2D"]
 curve = SubResource("Curve2D_cvoip")
+script = ExtResource("1_7gxqe")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 
