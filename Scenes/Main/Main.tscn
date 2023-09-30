@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu50tbbse7fvj"]
+[gd_scene load_steps=7 format=3 uid="uid://cu50tbbse7fvj"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_uvdap"]
 [ext_resource type="Texture2D" uid="uid://bj1vd0ditgkx5" path="res://Assets/Textures/icon.svg" id="2_kqnnd"]
@@ -10,6 +10,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -587, 130, 0, 0, 0, 0, -588, -290, 0, 0, 0, 0, -157, -439, 0, 0, 0, 0, 655, -192, 0, 0, 0, 0, 644, 299, 0, 0, 0, 0, -432, 338, 0, 0, 0, 0, -587, 130)
 }
 point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_g1md0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 463, -128, 0, 0, 0, 0, 213, -57, 0, 0, 0, 0, 150, 459, 0, 0, 0, 0, -341, 269, 0, 0, 0, 0, -509, -167, 0, 0, 0, 0, 88, -466, 0, 0, 0, 0, 550, -343, 0, 0, 0, 0, 463, -128)
+}
+point_count = 8
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_uvdap")
@@ -30,13 +36,23 @@ texture = ExtResource("2_kqnnd")
 
 [node name="SupplyPaths" type="Node2D" parent="."]
 
-[node name="Path2D" type="Path2D" parent="SupplyPaths"]
+[node name="Path1" type="Path2D" parent="SupplyPaths"]
 curve = SubResource("Curve2D_jirfs")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="SupplyPaths/Path2D"]
+[node name="PathFollow2D" type="PathFollow2D" parent="SupplyPaths/Path1"]
 position = Vector2(-587, 130)
 rotation = -1.57318
 
-[node name="SupplyShip" parent="SupplyPaths/Path2D/PathFollow2D" instance=ExtResource("4_6dkld")]
-position = Vector2(-1.99762, -1.0047)
-rotation = 1.57318
+[node name="SupplyShip" parent="SupplyPaths/Path1/PathFollow2D" instance=ExtResource("4_6dkld")]
+position = Vector2(0, -1)
+
+[node name="Path2" type="Path2D" parent="SupplyPaths"]
+curve = SubResource("Curve2D_g1md0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="SupplyPaths/Path2"]
+position = Vector2(463, -128)
+rotation = 2.86488
+scale = Vector2(1, 1)
+
+[node name="SupplyShip" parent="SupplyPaths/Path2/PathFollow2D" instance=ExtResource("4_6dkld")]
+scale = Vector2(1, 1)
