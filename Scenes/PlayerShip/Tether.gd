@@ -4,9 +4,9 @@ const ATTACHABLE_PHYSICS_LAYER = 0x2
 
 signal attached_to(this, target)
 
-@export var TETHER_SEGMENTS = 12
-@export var SEGMENT_LENGTH = 32.0
-@export var SHOOT_FORCE = 100.0
+@export var TETHER_SEGMENTS = 20.0
+@export var SEGMENT_LENGTH = 10.0
+@export var SHOOT_FORCE = 200.0
 
 var initialized = false;
 
@@ -19,6 +19,21 @@ var has_been_detached : bool = false
 var time_since_detached : float = 0.0
 
 var current_attachment = null
+
+var sprite_pool = []
+func _ready():
+	for i in range(TETHER_SEGMENTS-1):
+		var sprite = Sprite2D.new()
+		if i == 0:
+			sprite.texture = preload("res://Assets/Sprites/Tether_End.png")
+			sprite.flip_v = true
+		elif i == TETHER_SEGMENTS-2:
+			sprite.texture = preload("res://Assets/Sprites/Tether_End.png")
+		else:
+			sprite.texture = preload("res://Assets/Sprites/Tether_Center.png")
+		sprite.centered = true
+		add_child(sprite)
+		sprite_pool.append(sprite)
 
 func detach():
 	has_been_detached = true
@@ -110,16 +125,44 @@ func update_physics(delta):
 			emit_signal("attached_to", self, current_attachment)
 
 	# Redraw the rope.
-	queue_redraw()
+	update_draw()
 	
 	if time_since_detached > 3.0:
 		queue_free()
 	if elapsed > 5 and current_attachment == null:
 		queue_free()
+		
+func update_draw():
+	# Uncomment this to toggle the debug _draw line
+	# queue_redraw()
+	
+	for i in range(TETHER_SEGMENTS-1):
+		var p0 = points[i].position
+		var p1 = points[i+1].position
+		
+		var dist = p0.distance_to(p1)
+		var center = (p0 + p1) * 0.5
+		var angle = p0.angle_to_point(p1)
+		
+		sprite_pool[i].global_position = center
+		sprite_pool[i].global_rotation = angle + (PI / 2.0)
+		sprite_pool[i].scale = Vector2(1.0, dist / 32.0) * 1.1
+		
+		if time_since_detached > 0:
+			sprite_pool[i].modulate = Color(1.0, 1.0, 1.0, 1.0 - time_since_detached / 1.0)
+		elif elapsed > 4.5 and current_attachment == null:
+			sprite_pool[i].modulate = Color(1.0, 1.0, 1.0, 1.0 - (elapsed - 4.5) / 0.5)
+		else:
+			sprite_pool[i].modulate = Color(1.0, 1.0, 1.0, 1.0)
+		
 
 func _draw():
-	var gtr_inv = self.global_transform.inverse()
-	for i in range(TETHER_SEGMENTS-1):
-		var p0 = gtr_inv * points[i].position
-		var p1 = gtr_inv * points[i+1].position
-		draw_line(p0, p1, Color(1, 1, 1, 1), 2.0)
+	pass
+	#var gtr_inv = self.global_transform.inverse()
+	#for i in range(TETHER_SEGMENTS-1):
+		#var p0 = gtr_inv * points[i].position
+		#var p1 = gtr_inv * points[i+1].position
+		#draw_line(p0, p1, Color(1, 1, 1, 1), 2.0)
+		
+			
+

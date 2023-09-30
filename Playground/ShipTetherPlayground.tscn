@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bj1vd0ditgkx5" path="res://Assets/Textures/icon.svg" id="2_8unn6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvkhl"]
-size = Vector2(128, 128)
+size = Vector2(92, 98)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_x2kn0")
@@ -36,6 +36,7 @@ texture = ExtResource("2_8unn6")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor2"]
+position = Vector2(-2, -1)
 shape = SubResource("RectangleShape2D_xvkhl")
 metadata/_edit_lock_ = true
 
