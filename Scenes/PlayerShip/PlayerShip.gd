@@ -87,7 +87,7 @@ func do_aim():
 		last_controller_aim = Time.get_ticks_msec()
 		aim_dir = aim_dir_joy
 	elif last_mouse_aim > last_controller_aim:
-		var mouse_pos = get_viewport().get_mouse_position()
+		var mouse_pos = get_viewport().get_camera_2d().get_global_mouse_position()
 		aim_dir = (mouse_pos - self.global_position).normalized()
 
 	$AimPivot.rotation = Vector2.RIGHT.angle_to(aim_dir)
