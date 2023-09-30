@@ -40,4 +40,3 @@ rotation = -1.57318
 [node name="SupplyShip" parent="SupplyPaths/Path2D/PathFollow2D" instance=ExtResource("4_6dkld")]
 position = Vector2(-1.99762, -1.0047)
 rotation = 1.57318
-scale = Vector2(1, 1)

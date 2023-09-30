@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1fv40ekxbg68"]
+
+[ext_resource type="Texture2D" uid="uid://bj1vd0ditgkx5" path="res://Assets/Textures/icon.svg" id="1_nafdu"]
+
+[node name="PlayerShip" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(20, 0)
+rotation = 1.5708
+scale = Vector2(0.492663, 1)
+texture = ExtResource("1_nafdu")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(-42, -33)
+rotation = 1.5708
+scale = Vector2(0.229586, 0.447538)
+texture = ExtResource("1_nafdu")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+position = Vector2(-41, 26)
+rotation = 1.5708
+scale = Vector2(0.229586, 0.447538)
+texture = ExtResource("1_nafdu")
