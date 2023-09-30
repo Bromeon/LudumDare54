@@ -15,7 +15,8 @@ func _ready():
 		var curve: Curve2D = path.curve
 		
 		var cur = curve.get_point_position(0)
-		var next = curve.get_point_position(1)
+		var next = curve.sample(0, 0.01)
+		
 		var direction = (next - cur).angle() + deg_to_rad(90)
 		
 		ship.global_position = cur
