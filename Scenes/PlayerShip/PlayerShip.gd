@@ -47,7 +47,6 @@ func cleanup_dead_tethers():
 	tethers = cleaned
 
 func _physics_process(delta):
-
 	move_dir = Input.get_vector("Left", "Right", "Up", "Down")
 	apply_force(move_dir * THRUSTER_FORCE)
 	
@@ -102,6 +101,13 @@ func shoot_tether():
 	var tether = Tether.instantiate()
 	add_child(tether)
 	tether.init(aim_dir)
+	tethers.append(tether)
+	tether.connect("attached_to", _on_tether_attached)
+	
+func setup_initial_tether(other_ship):
+	var tether = Tether.instantiate()
+	add_child(tether)
+	tether.init(Vector2.ZERO, other_ship)
 	tethers.append(tether)
 	tether.connect("attached_to", _on_tether_attached)
 		

@@ -30,6 +30,7 @@ position = Vector2(-239, -263)
 rotation = -1.01067
 
 [node name="Ship" type="Node2D" parent="PathFollow2D"]
+unique_name_in_owner = true
 rotation = 1.5708
 
 [node name="Front" type="Sprite2D" parent="PathFollow2D/Ship"]

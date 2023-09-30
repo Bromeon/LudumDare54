@@ -17,9 +17,9 @@ func _ready():
 	
 	camera_should.global_position = player.position
 	camera_should.modulate = Color(1.0, 1.0, 1.0, 0.3)
-	
-		
 
+	$PlayerShip.setup_initial_tether($SupplyPaths/Supply2.get_node("%Ship"))
+	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()

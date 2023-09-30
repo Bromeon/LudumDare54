@@ -34,7 +34,7 @@ func _ready():
 		sprite.centered = true
 		add_child(sprite)
 		sprite_pool.append(sprite)
-
+		
 func detach():
 	has_been_detached = true
 
@@ -44,16 +44,28 @@ func current_attachment_position():
 	else:
 		return null
 
-func init(sh_dir):
+func init(sh_dir, at_final_target = null):
 	self.shoot_dir = sh_dir
 	var global_pos = get_global_position()
 	for i in range(TETHER_SEGMENTS):
-		# Verlet integration requires storing the previous position.
-		var pos = global_pos + sh_dir * i * SEGMENT_LENGTH * 0.1;
+		var pos 
+		if at_final_target != null:
+			pos = global_pos.lerp(at_final_target.global_position, i / TETHER_SEGMENTS)
+		else:
+			pos = global_pos + sh_dir * i * SEGMENT_LENGTH * 0.1;
+
 		points.append({
 			position = pos,
+			# Verlet integration requires storing the previous position.
 			prev_position = pos,
 		})
+		
+		if at_final_target != null:
+			current_attachment = {
+				node = at_final_target,
+				offset = Vector2.ZERO,
+			}
+			emit_signal("attached_to", self, current_attachment)
 		
 # Called from PlayerShip
 func update_physics(delta):
