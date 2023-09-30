@@ -1,21 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cu50tbbse7fvj"]
+[gd_scene load_steps=8 format=3 uid="uid://cu50tbbse7fvj"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_uvdap"]
 [ext_resource type="Texture2D" uid="uid://bj1vd0ditgkx5" path="res://Assets/Textures/icon.svg" id="2_kqnnd"]
 [ext_resource type="PackedScene" uid="uid://dyn6k0po4fgge" path="res://Scenes/Universe/Universe.tscn" id="2_sb0dw"]
 [ext_resource type="PackedScene" uid="uid://bk47qpmiqsfv5" path="res://Scenes/SupplyShip/SupplyShip.tscn" id="4_6dkld"]
-
-[sub_resource type="Curve2D" id="Curve2D_jirfs"]
-_data = {
-"points": PackedVector2Array(35.9188, 156.022, -35.9188, -156.022, -587, 130, -138.748, 132.021, 138.748, -132.021, -588, -290, -113.521, -14.2952, 113.521, 14.2952, -157, -439, -44.5675, -110.157, 44.5675, 110.157, 655, -192, 89.9759, -69.7944, -89.9759, 69.7944, 644, 299, 120.248, 33.6359, -120.248, -33.6359, -432, 338, 0, 0, 0, 0, -587, 130)
-}
-point_count = 7
-
-[sub_resource type="Curve2D" id="Curve2D_g1md0"]
-_data = {
-"points": PackedVector2Array(87.552, -56.1231, -87.552, 56.1231, 463, -128, 147.043, -84.1847, -147.043, 84.1847, 213, -57, 126.838, -2.24492, -126.838, 2.24492, 150, 459, 135.818, 140.308, -135.818, -140.308, -341, 269, -23.5717, 148.165, 23.5717, -148.165, -509, -167, -122.348, 1.12246, 122.348, -1.12246, 88, -466, -42.6536, -96.5317, 42.6536, 96.5317, 550, -343, 0, 0, 0, 0, 463, -128)
-}
-point_count = 8
+[ext_resource type="Curve2D" uid="uid://ddcukk4djcpb8" path="res://Scenes/Universe/Paths/Path1.tres" id="5_kkofb"]
+[ext_resource type="Curve2D" uid="uid://bjwvxslxdup66" path="res://Scenes/Universe/Paths/Path2.tres" id="6_rjk23"]
+[ext_resource type="Curve2D" uid="uid://cpyrsyofnhv3w" path="res://Scenes/Universe/Paths/Path3.tres" id="7_t62cn"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_uvdap")
@@ -36,21 +27,21 @@ texture = ExtResource("2_kqnnd")
 
 [node name="SupplyPaths" type="Node2D" parent="."]
 
-[node name="Path1" type="Path2D" parent="SupplyPaths"]
-curve = SubResource("Curve2D_jirfs")
+[node name="Supply1" parent="SupplyPaths" instance=ExtResource("4_6dkld")]
+curve = ExtResource("5_kkofb")
+color = Color(0.141176, 0.533333, 0.933333, 1)
+effect_radius = 200.0
+speed = 1.5
 
-[node name="PathFollow2D" type="PathFollow2D" parent="SupplyPaths/Path1"]
-position = Vector2(-587, 130)
-rotation = -1.79707
+[node name="Supply2" parent="SupplyPaths" instance=ExtResource("4_6dkld")]
+curve = ExtResource("6_rjk23")
+color = Color(0.109804, 0.662745, 0.388235, 1)
+effect_radius = 250.0
+speed = 1.0
 
-[node name="SupplyShip" parent="SupplyPaths/Path1/PathFollow2D" instance=ExtResource("4_6dkld")]
-position = Vector2(0, -1)
-
-[node name="Path2" type="Path2D" parent="SupplyPaths"]
-curve = SubResource("Curve2D_g1md0")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="SupplyPaths/Path2"]
-position = Vector2(463, -128)
-rotation = 2.57155
-
-[node name="SupplyShip" parent="SupplyPaths/Path2/PathFollow2D" instance=ExtResource("4_6dkld")]
+[node name="Supply3" parent="SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(-12, 23)
+curve = ExtResource("7_t62cn")
+color = Color(0.827451, 0.752941, 0.247059, 1)
+effect_radius = 250.0
+speed = 3.0
