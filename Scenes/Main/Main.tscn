@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cu50tbbse7fvj"]
+[gd_scene load_steps=10 format=3 uid="uid://cu50tbbse7fvj"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_uvdap"]
 [ext_resource type="Texture2D" uid="uid://bj1vd0ditgkx5" path="res://Assets/Textures/icon.svg" id="2_kqnnd"]
@@ -7,12 +7,14 @@
 [ext_resource type="Curve2D" uid="uid://ddcukk4djcpb8" path="res://Scenes/Universe/Paths/Path1.tres" id="5_kkofb"]
 [ext_resource type="Curve2D" uid="uid://bjwvxslxdup66" path="res://Scenes/Universe/Paths/Path2.tres" id="6_rjk23"]
 [ext_resource type="Curve2D" uid="uid://cpyrsyofnhv3w" path="res://Scenes/Universe/Paths/Path3.tres" id="7_t62cn"]
+[ext_resource type="Curve2D" uid="uid://b7xc2mjrkjyrv" path="res://Scenes/Universe/Paths/Path4.tres" id="8_b64bo"]
 [ext_resource type="PackedScene" uid="uid://d1fv40ekxbg68" path="res://Scenes/PlayerShip/PlayerShip.tscn" id="8_tj2rl"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_uvdap")
 
 [node name="Universe" parent="." instance=ExtResource("2_sb0dw")]
+position = Vector2(192, -320)
 
 [node name="Label" type="Label" parent="."]
 offset_right = 672.0
@@ -36,19 +38,26 @@ texture = ExtResource("2_kqnnd")
 curve = ExtResource("5_kkofb")
 color = Color(0.141176, 0.533333, 0.933333, 1)
 effect_radius = 200.0
-speed = 1.5
+speed = 15.0
 
 [node name="Supply2" parent="SupplyPaths" instance=ExtResource("4_6dkld")]
 curve = ExtResource("6_rjk23")
 color = Color(0.109804, 0.662745, 0.388235, 1)
 effect_radius = 250.0
-speed = 1.0
+speed = 100.0
 
 [node name="Supply3" parent="SupplyPaths" instance=ExtResource("4_6dkld")]
 position = Vector2(-12, 23)
 curve = ExtResource("7_t62cn")
 color = Color(0.827451, 0.752941, 0.247059, 1)
 effect_radius = 250.0
-speed = 3.0
+speed = 300.0
+metadata/_edit_group_ = true
+
+[node name="Supply4" parent="SupplyPaths" instance=ExtResource("4_6dkld")]
+curve = ExtResource("8_b64bo")
+color = Color(0.556863, 0.211765, 0.505882, 1)
+effect_radius = 400.0
+speed = 40.0
 
 [node name="PlayerShip" parent="." instance=ExtResource("8_tj2rl")]

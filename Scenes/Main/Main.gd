@@ -6,6 +6,12 @@ extends Node2D
 @onready var camera_should = $CameraShould
 @onready var player = $PlayerShip
 
+# Camera: how much direction (forward vector) and velocity vector contribute
+const WEIGHT_FORWARD = 30
+const WEIGHT_VELOCITY = 0.8
+# How fast the camera catches up to "should" position
+const CATCHUP_SPEED = 12
+
 func _ready():
 	print("MMO initializing...")
 	
@@ -22,6 +28,6 @@ func _process(delta):
 	sprite.rotate(delta * 1.5)
 	
 	var forward = Vector2.RIGHT.rotated(player.rotation_angle)
-	camera_should.position = player.position + 30 * forward + 1 * player.linear_velocity
+	camera_should.position = player.position + WEIGHT_FORWARD * forward + WEIGHT_VELOCITY * player.linear_velocity
 
-	camera.position += (camera_should.position - camera.position) * delta * 10
+	camera.position += (camera_should.position - camera.position) * delta * CATCHUP_SPEED
