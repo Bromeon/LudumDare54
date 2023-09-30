@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dyn6k0po4fgge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4lgh"]
-size = Vector2(1536, 1024)
+size = Vector2(4066, 3264)
 
 [node name="Universe" type="Node2D"]
 

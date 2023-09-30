@@ -8,6 +8,7 @@ extends Path2D
 
 @onready var follow := $PathFollow2D
 @onready var graphics := $PathFollow2D/Ship
+@onready var total_path_length := self.curve.get_baked_length()
 
 func _ready():
 	var circle = CircleShape2D.new()
@@ -31,5 +32,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	follow.progress_ratio = wrapf(follow.progress_ratio + delta * 0.01 * speed, 0.0, 1.0)
+	follow.progress_ratio = wrapf(follow.progress_ratio + delta * speed / total_path_length, 0.0, 1.0)
 	
