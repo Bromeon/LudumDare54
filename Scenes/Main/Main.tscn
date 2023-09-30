@@ -52,7 +52,5 @@ curve = SubResource("Curve2D_g1md0")
 [node name="PathFollow2D" type="PathFollow2D" parent="SupplyPaths/Path2"]
 position = Vector2(463, -128)
 rotation = 2.57155
-scale = Vector2(1, 1)
 
 [node name="SupplyShip" parent="SupplyPaths/Path2/PathFollow2D" instance=ExtResource("4_6dkld")]
-scale = Vector2(1, 1)

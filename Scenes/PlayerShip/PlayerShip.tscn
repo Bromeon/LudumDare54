@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1fv40ekxbg68"]
+[gd_scene load_steps=6 format=3 uid="uid://d1fv40ekxbg68"]
 
 [ext_resource type="Script" path="res://Scenes/PlayerShip/PlayerShip.gd" id="1_7ccbx"]
 [ext_resource type="Texture2D" uid="uid://bj1vd0ditgkx5" path="res://Assets/Textures/icon.svg" id="1_nafdu"]
+[ext_resource type="PackedScene" uid="uid://clb0gamk6ivir" path="res://Scenes/PlayerShip/Tether.tscn" id="3_53urk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w5qtl"]
 radius = 31.0
@@ -57,3 +58,6 @@ shape = SubResource("CapsuleShape2D_1fd7g")
 position = Vector2(-42, 26)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_1fd7g")
+
+[node name="Tether" parent="." instance=ExtResource("3_53urk")]
+position = Vector2(11, 1)
