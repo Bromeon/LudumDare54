@@ -4,6 +4,10 @@
 [ext_resource type="Script" path="res://Scenes/SupplyShip/SupplyShip.gd" id="1_7gxqe"]
 
 [sub_resource type="Curve2D" id="Curve2D_cvoip"]
+_data = {
+"points": PackedVector2Array(-111, 177, 111, -177, -239, -263, -113, 22, 113, -22, 73, -348, -146, -76, 146, 76, 375, -402, 51, -87, -51, 87, 528, 204, 106, -20, -106, 20, 260, 374, 441, -16, -441, 16, -219, 396, 0, 0, 0, 0, -385, -17, -72.3065, 121.007, 72.3065, -121.007, -239, -263)
+}
+point_count = 8
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tfatm"]
 radius = 100.0
@@ -13,8 +17,11 @@ curve = SubResource("Curve2D_cvoip")
 script = ExtResource("1_7gxqe")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-239, -263)
+rotation = -1.01067
 
 [node name="Ship" type="Node2D" parent="PathFollow2D"]
+rotation = 1.5708
 
 [node name="Front" type="Sprite2D" parent="PathFollow2D/Ship"]
 scale = Vector2(0.15625, 0.4375)
