@@ -11,8 +11,8 @@ func _ready():
 
 	for path in supply_paths.get_children():
 		var follow: PathFollow2D = path.get_node("PathFollow2D")
-		var ship: Node2D = follow.get_node("SupplyShip")
 		var curve: Curve2D = path.curve
+		var ship = follow.get_node("Ship")
 		
 		var cur = curve.get_point_position(0)
 		var next = curve.sample(0, 0.01)

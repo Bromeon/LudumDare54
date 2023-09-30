@@ -1,20 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk47qpmiqsfv5"]
+[gd_scene load_steps=3 format=3 uid="uid://bk47qpmiqsfv5"]
 
 [ext_resource type="Texture2D" uid="uid://bj1vd0ditgkx5" path="res://Assets/Textures/icon.svg" id="1_6ja8e"]
 
-[node name="SupplyShip" type="Node2D"]
+[sub_resource type="Curve2D" id="Curve2D_cvoip"]
 
-[node name="Front" type="Sprite2D" parent="."]
+[node name="SupplyShip" type="Path2D"]
+curve = SubResource("Curve2D_cvoip")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+
+[node name="Ship" type="Node2D" parent="PathFollow2D"]
+
+[node name="Front" type="Sprite2D" parent="PathFollow2D/Ship"]
 scale = Vector2(0.15625, 0.4375)
 texture = ExtResource("1_6ja8e")
 
-[node name="Side1" type="Sprite2D" parent="."]
+[node name="Side1" type="Sprite2D" parent="PathFollow2D/Ship"]
 position = Vector2(0, 7.00001)
 scale = Vector2(0.21875, 0.078125)
 texture = ExtResource("1_6ja8e")
 metadata/_edit_group_ = true
 
-[node name="Side2" type="Sprite2D" parent="."]
+[node name="Side2" type="Sprite2D" parent="PathFollow2D/Ship"]
 position = Vector2(0, 20)
 scale = Vector2(0.34375, 0.0625)
 texture = ExtResource("1_6ja8e")
