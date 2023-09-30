@@ -12,13 +12,9 @@ radius = 16.0
 height = 60.0
 
 [node name="PlayerShip" type="RigidBody2D"]
-position = Vector2(125, 88)
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_7ccbx")
-THRUSTER_FORCE = 200
-ROTATION_SPEED = 1.0
-BRAKE_FACTOR = 0.05
 
 [node name="AimPivot" type="Node2D" parent="."]
 

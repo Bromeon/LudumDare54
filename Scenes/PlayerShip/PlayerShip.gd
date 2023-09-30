@@ -1,8 +1,8 @@
 extends RigidBody2D
 
-@export var THRUSTER_FORCE = 100
-@export var ROTATION_SPEED = 3.0
-@export var BRAKE_FACTOR = 0.999
+@export var THRUSTER_FORCE = 200
+@export var ROTATION_SPEED = 1.0
+@export var BRAKE_FACTOR = 0.05
 
 var move_dir = Vector2(0, 0)
 var rotation_angle = 0.0
