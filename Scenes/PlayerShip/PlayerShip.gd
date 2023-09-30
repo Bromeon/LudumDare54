@@ -5,6 +5,7 @@ var Tether = preload("res://Scenes/PlayerShip/Tether.tscn")
 @export var THRUSTER_FORCE = 200
 @export var ROTATION_SPEED = 1.0
 @export var BRAKE_FACTOR = 0.05
+@export var TETHER_SHOOT_COOLDOWN = 3.0
 
 @export var MAX_TETHER_LENGTH = 500.0
 
@@ -13,9 +14,11 @@ var Tether = preload("res://Scenes/PlayerShip/Tether.tscn")
 # another object.
 var tethers = []
 
+var tether_shoot_cooldown_timer = 0.0
+
 var move_dir = Vector2(0, 0)
 var rotation_angle = 0.0
-var attached_to = null
+var current_attachment = null
 var aim_dir = Vector2(1, 0)
 
 # Time since last time the controller or mouse were used to aim. This is used in
@@ -24,22 +27,27 @@ var last_controller_aim = 0
 var last_mouse_aim = 0
 
 # Attaches this ship to a node, so that it moves with it.
-func attach_to(node: Node2D, local_offset: Vector2):
-	attached_to = {
-		node = node,
-		local_offset = local_offset
-	}
+func attach_to(attachment_):
+	current_attachment = attachment_
 	
-func attachment_point():
-	if attached_to == null:
-		return null
-	else:
-		return attached_to.node.global_position + attached_to.local_offset
-		
 func _ready():
 	$AimPivot.top_level = true
+	
+func current_attachment_position():
+	if current_attachment != null:
+		return current_attachment.node.global_position + current_attachment.offset
+	else:
+		return null
+		
+func cleanup_dead_tethers():
+	var cleaned = []
+	for tether in tethers:
+		if is_instance_valid(tether):
+			cleaned.append(tether)
+	tethers = cleaned
 
 func _physics_process(delta):
+
 	move_dir = Input.get_vector("Left", "Right", "Up", "Down")
 	apply_force(move_dir * THRUSTER_FORCE)
 	
@@ -54,22 +62,23 @@ func _physics_process(delta):
 	$AimPivot.position = self.position
 	
 	# Global distance constraint for the tether
-	var attch = attachment_point()
-	if attch != null:
-		var distance_vector = self.global_position - attch
+	if current_attachment != null:
+		var distance_vector = self.global_position - current_attachment_position()
 		if distance_vector.length() > MAX_TETHER_LENGTH:
 			var new_distance_vector = distance_vector.normalized() * MAX_TETHER_LENGTH
-			self.global_position = attch + new_distance_vector
-
+			self.global_position = current_attachment_position() + new_distance_vector
+			var radial_velocity = self.linear_velocity.dot(new_distance_vector.normalized()) * new_distance_vector.normalized()
+			self.linear_velocity -= radial_velocity
+						
 	# Update the tethers
-	if tethers.size() > 0:
-		tethers[0].update_physics(delta, attch)
-	if tethers.size() > 1:
-		# The attached tether is always the first one.
-		tethers[1].update_physics(delta, null)
+	cleanup_dead_tethers()
+	for tether in tethers:
+		tether.update_physics(delta)
 	
 	# Handle aim and shooting tether
 	do_aim()
+	if tether_shoot_cooldown_timer > 0:
+		tether_shoot_cooldown_timer -= delta
 	if Input.is_action_just_pressed("ShootTether"):
 		shoot_tether()
 	
@@ -85,11 +94,22 @@ func do_aim():
 	$AimPivot.rotation = Vector2.RIGHT.angle_to(aim_dir)
 	
 func shoot_tether():
-	if len(tethers) < 2:
-		var tether = Tether.instantiate()
-		add_child(tether)
-		tether.init(aim_dir)
-		tethers.append(tether)
+	if tether_shoot_cooldown_timer > 0:
+		return
+		
+	tether_shoot_cooldown_timer = TETHER_SHOOT_COOLDOWN
+
+	var tether = Tether.instantiate()
+	add_child(tether)
+	tether.init(aim_dir)
+	tethers.append(tether)
+	tether.connect("attached_to", _on_tether_attached)
+		
+func _on_tether_attached(attached_tether, attch):
+	for t in tethers:
+		if t != attached_tether:
+			t.detach()
+	self.attach_to(attch)
 
 func _input(event):
 	if event is InputEventMouseMotion:
