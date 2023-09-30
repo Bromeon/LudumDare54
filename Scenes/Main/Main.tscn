@@ -20,11 +20,15 @@ offset_bottom = 309.0
 text = "
 ^ the center of the universe"
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(0.203125, 0.203125)
 texture = ExtResource("2_kqnnd")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="CameraShould" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_kqnnd")
 
 [node name="SupplyPaths" type="Node2D" parent="."]
 

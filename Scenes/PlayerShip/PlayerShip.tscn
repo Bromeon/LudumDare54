@@ -10,7 +10,6 @@ height = 59.5799
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1fd7g"]
 radius = 7.0
-height = 30.0
 
 [node name="PlayerShip" type="RigidBody2D"]
 gravity_scale = 0.0
