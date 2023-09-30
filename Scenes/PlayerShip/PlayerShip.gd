@@ -35,6 +35,9 @@ func attachment_point():
 		return null
 	else:
 		return attached_to.node.global_position + attached_to.local_offset
+		
+func _ready():
+	$AimPivot.top_level = true
 
 func _physics_process(delta):
 	move_dir = Input.get_vector("Left", "Right", "Up", "Down")
@@ -47,7 +50,8 @@ func _physics_process(delta):
 		var target_angle= Vector2(1,0).angle_to(move_dir)
 		rotation_angle = lerp_angle(rotation_angle, target_angle, delta * ROTATION_SPEED)
 
-	$Sprite.rotation = rotation_angle
+	self.rotation = rotation_angle
+	$AimPivot.position = self.position
 	
 	# Global distance constraint for the tether
 	var attch = attachment_point()
