@@ -38,26 +38,26 @@ texture = ExtResource("2_kqnnd")
 curve = ExtResource("5_kkofb")
 color = Color(0.141176, 0.533333, 0.933333, 1)
 effect_radius = 200.0
-speed = 1.5
+speed = 15.0
 
 [node name="Supply2" parent="SupplyPaths" instance=ExtResource("4_6dkld")]
 curve = ExtResource("6_rjk23")
 color = Color(0.109804, 0.662745, 0.388235, 1)
 effect_radius = 250.0
-speed = 1.0
+speed = 100.0
 
 [node name="Supply3" parent="SupplyPaths" instance=ExtResource("4_6dkld")]
 position = Vector2(-12, 23)
 curve = ExtResource("7_t62cn")
 color = Color(0.827451, 0.752941, 0.247059, 1)
 effect_radius = 250.0
-speed = 3.0
+speed = 300.0
 metadata/_edit_group_ = true
 
 [node name="Supply4" parent="SupplyPaths" instance=ExtResource("4_6dkld")]
 curve = ExtResource("8_b64bo")
 color = Color(0.556863, 0.211765, 0.505882, 1)
 effect_radius = 400.0
-speed = 5.0
+speed = 40.0
 
 [node name="PlayerShip" parent="." instance=ExtResource("8_tj2rl")]
