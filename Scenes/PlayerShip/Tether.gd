@@ -159,6 +159,7 @@ func update_draw():
 		sprite_pool[i].global_position = center
 		sprite_pool[i].global_rotation = angle + (PI / 2.0)
 		sprite_pool[i].scale = Vector2(1.0, dist / 32.0) * 1.1
+		sprite_pool[i].z_index = -100
 		
 		if time_since_detached > 0:
 			sprite_pool[i].modulate = Color(1.0, 1.0, 1.0, 1.0 - time_since_detached / 1.0)

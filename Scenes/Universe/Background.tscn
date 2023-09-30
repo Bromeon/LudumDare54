@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://txa8ubm7w8ew"]
+
+[ext_resource type="Shader" path="res://Scenes/Universe/Background.gdshader" id="1_hdq74"]
+[ext_resource type="Script" path="res://Scenes/Universe/Background.gd" id="2_8sx0i"]
+[ext_resource type="Texture2D" uid="uid://kmkslenvgq31" path="res://Assets/BackgroundParallax/background_parallax_background.png" id="2_n70vx"]
+[ext_resource type="Texture2D" uid="uid://74466v160yuu" path="res://Assets/BackgroundParallax/background_parallax_nebulas.png" id="3_bun7q"]
+[ext_resource type="Texture2D" uid="uid://d3uvjffn5nlrb" path="res://Assets/BackgroundParallax/background_parallax_planets.png" id="4_0uni1"]
+[ext_resource type="Texture2D" uid="uid://dmdmbmkwr6rkh" path="res://Assets/BackgroundParallax/background_parallax_stars.png" id="5_vdhv5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wf42v"]
+shader = ExtResource("1_hdq74")
+shader_parameter/backgroundSpeed = 0.001
+shader_parameter/nebulaSpeed = 0.004
+shader_parameter/starsSpeed = 0.008
+shader_parameter/planetsSpeed = 0.006
+shader_parameter/zoom = 1.56
+shader_parameter/brightness = 1.0
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/backgroundTex = ExtResource("2_n70vx")
+shader_parameter/nebulaTex = ExtResource("3_bun7q")
+shader_parameter/planetsTex = ExtResource("4_0uni1")
+shader_parameter/starsTex = ExtResource("5_vdhv5")
+
+[node name="Background" type="ColorRect"]
+z_index = -200
+texture_repeat = 2
+material = SubResource("ShaderMaterial_wf42v")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_8sx0i")
