@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu50tbbse7fvj"]
+
+[ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_uvdap"]
+[ext_resource type="Texture2D" uid="uid://bj1vd0ditgkx5" path="res://Assets/Textures/icon.svg" id="2_kqnnd"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_uvdap")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 672.0
+offset_bottom = 309.0
+text = "LUDUM DARE 54
+
+Here is some superior stuff:
+
+and or not or and not or and or not
+or not and and not or
+not"
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(357, 358)
+texture = ExtResource("2_kqnnd")
