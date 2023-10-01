@@ -30,6 +30,6 @@ func _physics_process(delta):
 		$Mineral1.modulate.a = $Mineral1.modulate.a * 0.99
 		
 		if elapsed_since_collected > 1.0:
-			print("Collected a piece of", mineral_type)
+			print("Collected a piece of ", mineral_type)
 			queue_free()
 
