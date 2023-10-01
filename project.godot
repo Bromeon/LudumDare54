@@ -20,6 +20,10 @@ config/icon="res://Assets/Textures/icon.svg"
 window/size/viewport_width=1600
 window/size/viewport_height=1280
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 Left={
