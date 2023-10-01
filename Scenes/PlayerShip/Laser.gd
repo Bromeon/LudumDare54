@@ -7,23 +7,23 @@ const DENSITY = 10
 
 var active: bool = false
 
-@onready var particles := $GPUParticles2D
-@onready var particle_material: ParticleProcessMaterial = $GPUParticles2D.process_material
+@onready var beam := $Beam
+@onready var beam_material: ParticleProcessMaterial = $Beam.process_material
 
 func deactivate():
 	active = false
-	particles.emitting = false
+	beam.emitting = false
 	start = Vector2.ZERO
 	end = Vector2.ZERO
 
 func activate(start_: Vector2, end_: Vector2):
 	active = true
-	particles.emitting = true
+	beam.emitting = true
 	start = start_
 	end = end_
 	
 func _ready():
-	particles.top_level = true
+	beam.top_level = true
 
 func _process(delta):
 	if active:
@@ -31,7 +31,7 @@ func _process(delta):
 	else:
 		return
 		
-#	print("beam_len: ", beam_length, "   box:  ", particle_material.emission_box_extents)
+#	print("beam_len: ", beam_length, "   box:  ", beam_material.emission_box_extents)
 	
 	#var global_tr_inv = self.global_transform.inverse()
 	var global_tr_inv = Transform2D.IDENTITY
@@ -48,12 +48,12 @@ func _process(delta):
 	
 	var rotated_offset = offset.rotated(angle)
 	
-	particles.rotation = angle
-	particles.position = start_ + rotated_offset
+	beam.rotation = angle
+	beam.position = start_ + rotated_offset
 	
 	# can't dynamically change amount: https://github.com/godotengine/godot/issues/16352
-	#particles.amount = DENSITY * beam_length
-	particle_material.emission_box_extents.x = beam_length / 2
+	#beam.amount = DENSITY * beam_length
+	beam_material.emission_box_extents.x = beam_length / 2
 #	print("beam: ", start_.round(), " -> ", end_.round())
 	
 	
