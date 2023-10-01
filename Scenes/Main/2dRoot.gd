@@ -11,7 +11,9 @@ extends Node2D
 const WEIGHT_FORWARD = 30
 const WEIGHT_VELOCITY = 0.8
 # How fast the camera catches up to "should" position
-const CATCHUP_SPEED = 2
+const CATCHUP_POS_SPEED = 2
+# How much the velocity adjusts to the "ideal one" between 0.5 and 1
+const CATCHUP_VEL_RATIO = 0.92
 
 var camera_vel: Vector2
 
@@ -40,8 +42,8 @@ func _process(delta):
 	var forward = Vector2.RIGHT.rotated(player.rotation_angle)
 	camera_should.position = player.position + WEIGHT_FORWARD * forward + WEIGHT_VELOCITY * player.linear_velocity
 	
-	var camera_should_vel = (camera_should.position - camera.position) * CATCHUP_SPEED
-	camera_vel = lerp(camera_should_vel, camera_vel, 0.92)
+	var camera_should_vel = (camera_should.position - camera.position) * CATCHUP_POS_SPEED
+	camera_vel = lerp(camera_should_vel, camera_vel, CATCHUP_VEL_RATIO)
 	camera.position += camera_vel * delta
 	
 #	debug.text = str("forward:    ", (WEIGHT_FORWARD * forward).round(), "\n",
