@@ -3,7 +3,7 @@ extends Node2D
 var start: Vector2
 var end: Vector2
 
-const DENSITY = 1
+const DENSITY = 10
 
 var active: bool = false
 
