@@ -67,7 +67,8 @@ func _physics_process(delta):
 			var new_distance_vector = distance_vector.normalized() * MAX_TETHER_LENGTH
 			self.global_position = current_attachment_position() + new_distance_vector
 			var radial_velocity = self.linear_velocity.dot(new_distance_vector.normalized()) * new_distance_vector.normalized()
-			self.linear_velocity -= radial_velocity
+			if radial_velocity.dot(current_attachment_position() - self.global_position) < 0:
+				self.linear_velocity -= radial_velocity
 						
 	# Update the tethers
 	cleanup_dead_tethers()
@@ -87,7 +88,12 @@ func do_aim():
 		last_controller_aim = Time.get_ticks_msec()
 		aim_dir = aim_dir_joy
 	elif last_mouse_aim > last_controller_aim:
-		var mouse_pos = get_viewport().get_camera_2d().get_global_mouse_position()
+		var camera = get_viewport().get_camera_2d()
+		var mouse_pos
+		if camera != null:
+			mouse_pos = camera.get_global_mouse_position()
+		else:
+			mouse_pos = get_viewport().get_mouse_position()
 		aim_dir = (mouse_pos - self.global_position).normalized()
 
 	$AimPivot.rotation = Vector2.RIGHT.angle_to(aim_dir)
@@ -107,9 +113,9 @@ func shoot_tether():
 func setup_initial_tether(other_ship):
 	var tether = Tether.instantiate()
 	add_child(tether)
+	tether.connect("attached_to", _on_tether_attached)
 	tether.init(Vector2.ZERO, other_ship)
 	tethers.append(tether)
-	tether.connect("attached_to", _on_tether_attached)
 		
 func _on_tether_attached(attached_tether, attch):
 	for t in tethers:

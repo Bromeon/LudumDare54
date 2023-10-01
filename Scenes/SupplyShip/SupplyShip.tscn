@@ -1,22 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bk47qpmiqsfv5"]
+[gd_scene load_steps=5 format=3 uid="uid://bk47qpmiqsfv5"]
 
-[ext_resource type="Texture2D" uid="uid://bj1vd0ditgkx5" path="res://Assets/Textures/icon.svg" id="1_6ja8e"]
 [ext_resource type="Script" path="res://Scenes/SupplyShip/SupplyShip.gd" id="1_7gxqe"]
+[ext_resource type="PackedScene" uid="uid://ci31wbu1otvju" path="res://Scenes/SupplyShip/SupplyShipSprite.tscn" id="2_hmuw6"]
 
 [sub_resource type="Curve2D" id="Curve2D_cvoip"]
 _data = {
-"points": PackedVector2Array(-111, 177, 111, -177, -239, -263, -113, 22, 113, -22, 73, -348, -146, -76, 146, 76, 375, -402, 51, -87, -51, 87, 528, 204, 106, -20, -106, 20, 260, 374, 441, -16, -441, 16, -219, 396, 0, 0, 0, 0, -385, -17, -72.3065, 121.007, 72.3065, -121.007, -239, -263)
+"points": PackedVector2Array(-111, 177, 111, -177, -239, -263, -113, 22, 113, -22, -319, -847, 0, 0, 0, 0, 92, -851, -146, -76, 146, 76, 1181, -593, 51, -87, -51, 87, 528, 204, 106, -20, -106, 20, 260, 374, 441, -16, -441, 16, -219, 396, 0, 0, 0, 0, -385, -17, -72.3065, 121.007, 72.3065, -121.007, -239, -263)
 }
-point_count = 8
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfknw"]
-size = Vector2(19.9221, 55.2397)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ittw7"]
-size = Vector2(27.6701, 9.43394)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mge8"]
-size = Vector2(45.26, 9.43394)
+point_count = 9
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tfatm"]
 radius = 100.0
@@ -29,41 +20,8 @@ script = ExtResource("1_7gxqe")
 position = Vector2(-239, -263)
 rotation = -1.01067
 
-[node name="Ship" type="Node2D" parent="PathFollow2D"]
+[node name="Ship" parent="PathFollow2D" instance=ExtResource("2_hmuw6")]
 unique_name_in_owner = true
-rotation = 1.5708
-
-[node name="Front" type="Sprite2D" parent="PathFollow2D/Ship"]
-scale = Vector2(0.15625, 0.4375)
-texture = ExtResource("1_6ja8e")
-
-[node name="Side1" type="Sprite2D" parent="PathFollow2D/Ship"]
-position = Vector2(0, 7.00001)
-scale = Vector2(0.21875, 0.078125)
-texture = ExtResource("1_6ja8e")
-metadata/_edit_group_ = true
-
-[node name="Side2" type="Sprite2D" parent="PathFollow2D/Ship"]
-position = Vector2(0, 20)
-scale = Vector2(0.34375, 0.0625)
-texture = ExtResource("1_6ja8e")
-metadata/_edit_group_ = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="PathFollow2D/Ship"]
-collision_layer = 3
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Ship/StaticBody2D"]
-position = Vector2(-0.0389709, 0.150787)
-shape = SubResource("RectangleShape2D_gfknw")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="PathFollow2D/Ship/StaticBody2D"]
-position = Vector2(0.0646057, 6.09552)
-shape = SubResource("RectangleShape2D_ittw7")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="PathFollow2D/Ship/StaticBody2D"]
-position = Vector2(-0.660492, 19.3992)
-shape = SubResource("RectangleShape2D_4mge8")
 
 [node name="Area2D" type="Area2D" parent="PathFollow2D"]
 

@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cu50tbbse7fvj"]
+[gd_scene load_steps=12 format=3 uid="uid://cu50tbbse7fvj"]
 
-[ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_uvdap"]
+[ext_resource type="Script" path="res://Scenes/Main/MainGame.gd" id="1_2w541"]
+[ext_resource type="PackedScene" uid="uid://txa8ubm7w8ew" path="res://Scenes/Universe/Background.tscn" id="1_vmh7m"]
 [ext_resource type="Texture2D" uid="uid://bj1vd0ditgkx5" path="res://Assets/Textures/icon.svg" id="2_kqnnd"]
 [ext_resource type="PackedScene" uid="uid://dyn6k0po4fgge" path="res://Scenes/Universe/Universe.tscn" id="2_sb0dw"]
+[ext_resource type="Script" path="res://Scenes/Main/2dRoot.gd" id="2_vx87s"]
 [ext_resource type="PackedScene" uid="uid://bk47qpmiqsfv5" path="res://Scenes/SupplyShip/SupplyShip.tscn" id="4_6dkld"]
 [ext_resource type="Curve2D" uid="uid://ddcukk4djcpb8" path="res://Scenes/Universe/Paths/Path1.tres" id="5_kkofb"]
 [ext_resource type="Curve2D" uid="uid://bjwvxslxdup66" path="res://Scenes/Universe/Paths/Path2.tres" id="6_rjk23"]
@@ -10,43 +12,54 @@
 [ext_resource type="Curve2D" uid="uid://b7xc2mjrkjyrv" path="res://Scenes/Universe/Paths/Path4.tres" id="8_b64bo"]
 [ext_resource type="PackedScene" uid="uid://d1fv40ekxbg68" path="res://Scenes/PlayerShip/PlayerShip.tscn" id="8_tj2rl"]
 
-[node name="Main" type="Node2D"]
-script = ExtResource("1_uvdap")
+[node name="Main" type="Node"]
+script = ExtResource("1_2w541")
 
-[node name="Universe" parent="." instance=ExtResource("2_sb0dw")]
+[node name="Background" parent="." instance=ExtResource("1_vmh7m")]
+unique_name_in_owner = true
+offset_left = -4606.0
+offset_top = -3952.0
+offset_right = 3254.0
+offset_bottom = 4228.0
+
+[node name="2DRoot" type="Node2D" parent="."]
+script = ExtResource("2_vx87s")
+
+[node name="Universe" parent="2DRoot" instance=ExtResource("2_sb0dw")]
 position = Vector2(192, -320)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="2DRoot"]
 offset_right = 672.0
 offset_bottom = 309.0
 text = "
 ^ the center of the universe"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="2DRoot"]
+unique_name_in_owner = true
 
-[node name="Icon" type="Sprite2D" parent="."]
+[node name="Icon" type="Sprite2D" parent="2DRoot"]
 scale = Vector2(0.203125, 0.203125)
 texture = ExtResource("2_kqnnd")
 
-[node name="CameraShould" type="Sprite2D" parent="."]
+[node name="CameraShould" type="Sprite2D" parent="2DRoot"]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_kqnnd")
 
-[node name="SupplyPaths" type="Node2D" parent="."]
+[node name="SupplyPaths" type="Node2D" parent="2DRoot"]
 
-[node name="Supply1" parent="SupplyPaths" instance=ExtResource("4_6dkld")]
+[node name="Supply1" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
 curve = ExtResource("5_kkofb")
 color = Color(0.141176, 0.533333, 0.933333, 1)
 effect_radius = 200.0
 speed = 15.0
 
-[node name="Supply2" parent="SupplyPaths" instance=ExtResource("4_6dkld")]
+[node name="Supply2" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
 curve = ExtResource("6_rjk23")
 color = Color(0.109804, 0.662745, 0.388235, 1)
 effect_radius = 250.0
 speed = 100.0
 
-[node name="Supply3" parent="SupplyPaths" instance=ExtResource("4_6dkld")]
+[node name="Supply3" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
 position = Vector2(-12, 23)
 curve = ExtResource("7_t62cn")
 color = Color(0.827451, 0.752941, 0.247059, 1)
@@ -54,10 +67,10 @@ effect_radius = 250.0
 speed = 300.0
 metadata/_edit_group_ = true
 
-[node name="Supply4" parent="SupplyPaths" instance=ExtResource("4_6dkld")]
+[node name="Supply4" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
 curve = ExtResource("8_b64bo")
 color = Color(0.556863, 0.211765, 0.505882, 1)
 effect_radius = 400.0
 speed = 40.0
 
-[node name="PlayerShip" parent="." instance=ExtResource("8_tj2rl")]
+[node name="PlayerShip" parent="2DRoot" instance=ExtResource("8_tj2rl")]
