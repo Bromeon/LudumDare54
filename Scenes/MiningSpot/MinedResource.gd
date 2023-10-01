@@ -31,5 +31,6 @@ func _physics_process(delta):
 		
 		if elapsed_since_collected > 1.0:
 			print("Collected a piece of ", mineral_type)
+			GameData.notify_mineral_collected(mineral_type, 1)
 			queue_free()
 

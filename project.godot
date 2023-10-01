@@ -18,6 +18,7 @@ config/icon="res://Assets/Textures/icon.svg"
 [autoload]
 
 GameConstants="*res://Autoloads/GameConstants.tscn"
+GameData="*res://Autoloads/GameData.tscn"
 
 [display]
 

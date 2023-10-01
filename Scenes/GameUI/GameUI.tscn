@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b87xo21ajrno2"]
+[gd_scene load_steps=12 format=3 uid="uid://b87xo21ajrno2"]
 
 [ext_resource type="Texture2D" uid="uid://dmfyo8ydveg77" path="res://Assets/Sprites/InfoIcon_Normal.png" id="1_ctcy2"]
 [ext_resource type="Texture2D" uid="uid://da01pmom8oygm" path="res://Assets/Sprites/Frame2.png" id="1_v8fmv"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Scenes/GameUI/HBoxContainer5.gd" id="7_bf7qd"]
 [ext_resource type="Texture2D" uid="uid://ri64wkcjxcnn" path="res://Assets/Sprites/Mineral_drop.png" id="7_xpiwf"]
 [ext_resource type="FontFile" uid="uid://c4pj7uyt6yom4" path="res://Assets/Fonts/PlavskyBold-0B8G.ttf" id="8_h55pp"]
+[ext_resource type="Script" path="res://Scenes/GameUI/ToolBar.gd" id="10_5ql54"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -252,6 +253,7 @@ patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
+script = ExtResource("10_5ql54")
 
 [node name="MarginContainer" type="MarginContainer" parent="ToolBar"]
 layout_mode = 1
@@ -279,6 +281,15 @@ layout_mode = 2
 texture = ExtResource("2_vn2xi")
 stretch_mode = 2
 
+[node name="Icon" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_xpiwf")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -303,6 +314,15 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("2_vn2xi")
 stretch_mode = 2
+
+[node name="Icon" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer2/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_xpiwf")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -329,6 +349,15 @@ layout_mode = 2
 texture = ExtResource("2_vn2xi")
 stretch_mode = 2
 
+[node name="Icon" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer3/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_xpiwf")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -353,6 +382,15 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("2_vn2xi")
 stretch_mode = 2
+
+[node name="Icon" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer4/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_xpiwf")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer4"]
 layout_mode = 2
@@ -379,6 +417,15 @@ layout_mode = 2
 texture = ExtResource("2_vn2xi")
 stretch_mode = 2
 
+[node name="Icon" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer5/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_xpiwf")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer5"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -403,6 +450,15 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("2_vn2xi")
 stretch_mode = 2
+
+[node name="Icon" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer6/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_xpiwf")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer6"]
 layout_mode = 2
@@ -429,6 +485,15 @@ layout_mode = 2
 texture = ExtResource("2_vn2xi")
 stretch_mode = 2
 
+[node name="Icon" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer7/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_xpiwf")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer7"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -453,6 +518,15 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("2_vn2xi")
 stretch_mode = 2
+
+[node name="Icon" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer8/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_xpiwf")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer8"]
 layout_mode = 2
