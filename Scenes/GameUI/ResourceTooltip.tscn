@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bcjn242q5lcyu"]
 
-[ext_resource type="Texture2D" uid="uid://da01pmom8oygm" path="res://Assets/Sprites/Frame2.png" id="1_b1nrs"]
+[ext_resource type="Texture2D" uid="uid://cdu35rkj1ix5x" path="res://Assets/Sprites/Frame2_tick.png" id="1_pangj"]
 [ext_resource type="Script" path="res://Scenes/GameUI/ResourceTooltip.gd" id="2_yqv46"]
 [ext_resource type="Texture2D" uid="uid://ri64wkcjxcnn" path="res://Assets/Sprites/Mineral_drop.png" id="3_hbex0"]
 [ext_resource type="FontFile" uid="uid://c4pj7uyt6yom4" path="res://Assets/Fonts/PlavskyBold-0B8G.ttf" id="4_shv3h"]
@@ -10,7 +10,7 @@
 texture_filter = 1
 offset_right = 232.0
 offset_bottom = 156.0
-texture = ExtResource("1_b1nrs")
+texture = ExtResource("1_pangj")
 patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12

@@ -228,7 +228,7 @@ layout_mode = 1
 offset_left = 8.0
 offset_top = 64.0
 offset_right = 288.0
-offset_bottom = 689.0
+offset_bottom = 730.0
 texture = ExtResource("1_v8fmv")
 patch_margin_left = 12
 patch_margin_top = 12
@@ -272,6 +272,8 @@ text = "
      mining laser
   CTRL / B
      brake
+  Mouse over mineral
+     show tooltip
 
 [*] ship will move towards 
      mouse aim
