@@ -212,3 +212,5 @@ func _on_tether_attached(attached_tether, attch):
 func _input(event):
 	if event is InputEventMouseMotion:
 		last_mouse_aim = Time.get_ticks_msec()
+	if event is InputEventJoypadMotion or InputEventJoypadButton:
+		last_controller_aim = Time.get_ticks_msec()
