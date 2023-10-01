@@ -2,26 +2,23 @@
 
 [ext_resource type="Script" path="res://Scenes/SupplyShip/SupplyShip.gd" id="1_7gxqe"]
 [ext_resource type="PackedScene" uid="uid://ci31wbu1otvju" path="res://Scenes/SupplyShip/SupplyShipSprite.tscn" id="2_hmuw6"]
-
-[sub_resource type="Curve2D" id="Curve2D_cvoip"]
-_data = {
-"points": PackedVector2Array(-111, 177, 111, -177, -239, -263, -113, 22, 113, -22, -319, -847, 0, 0, 0, 0, 92, -851, -146, -76, 146, 76, 1181, -593, 51, -87, -51, 87, 528, 204, 106, -20, -106, 20, 260, 374, 441, -16, -441, 16, -219, 396, 0, 0, 0, 0, -385, -17, -72.3065, 121.007, 72.3065, -121.007, -239, -263)
-}
-point_count = 9
+[ext_resource type="PackedScene" uid="uid://du272ta22heks" path="res://Scenes/Particles/FuelExhaust.tscn" id="3_8nn3u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tfatm"]
 radius = 100.0
 
 [node name="SupplyShip" type="Path2D"]
-curve = SubResource("Curve2D_cvoip")
 script = ExtResource("1_7gxqe")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(-239, -263)
-rotation = -1.01067
 
 [node name="Ship" parent="PathFollow2D" instance=ExtResource("2_hmuw6")]
 unique_name_in_owner = true
+
+[node name="GPUParticles2D" parent="PathFollow2D/Ship" instance=ExtResource("3_8nn3u")]
+position = Vector2(0.000179291, 50)
+rotation = -1.5708
+amount = 100
 
 [node name="Area2D" type="Area2D" parent="PathFollow2D"]
 
