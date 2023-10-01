@@ -127,11 +127,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ShootTether"):
 		shoot_tether()
 	if Input.is_action_pressed("ShootLaser"):
-		$Laser.visible = true
 		shoot_laser_tick(delta)
 	else:
-		$Laser.set_endpoints(Vector2.ZERO, Vector2.ZERO)
-		$Laser.visible = false
+		$Laser.deactivate()
 	
 static func adjust_emitter(thrust: GPUParticles2D, axis: Vector2, input: Vector2, velocity: Vector2):
 	# if there is a component in positive direction of axis
@@ -194,9 +192,9 @@ func shoot_laser_tick(delta):
 			result.normal,
 			delta,
 		)
-		$Laser.set_endpoints(self.global_position, result.position)
+		$Laser.activate(self.global_position, result.position)
 	else:
-		$Laser.set_endpoints(self.global_position, params.to)
+		$Laser.activate(self.global_position, params.to)
 	
 func setup_initial_tether(other_ship):
 	var tether = Tether.instantiate()

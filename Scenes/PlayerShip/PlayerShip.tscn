@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cq7rs1xmf34tu" path="res://Assets/Sprites/Aim.png" id="2_k584m"]
 [ext_resource type="Texture2D" uid="uid://3cdvaycogfao" path="res://Assets/Sprites/Player_V1.png" id="3_cfrxs"]
 [ext_resource type="PackedScene" uid="uid://du272ta22heks" path="res://Scenes/Particles/FuelExhaust.tscn" id="4_q3lfr"]
-[ext_resource type="PackedScene" uid="uid://b7w7gp4xklp85" path="res://Scenes/PlayerShip/Laser.tscn" id="5_4wjfk"]
+[ext_resource type="PackedScene" uid="uid://c7d2qrc31gp5s" path="res://Scenes/PlayerShip/Laser.tscn" id="5_4wjfk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w5qtl"]
 radius = 11.5079
