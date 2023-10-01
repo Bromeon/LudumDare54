@@ -48,7 +48,7 @@ func cleanup_dead_tethers():
 		if is_instance_valid(tether):
 			cleaned.append(tether)
 	tethers = cleaned
-
+	
 func _physics_process(delta):
 	# When mouse is used, the thrust force is relative to orientation
 	if player_uses_mouse():
@@ -68,11 +68,22 @@ func _physics_process(delta):
 		rotation_angle += angle
 		
 		var input = Input.get_vector("Down", "Up", "Left", "Right")
-		$MainThrust.emitting = input.x > 0
-		$RightThrust.emitting = input.y < 0
-		$LeftThrust.emitting = input.y > 0
-		$ReverseThrust.emitting = input.x < 0
-		$ReverseThrust2.emitting = input.x < 0
+#		$MainThrust.emitting = input.x > 0
+#		$RightThrust.emitting = input.y < 0
+#		$LeftThrust.emitting = input.y > 0
+#		$ReverseThrust.emitting = input.x < 0
+#		$ReverseThrust2.emitting = input.x < 0
+#
+#		$LeftThrust.process_material.direction = to_vec3(Vector2.UP + velocity)
+#		$RightThrust.process_material.direction = to_vec3(Vector2.DOWN + velocity)
+
+		var velocity = $MainThrust.to_local(self.linear_velocity * delta)
+#		var velocity = self.linear_velocity
+		adjust_emitter($MainThrust, Vector2.LEFT, input, velocity)
+		adjust_emitter($RightThrust, Vector2.DOWN, input, velocity)
+		adjust_emitter($LeftThrust, Vector2.UP, input, velocity)
+		adjust_emitter($ReverseThrust, Vector2.RIGHT, input, velocity)
+		adjust_emitter($ReverseThrust2, Vector2.RIGHT, input, velocity)
 
 		move_dir = input.rotated(rotation_angle)
 		
@@ -121,6 +132,20 @@ func _physics_process(delta):
 	else:
 		$Laser.set_endpoints(Vector2.ZERO, Vector2.ZERO)
 		$Laser.visible = false
+	
+static func adjust_emitter(thrust: GPUParticles2D, axis: Vector2, input: Vector2, velocity: Vector2):
+	# if there is a component in positive direction of axis
+	thrust.emitting = input.dot(axis) < 0
+	
+#	print(velocity)
+	# attempt to adjust to velocityw
+	var material: ParticleProcessMaterial = thrust.process_material
+#	material.direction = to_vec3( axis + velocity )
+#	material.initial_velocity_min = 200 * velocity.length()
+#	material.initial_velocity_max = 300 * velocity.length()
+
+static func to_vec3(vec2: Vector2) -> Vector3:
+	return Vector3(vec2.x, vec2.y, 0)
 	
 func do_aim():
 	var aim_dir_joy = Input.get_vector("AimLeft", "AimRight", "AimUp", "AimDown")
