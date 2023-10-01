@@ -8,5 +8,7 @@ gravity_scale = 0.0
 script = ExtResource("1_qxhvo")
 
 [node name="Mineral1" type="Sprite2D" parent="."]
+z_index = 100
 texture_filter = 1
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_obn7s")
