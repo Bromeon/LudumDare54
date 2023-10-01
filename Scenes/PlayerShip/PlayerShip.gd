@@ -9,7 +9,7 @@ var Tether = preload("res://Scenes/PlayerShip/Tether.tscn")
 
 @export var MAX_TETHER_LENGTH = 500.0
 
-@onready var particles := $GPUParticles2D
+const ROTATION_RATE := deg_to_rad(180)
 
 # A ship can have at most two tethers. One of them will be attached to another #
 # ship, and the second one will be used when trying to reattach the ship to #
@@ -52,12 +52,33 @@ func cleanup_dead_tethers():
 func _physics_process(delta):
 	# When mouse is used, the thrust force is relative to orientation
 	if player_uses_mouse():
-		var input = Input.get_vector("Down", "Up", "Left", "Right")
-		particles.emitting = input.x > 0
+		var mouse_pos = get_global_mouse_position()
+		var forward_is = Vector2.RIGHT.rotated(rotation_angle)
+		var forward_should = mouse_pos - self.position
+		
+		#var cross = forward_is.cross(forward_should)
+		var angle = forward_is.angle_to(forward_should)
+		var rotation_rate = ROTATION_RATE * delta
+
+		if angle >= 0:
+			angle = min(angle, rotation_rate)
+		else:
+			angle = max(angle, -rotation_rate)
 			
+		rotation_angle += angle
+		
+		var input = Input.get_vector("Down", "Up", "Left", "Right")
+		$MainThrust.emitting = input.x > 0
+		$RightThrust.emitting = input.y < 0
+		$LeftThrust.emitting = input.y > 0
+		$ReverseThrust.emitting = input.x < 0
+		$ReverseThrust2.emitting = input.x < 0
+
 		move_dir = input.rotated(rotation_angle)
+		
+		
 	
-	else:	
+	else:
 		move_dir = Input.get_vector("Left", "Right", "Up", "Down")
 	
 	
@@ -118,7 +139,7 @@ func do_aim():
 	$AimPivot.rotation = Vector2.RIGHT.angle_to(aim_dir)
 
 func player_uses_mouse() -> bool:
-	return last_mouse_aim > last_controller_aim
+	return last_mouse_aim >= last_controller_aim
 
 func shoot_tether():
 	if tether_shoot_cooldown_timer > 0:
