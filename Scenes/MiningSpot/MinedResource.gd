@@ -6,9 +6,9 @@ var elapsed_since_collected = 0.0
 
 @export var mineral_type = "Lanthanum"
 
-func set_mineral_type(type, color):
+func set_mineral_type(type):
 	mineral_type = type
-	$Mineral1.modulate = color
+	$Mineral1.modulate = GameConstants.MINERAL_TYPE_COLORS[type]
 
 func _physics_process(delta):
 	$Mineral1.rotate(rotation_speed * delta)
