@@ -1,15 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1fv40ekxbg68"]
+[gd_scene load_steps=11 format=3 uid="uid://d1fv40ekxbg68"]
 
 [ext_resource type="Script" path="res://Scenes/PlayerShip/PlayerShip.gd" id="1_7ccbx"]
 [ext_resource type="Texture2D" uid="uid://cq7rs1xmf34tu" path="res://Assets/Sprites/Aim.png" id="2_k584m"]
 [ext_resource type="Texture2D" uid="uid://3cdvaycogfao" path="res://Assets/Sprites/Player_V1.png" id="3_cfrxs"]
+[ext_resource type="PackedScene" uid="uid://du272ta22heks" path="res://Scenes/Particles/FuelExhaust.tscn" id="4_q3lfr"]
+[ext_resource type="PackedScene" uid="uid://b7w7gp4xklp85" path="res://Scenes/PlayerShip/Laser.tscn" id="5_4wjfk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w5qtl"]
 radius = 11.5079
 height = 59.5798
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1fd7g"]
+radius = 6.0
 height = 32.0
+
+[sub_resource type="Gradient" id="Gradient_4s4l2"]
+offsets = PackedFloat32Array(0, 0.0666667, 0.140741, 1)
+colors = PackedColorArray(0.74744, 0.749025, 0.508608, 0.640625, 0.742188, 0.706107, 0.330342, 1, 0.894752, 0.896994, 0.556892, 0.90625, 0.392157, 0.392157, 0.392157, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_305x4"]
+gradient = SubResource("Gradient_4s4l2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5nfy1"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 10, 1)
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 7.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 410.53
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -85.26
+linear_accel_max = -85.26
+color_ramp = SubResource("GradientTexture1D_305x4")
 
 [node name="PlayerShip" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -48,3 +73,9 @@ shape = SubResource("CapsuleShape2D_1fd7g")
 position = Vector2(-11, 21)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_1fd7g")
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("4_q3lfr")]
+position = Vector2(-23, 0)
+process_material = SubResource("ParticleProcessMaterial_5nfy1")
+
+[node name="Laser" parent="." instance=ExtResource("5_4wjfk")]
