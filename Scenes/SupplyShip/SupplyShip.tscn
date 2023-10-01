@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bk47qpmiqsfv5"]
+[gd_scene load_steps=6 format=3 uid="uid://bk47qpmiqsfv5"]
 
 [ext_resource type="Script" path="res://Scenes/SupplyShip/SupplyShip.gd" id="1_7gxqe"]
 [ext_resource type="PackedScene" uid="uid://ci31wbu1otvju" path="res://Scenes/SupplyShip/SupplyShipSprite.tscn" id="2_hmuw6"]
 [ext_resource type="PackedScene" uid="uid://du272ta22heks" path="res://Scenes/Particles/FuelExhaust.tscn" id="3_8nn3u"]
 
+[sub_resource type="Curve2D" id="Curve2D_ntjy4"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_tfatm"]
 radius = 100.0
 
 [node name="SupplyShip" type="Path2D"]
+curve = SubResource("Curve2D_ntjy4")
 script = ExtResource("1_7gxqe")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]

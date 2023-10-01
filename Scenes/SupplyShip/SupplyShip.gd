@@ -3,6 +3,7 @@ extends Path2D
 #class_name SupplyShip
 
 @export var color: Color
+@export var hue: float = 0.0
 @export var effect_radius: float
 @export var speed: float
 
@@ -16,7 +17,7 @@ func _ready():
 	
 	$PathFollow2D/Area2D/CollisionShape2D.shape = circle
 	
-	
+	get_node("%Ship/%Sprite").material.set_shader_parameter("hue", hue)
 	graphics.modulate = color
 	var global_tr = self.global_transform
 	
@@ -35,3 +36,4 @@ func _ready():
 func _process(delta):
 	follow.progress_ratio = wrapf(follow.progress_ratio + delta * speed / total_path_length, 0.0, 1.0)
 	
+
