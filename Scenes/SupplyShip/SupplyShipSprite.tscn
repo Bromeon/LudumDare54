@@ -3,13 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://qog02k4u68l7" path="res://Assets/Sprites/Station_V1.png" id="1_iqk0l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfknw"]
-size = Vector2(27.0004, 105)
+size = Vector2(59.0004, 212)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ittw7"]
-size = Vector2(29.0001, 14.9999)
+size = Vector2(58.5, 28.5001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mge8"]
-size = Vector2(31.9999, 30.0001)
+size = Vector2(69.9998, 57.0002)
 
 [node name="Ship" type="Node2D"]
 rotation = 1.5708
@@ -17,7 +17,7 @@ rotation = 1.5708
 [node name="StationV1" type="Sprite2D" parent="."]
 texture_filter = 1
 rotation = 2.39285
-scale = Vector2(3, 3)
+scale = Vector2(6, 6)
 texture = ExtResource("1_iqk0l")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -25,17 +25,17 @@ collision_layer = 3
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0.999989, -3)
+position = Vector2(4.50018, -5.00002)
 shape = SubResource("RectangleShape2D_gfknw")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-26.4999, 22.5001)
+position = Vector2(-52.2499, 45.2501)
 shape = SubResource("RectangleShape2D_ittw7")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-29, -8.99987)
+position = Vector2(-55.0001, -15.4998)
 shape = SubResource("RectangleShape2D_4mge8")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(26, 2.99991)
+position = Vector2(53, 3.99981)
 shape = SubResource("RectangleShape2D_4mge8")
