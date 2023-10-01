@@ -69,29 +69,20 @@ func _physics_process(delta):
 		rotation_angle += angle
 		
 		var input = Input.get_vector("Down", "Up", "Left", "Right")
-#		$MainThrust.emitting = input.x > 0
-#		$RightThrust.emitting = input.y < 0
-#		$LeftThrust.emitting = input.y > 0
-#		$ReverseThrust.emitting = input.x < 0
-#		$ReverseThrust2.emitting = input.x < 0
-#
-#		$LeftThrust.process_material.direction = to_vec3(Vector2.UP + velocity)
-#		$RightThrust.process_material.direction = to_vec3(Vector2.DOWN + velocity)
-
-		var velocity = $MainThrust.to_local(self.linear_velocity * delta)
-#		var velocity = self.linear_velocity
-		adjust_emitter($MainThrust, Vector2.LEFT, input, velocity)
-		adjust_emitter($RightThrust, Vector2.DOWN, input, velocity)
-		adjust_emitter($LeftThrust, Vector2.UP, input, velocity)
-		adjust_emitter($ReverseThrust, Vector2.RIGHT, input, velocity)
-		adjust_emitter($ReverseThrust2, Vector2.RIGHT, input, velocity)
-
-		move_dir = input.rotated(rotation_angle)
+		emit_thruster_particles(input, delta)
 		
+		move_dir = input.rotated(rotation_angle)
 		
 	
 	else:
 		move_dir = Input.get_vector("Left", "Right", "Up", "Down")
+		var aligned_move_dir = Transform2D(rotation_angle, Vector2()).basis_xform_inv(move_dir)
+		
+		# set threshold for left/right, otherwise side thrusters are always on
+		if abs(aligned_move_dir.y) < 0.3:
+			aligned_move_dir.y = 0
+		
+		emit_thruster_particles(aligned_move_dir, delta)
 	
 	
 	apply_force(move_dir * THRUSTER_FORCE)
@@ -134,9 +125,22 @@ func _physics_process(delta):
 	else:
 		$Laser.deactivate()
 	
+func emit_thruster_particles(input: Vector2, delta: float) -> void:
+	
+		var velocity = $MainThrust.to_local(self.linear_velocity * delta)
+#		var velocity = self.linear_velocity
+		adjust_emitter($MainThrust, Vector2.LEFT, input, velocity)
+		adjust_emitter($RightThrust, Vector2.DOWN, input, velocity)
+		adjust_emitter($LeftThrust, Vector2.UP, input, velocity)
+		adjust_emitter($ReverseThrust, Vector2.RIGHT, input, velocity)
+		adjust_emitter($ReverseThrust2, Vector2.RIGHT, input, velocity)
+	
+	
 static func adjust_emitter(thrust: GPUParticles2D, axis: Vector2, input: Vector2, velocity: Vector2):
+#	var threshold = 
+	
 	# if there is a component in positive direction of axis
-	thrust.emitting = input.dot(axis) < 0
+	thrust.emitting = input.dot(axis) < 0 # && input.length() > THRESHOLD
 	
 #	print(velocity)
 	# attempt to adjust to velocityw
@@ -165,7 +169,7 @@ func do_aim():
 	$AimPivot.rotation = Vector2.RIGHT.angle_to(aim_dir)
 
 func player_uses_mouse() -> bool:
-	print("USES MOUSE", last_mouse_aim >= last_controller_aim)
+#	print("USES MOUSE", last_mouse_aim >= last_controller_aim)
 	return last_mouse_aim >= last_controller_aim
 
 func shoot_tether():
