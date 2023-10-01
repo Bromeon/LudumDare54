@@ -38,9 +38,18 @@ var MINERAL_DESCRIPTIONS = {
 "Among the rarest minerals in the galaxy, the most abundant. These samples are remarkably pure.
 
 [right]- Ea Nasir's descendant  [/right]",
-	"Lanthanum": "TODO",
-	"Yttrium": "TODO",
-	"Cerium": "TODO",
+	"Lanthanum":   
+"You could cut this metal with a butter knife. But better not.
+
+[right]- A concerned professor  [/right]",
+	"Yttrium":  
+"One of the rarest minerals in the galaxy, it is not only rare, but extremely expensive!
+
+[right]- A Rare earth broker  [/right]",
+	"Cerium":   
+"Good old CRT monitors used lead because Cerium isn't that effective at shielding radiation.
+
+[right]- 60's nostalgic  [/right]",
 	"Praseodymium": 
 "The cooler half of didymium, way better than neodymium by far. Magnets? Pah. Motors, that's where it's at.
 
@@ -50,8 +59,11 @@ var MINERAL_DESCRIPTIONS = {
 
 [right]- Sm (and Eu!) discoverer [/right]",
 	"Terbium": 
-"One of the rarest minerals in the galaxy, it is not only rare, but extremely expensive!
+"Not Ytterbium, Terbium. No, without the Y: T-E-R... What do you mean it's not on stock?
 
-[right]- A Terbium seller  [/right]",
-	"Gadolinium": "TODO",
+[right]- A Terbium customer  [/right]",
+	"Gadolinium":  
+"Electron configuration: [Xe] 4f7 5d1 6s2
+
+[right]- Wikipedia  [/right]",
 }
