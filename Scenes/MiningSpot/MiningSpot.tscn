@@ -10,7 +10,7 @@ size = Vector2(22, 27.5)
 size = Vector2(35, 20.5)
 
 [node name="MiningSpot" type="StaticBody2D"]
-position = Vector2(39, 34)
+scale = Vector2(3, 3)
 collision_layer = 4
 script = ExtResource("1_bjivk")
 ROTATION_SPEED = 0.25

@@ -94,6 +94,12 @@ func _physics_process(delta):
 		tether_shoot_cooldown_timer -= delta
 	if Input.is_action_just_pressed("ShootTether"):
 		shoot_tether()
+	if Input.is_action_pressed("ShootLaser"):
+		$Laser.visible = true
+		shoot_laser_tick(delta)
+	else:
+		$Laser.set_endpoints(Vector2.ZERO, Vector2.ZERO)
+		$Laser.visible = false
 	
 func do_aim():
 	var aim_dir_joy = Input.get_vector("AimLeft", "AimRight", "AimUp", "AimDown")
@@ -125,6 +131,27 @@ func shoot_tether():
 	tether.init(aim_dir)
 	tethers.append(tether)
 	tether.connect("attached_to", _on_tether_attached)
+	
+func shoot_laser_tick(delta):
+	var dss = get_world_2d().direct_space_state
+	var params = PhysicsRayQueryParameters2D.new()
+	params.collide_with_bodies = true
+	params.collision_mask = 0x4 # Asteroid layer
+	params.from = self.global_position
+	params.to = self.global_position + aim_dir * 1000
+
+	var result = dss.intersect_ray(params)
+	if result.has("collider"):
+		var asteroid = result["collider"]
+		asteroid.deal_damage_tick(
+			result.position,
+			result.normal,
+			delta,
+		)
+		$Laser.set_endpoints(self.global_position, result.position)
+	else:
+		$Laser.set_endpoints(self.global_position, params.to)
+		
 	
 func setup_initial_tether(other_ship):
 	var tether = Tether.instantiate()
