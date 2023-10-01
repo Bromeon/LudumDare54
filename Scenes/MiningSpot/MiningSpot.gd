@@ -6,7 +6,7 @@ var MinedResource = preload("res://Scenes/MiningSpot/MinedResource.tscn")
 @export var RESOURCE_SPREAD: float = 0.1
 @export var HP_PER_DROP: float = 2
 @export var RESOURCE_YIELD: int = 5
-@export var MINERAL_TYPE = "Lanthanum"
+@export_enum("Lanthanum", "Yttrium", "Cerium", "Praseodymium", "Europium", "Terbium", "Samarium", "Gadolinium") var MINERAL_TYPE = "Lanthanum"
 
 # The asteroid will drop one mineral each time its HP reaches zero.
 # After dropping `RESOURCE_YIELD` minerals it is destroyed.
