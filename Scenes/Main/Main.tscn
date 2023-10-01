@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cu50tbbse7fvj"]
+[gd_scene load_steps=23 format=3 uid="uid://cu50tbbse7fvj"]
 
 [ext_resource type="Script" path="res://Scenes/Main/MainGame.gd" id="1_2w541"]
 [ext_resource type="PackedScene" uid="uid://txa8ubm7w8ew" path="res://Scenes/Universe/Background.tscn" id="1_vmh7m"]
@@ -8,12 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bk47qpmiqsfv5" path="res://Scenes/SupplyShip/SupplyShip.tscn" id="4_6dkld"]
 [ext_resource type="Curve2D" uid="uid://ddcukk4djcpb8" path="res://Scenes/Universe/Paths/Path1.tres" id="5_kkofb"]
 [ext_resource type="Curve2D" uid="uid://bjwvxslxdup66" path="res://Scenes/Universe/Paths/Path2.tres" id="6_rjk23"]
-[ext_resource type="Texture2D" uid="uid://cq7rs1xmf34tu" path="res://Assets/Sprites/Aim.png" id="6_txt7n"]
 [ext_resource type="Curve2D" uid="uid://cpyrsyofnhv3w" path="res://Scenes/Universe/Paths/Path3.tres" id="7_t62cn"]
 [ext_resource type="Curve2D" uid="uid://b7xc2mjrkjyrv" path="res://Scenes/Universe/Paths/Path4.tres" id="8_b64bo"]
 [ext_resource type="PackedScene" uid="uid://d1fv40ekxbg68" path="res://Scenes/PlayerShip/PlayerShip.tscn" id="8_tj2rl"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7f26y"]
+[ext_resource type="PackedScene" uid="uid://c4rgrpq3etg1w" path="res://Scenes/MiningSpot/MiningSpot.tscn" id="13_3leab"]
 
 [sub_resource type="Curve2D" id="Curve2D_hkf7s"]
 _data = {
@@ -23,37 +21,68 @@ point_count = 9
 
 [sub_resource type="Curve2D" id="Curve2D_iyvpy"]
 _data = {
-"points": PackedVector2Array(526.415, -127.437, -526.415, 127.437, 1496, 235, 492.496, 102.629, -492.496, -102.629, 430, 439, 28.541, 694.497, -28.541, -694.497, -450, -792, -799.62, 399.595, 799.62, -399.595, 629, -3543, -688.393, 863.008, 688.393, -863.008, 7052, -4282, 755.482, 413.377, -755.482, -413.377, 7375, -7552, 1341.54, -1050.66, -1341.54, 1050.66, 4503, -7146, -7.55099, -732.447, 7.55099, 732.447, 2443, -4823, -117.466, -469.864, 117.466, 469.864, 3477, -1986, 224.253, -266.968, -224.253, 266.968, 3219, -787, 113.871, -71.9187, -113.871, 71.9187, 2228, -13, 0, 0, 0, 0, 1496, 235)
+"points": PackedVector2Array(526.415, -127.437, -526.415, 127.437, 1618, -221, 492.496, 102.629, -492.496, -102.629, 464, -279, 28.541, 694.497, -28.541, -694.497, -610, -1492, -799.62, 399.595, 799.62, -399.595, 629, -3543, -688.393, 863.008, 688.393, -863.008, 6783, -4482, 653.888, 667.361, -653.888, -667.361, 6885, -6907, 1341.54, -1050.66, -1341.54, 1050.66, 4503, -7146, -7.55099, -732.447, 7.55099, 732.447, 2443, -4823, -117.466, -469.864, 117.466, 469.864, 3477, -1986, 224.253, -266.968, -224.253, 266.968, 3219, -787, 113.871, -71.9187, -113.871, 71.9187, 2626, -509, 0, 0, 0, 0, 1618, -223, 0, 0, 0, 0, 1618, -221)
 }
-point_count = 12
+point_count = 13
 
 [sub_resource type="Curve2D" id="Curve2D_tcef8"]
 _data = {
-"points": PackedVector2Array(526.415, -127.437, -526.415, 127.437, 1496, 235, 492.496, 102.629, -492.496, -102.629, 430, 439, 28.541, 694.497, -28.541, -694.497, -450, -792, -799.62, 399.595, 799.62, -399.595, 629, -3543, -688.393, 863.008, 688.393, -863.008, 7052, -4282, 755.482, 413.377, -755.482, -413.377, 7375, -7552, 1341.54, -1050.66, -1341.54, 1050.66, 4503, -7146, -7.55099, -732.447, 7.55099, 732.447, 2443, -4823, -117.466, -469.864, 117.466, 469.864, 3477, -1986, 224.253, -266.968, -224.253, 266.968, 3219, -787, 113.871, -71.9187, -113.871, 71.9187, 2228, -13, 0, 0, 0, 0, 1496, 235)
+"points": PackedVector2Array(526.415, -127.437, -526.415, 127.437, 1496, 235, 492.496, 102.629, -492.496, -102.629, 430, 439, 28.541, 694.497, -28.541, -694.497, -450, -792, -799.62, 399.595, 799.62, -399.595, 629, -3543, -688.393, 863.008, 688.393, -863.008, 7052, -4282, 755.482, 413.377, -755.482, -413.377, 6585.05, -7492.96, 1341.54, -1050.66, -1341.54, 1050.66, 4503, -7146, -7.55099, -732.447, 7.55099, 732.447, 2443, -4823, -117.466, -469.864, 117.466, 469.864, 3477, -1986, 224.253, -266.968, -224.253, 266.968, 3219, -787, 113.871, -71.9187, -113.871, 71.9187, 2228, -13, 0, 0, 0, 0, 1496, 235)
 }
 point_count = 12
 
 [sub_resource type="Curve2D" id="Curve2D_lkgte"]
 _data = {
-"points": PackedVector2Array(-111, 177, 111, -177, -239, -263, -113, 22, 113, -22, -319, -847, 0, 0, 0, 0, 92, -851, -146, -76, 146, 76, 1181, -593, 288.841, -258.246, -288.841, 258.246, 528, 204, 106, -20, -106, 20, 260, 374, 441, -16, -441, 16, -219, 396, 0, 0, 0, 0, -385, -17, -72.3065, 121.007, 72.3065, -121.007, -239, -263)
+"points": PackedVector2Array(-111, 177, 111, -177, -239, -263, -113, 22, 113, -22, -319, -847, 0, 0, 0, 0, 92, -851, 0, 0, 0, 0, 578.061, -773.724, -146, -76, 146, 76, 1181, -593, 0, 0, 0, 0, 1090.41, -334.875, 288.841, -258.246, -288.841, 258.246, 528, 204, 106, -20, -106, 20, 260, 374, 441, -16, -441, 16, -219, 396, 0, 0, 0, 0, -385, -17, -72.3065, 121.007, 72.3065, -121.007, -239, -263)
 }
-point_count = 9
+point_count = 11
 
-[sub_resource type="Curve2D" id="Curve2D_x4e4n"]
+[sub_resource type="Curve2D" id="Curve2D_1kdb4"]
 _data = {
 "points": PackedVector2Array(-111, 177, 111, -177, -239, -263, -148.919, 156.695, 148.919, -156.695, -319, -847, 0, 0, 0, 0, 376, -829, -28.4014, -165.09, 28.4014, 165.09, 942, -497, 100.388, -118.429, -100.388, 118.429, 403, -155, 195.797, -28.9797, -195.797, 28.9797, 457, 339, 441, -16, -441, 16, -219, 396, 0, 0, 0, 0, -385, -17, -72.3065, 121.007, 72.3065, -121.007, -239, -263)
 }
 point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_irqfa"]
+_data = {
+"points": PackedVector2Array(-111, 177, 111, -177, -239, -263, -148.919, 156.695, 148.919, -156.695, -319, -847, 0, 0, 0, 0, 376, -829, -28.4014, -165.09, 28.4014, 165.09, 942, -497, 0, 0, 0, 0, 695.16, -272.705, 100.388, -118.429, -100.388, 118.429, 403, -155, 195.797, -28.9797, -195.797, 28.9797, 457, 339, 441, -16, -441, 16, -219, 396, 0, 0, 0, 0, -385, -17, -72.3065, 121.007, 72.3065, -121.007, -239, -263)
+}
+point_count = 10
+
+[sub_resource type="Curve2D" id="Curve2D_jx6ov"]
+_data = {
+"points": PackedVector2Array(-111, 177, 111, -177, -239, -263, -148.919, 156.695, 148.919, -156.695, -319, -847, 0, 0, 0, 0, 376, -829, -28.4014, -165.09, 28.4014, 165.09, 942, -497, 100.388, -118.429, -100.388, 118.429, 403, -155, 195.797, -28.9797, -195.797, 28.9797, 457, 339, 441, -16, -441, 16, -219, 396, 0, 0, 0, 0, -385, -17, -72.3065, 121.007, 72.3065, -121.007, -239, -263)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_2m1a7"]
+_data = {
+"points": PackedVector2Array(-111, 177, 111, -177, -239, -263, -148.919, 156.695, 148.919, -156.695, -319, -847, 0, 0, 0, 0, 376, -829, -28.4014, -165.09, 28.4014, 165.09, 942, -497, 100.388, -118.429, -100.388, 118.429, 627, -163, 195.797, -28.9797, -195.797, 28.9797, 813, 579, 441, -16, -441, 16, -219, 396, 260.215, 141.421, -260.215, -141.421, -911, 370, -141.421, 181.019, 141.421, -181.019, -916, -145, -72.3065, 121.007, 72.3065, -121.007, -239, -263)
+}
+point_count = 10
+
+[sub_resource type="Curve2D" id="Curve2D_1vr4f"]
+_data = {
+"points": PackedVector2Array(-111, 177, 111, -177, -239, -263, -148.919, 156.695, 148.919, -156.695, -319, -847, 0, 0, 0, 0, 376, -829, -28.4014, -165.09, 28.4014, 165.09, 942, -497, 100.388, -118.429, -100.388, 118.429, 627, -163, 195.797, -28.9797, -195.797, 28.9797, 813, 579, 441, -16, -441, 16, -219, 396, 260.215, 141.421, -260.215, -141.421, -911, 370, -141.421, 181.019, 141.421, -181.019, -916, -145, -72.3065, 121.007, 72.3065, -121.007, -239, -263)
+}
+point_count = 10
+
+[sub_resource type="Curve2D" id="Curve2D_ujvim"]
+_data = {
+"points": PackedVector2Array(-111, 177, 111, -177, -239, -263, -148.919, 156.695, 148.919, -156.695, -319, -847, 0, 0, 0, 0, 376, -829, -28.4014, -165.09, 28.4014, 165.09, 942, -497, 100.388, -118.429, -100.388, 118.429, 627, -163, 195.797, -28.9797, -195.797, 28.9797, 813, 579, 441, -16, -441, 16, -219, 396, 260.215, 141.421, -260.215, -141.421, -911, 370, -141.421, 181.019, 141.421, -181.019, -916, -145, -72.3065, 121.007, 72.3065, -121.007, -239, -263)
+}
+point_count = 10
 
 [node name="Main" type="Node"]
 script = ExtResource("1_2w541")
 
 [node name="Background" parent="." instance=ExtResource("1_vmh7m")]
 unique_name_in_owner = true
-offset_left = -4606.0
-offset_top = -3952.0
-offset_right = 3254.0
-offset_bottom = 4228.0
+offset_left = -7208.0
+offset_top = -6826.0
+offset_right = 1291.0
+offset_bottom = 1993.0
+scale = Vector2(1.41709, 1.41709)
 
 [node name="2DRoot" type="Node2D" parent="."]
 script = ExtResource("2_vx87s")
@@ -83,22 +112,6 @@ texture = ExtResource("2_kqnnd")
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_kqnnd")
 
-[node name="TextureRect" type="TextureRect" parent="2DRoot"]
-visible = false
-material = SubResource("ShaderMaterial_7f26y")
-offset_left = -2730.0
-offset_top = -3802.0
-offset_right = -2690.0
-offset_bottom = -3762.0
-scale = Vector2(39.8215, 31.9343)
-texture = ExtResource("6_txt7n")
-
-[node name="ColorRect" type="ColorRect" parent="2DRoot/TextureRect"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.188235, 0, 0.313726, 1)
-
 [node name="SupplyPaths" type="Node2D" parent="2DRoot"]
 
 [node name="Supply1" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
@@ -106,9 +119,10 @@ position = Vector2(-2369, -2087)
 curve = ExtResource("5_kkofb")
 color = Color(0.141176, 0.533333, 0.933333, 1)
 effect_radius = 200.0
-speed = 15.0
+speed = 100.0
 
 [node name="Supply2" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(66, -96)
 curve = ExtResource("6_rjk23")
 color = Color(0.109804, 0.662745, 0.388235, 1)
 effect_radius = 250.0
@@ -119,25 +133,28 @@ position = Vector2(2276, -2070)
 curve = ExtResource("7_t62cn")
 color = Color(0.827451, 0.752941, 0.247059, 1)
 effect_radius = 250.0
-speed = 300.0
+speed = 100.0
 
 [node name="Supply4" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
 position = Vector2(-2170, 2370)
 curve = ExtResource("8_b64bo")
 color = Color(0.556863, 0.211765, 0.505882, 1)
 effect_radius = 400.0
-speed = 40.0
+speed = 100.0
 
 [node name="Supply5" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
 position = Vector2(1409, 1712)
 curve = SubResource("Curve2D_hkf7s")
+color = Color(0, 0.952941, 0.878431, 1)
+effect_radius = 500.0
+speed = 100.0
 
 [node name="Rocket1" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
 position = Vector2(-3267, 4277)
 curve = SubResource("Curve2D_iyvpy")
 color = Color(1, 0, 0, 1)
 effect_radius = 500.0
-speed = 1000.0
+speed = 500.0
 
 [node name="Rocket2" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
 position = Vector2(-3753, -2658)
@@ -145,15 +162,265 @@ rotation = 1.57079
 curve = SubResource("Curve2D_tcef8")
 color = Color(1, 0, 0, 1)
 effect_radius = 500.0
-speed = 1000.0
+speed = 500.0
 
-[node name="SupplyShip" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
-position = Vector2(3264, -2619)
+[node name="Supply6" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(3353, -1068)
+rotation = -2.21333
 curve = SubResource("Curve2D_lkgte")
+color = Color(1, 0.509804, 0.219608, 1)
+effect_radius = 500.0
+speed = 500.0
 
-[node name="SupplyShip2" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
-position = Vector2(-3770, -2907)
-curve = SubResource("Curve2D_x4e4n")
+[node name="Supply7" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(-2575, -2877)
+curve = SubResource("Curve2D_1kdb4")
+color = Color(0.717647, 0.752941, 0, 1)
+effect_radius = 500.0
+speed = 100.0
+
+[node name="Supply8" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(-3804, 1346)
+rotation = 1.50334
+curve = SubResource("Curve2D_irqfa")
+color = Color(0.717647, 0.752941, 0, 1)
+effect_radius = 500.0
+speed = 100.0
+
+[node name="Supply9" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(-3769, -558)
+curve = SubResource("Curve2D_jx6ov")
+color = Color(0.717647, 0.752941, 0, 1)
+effect_radius = 500.0
+speed = 100.0
+
+[node name="Supply10" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(-1210, -634)
+curve = SubResource("Curve2D_2m1a7")
+color = Color(0.717647, 0.752941, 0, 1)
+effect_radius = 500.0
+speed = 100.0
+
+[node name="Supply11" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(3337, 2699)
+curve = SubResource("Curve2D_1vr4f")
+color = Color(0.717647, 0.752941, 0, 1)
+effect_radius = 500.0
+speed = 100.0
+
+[node name="Supply12" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(1311, 4050)
+curve = SubResource("Curve2D_ujvim")
+color = Color(0.717647, 0.752941, 0, 1)
+effect_radius = 500.0
+speed = 100.0
+
+[node name="Supply13" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(-3362, 3972)
+curve = SubResource("Curve2D_ujvim")
+color = Color(0.717647, 0.752941, 0, 1)
+effect_radius = 500.0
+speed = 100.0
+
+[node name="Supply14" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(1893, -3658)
+rotation = -3.03633
+curve = SubResource("Curve2D_lkgte")
+color = Color(1, 0.509804, 0.219608, 1)
+effect_radius = 500.0
+speed = 500.0
 
 [node name="PlayerShip" parent="2DRoot" instance=ExtResource("8_tj2rl")]
 MAX_TETHER_LENGTH = 1000.0
+
+[node name="MiningSpot" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(194, 204)
+
+[node name="MiningSpot2" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(650, 533)
+
+[node name="MiningSpot3" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-282, 271)
+
+[node name="MiningSpot4" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(174, 600)
+
+[node name="MiningSpot5" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(3253, 2186)
+
+[node name="MiningSpot6" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(3709, 2515)
+
+[node name="MiningSpot7" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(2777, 2253)
+
+[node name="MiningSpot8" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(3233, 2582)
+
+[node name="MiningSpot9" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-3177, 4141)
+
+[node name="MiningSpot10" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-2721, 4470)
+
+[node name="MiningSpot11" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-3653, 4208)
+
+[node name="MiningSpot12" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-3197, 4537)
+
+[node name="MiningSpot13" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-4035, -1701)
+
+[node name="MiningSpot14" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-3579, -1372)
+
+[node name="MiningSpot15" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-4511, -1634)
+
+[node name="MiningSpot16" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-4055, -1305)
+
+[node name="MiningSpot17" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(1371, -1538)
+
+[node name="MiningSpot18" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(1827, -1209)
+
+[node name="MiningSpot19" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(895, -1471)
+
+[node name="MiningSpot20" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(1351, -1142)
+
+[node name="MiningSpot21" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(3730, -1302)
+
+[node name="MiningSpot22" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(4186, -973)
+
+[node name="MiningSpot23" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(3254, -1235)
+
+[node name="MiningSpot24" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(3710, -906)
+
+[node name="MiningSpot25" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-2000, 2399)
+
+[node name="MiningSpot26" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-1544, 2728)
+
+[node name="MiningSpot27" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-2476, 2466)
+
+[node name="MiningSpot28" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-2020, 2795)
+
+[node name="MiningSpot29" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-2858, -3443)
+
+[node name="MiningSpot30" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-2402, -3114)
+
+[node name="MiningSpot31" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-3334, -3376)
+
+[node name="MiningSpot32" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-2878, -3047)
+
+[node name="MiningSpot33" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(274, -26)
+
+[node name="MiningSpot34" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(730, 303)
+
+[node name="MiningSpot35" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-202, 41)
+
+[node name="MiningSpot36" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(254, 370)
+
+[node name="MiningSpot37" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(3333, 1956)
+
+[node name="MiningSpot38" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(3789, 2285)
+
+[node name="MiningSpot39" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(2857, 2023)
+
+[node name="MiningSpot40" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(3313, 2352)
+
+[node name="MiningSpot41" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-3097, 3911)
+
+[node name="MiningSpot42" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-2641, 4240)
+
+[node name="MiningSpot43" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-3573, 3978)
+
+[node name="MiningSpot44" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-3117, 4307)
+
+[node name="MiningSpot45" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-3955, -1931)
+
+[node name="MiningSpot46" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-3499, -1602)
+
+[node name="MiningSpot47" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-4431, -1864)
+
+[node name="MiningSpot48" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-3975, -1535)
+
+[node name="MiningSpot49" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(1451, -1768)
+
+[node name="MiningSpot50" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(1907, -1439)
+
+[node name="MiningSpot51" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(975, -1701)
+
+[node name="MiningSpot52" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(1431, -1372)
+
+[node name="MiningSpot53" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(3810, -1532)
+
+[node name="MiningSpot54" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(4266, -1203)
+
+[node name="MiningSpot55" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(3334, -1465)
+
+[node name="MiningSpot56" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(3790, -1136)
+
+[node name="MiningSpot57" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-1920, 2169)
+
+[node name="MiningSpot58" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-1464, 2498)
+
+[node name="MiningSpot59" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-2396, 2236)
+
+[node name="MiningSpot60" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-1940, 2565)
+
+[node name="MiningSpot61" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-2778, -3673)
+
+[node name="MiningSpot62" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-2322, -3344)
+
+[node name="MiningSpot63" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-3254, -3606)
+
+[node name="MiningSpot64" parent="." instance=ExtResource("13_3leab")]
+position = Vector2(-2798, -3277)
