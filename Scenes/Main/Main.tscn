@@ -170,7 +170,7 @@ rotation = -2.21333
 curve = SubResource("Curve2D_lkgte")
 color = Color(1, 0.509804, 0.219608, 1)
 effect_radius = 500.0
-speed = 500.0
+speed = 100.0
 
 [node name="Supply7" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
 position = Vector2(-2575, -2877)
@@ -228,199 +228,282 @@ rotation = -3.03633
 curve = SubResource("Curve2D_lkgte")
 color = Color(1, 0.509804, 0.219608, 1)
 effect_radius = 500.0
-speed = 500.0
+speed = 100.0
 
 [node name="PlayerShip" parent="2DRoot" instance=ExtResource("8_tj2rl")]
 MAX_TETHER_LENGTH = 1000.0
 
-[node name="MiningSpot" parent="." instance=ExtResource("13_3leab")]
+[node name="MiningSpots" type="Node2D" parent="2DRoot"]
 position = Vector2(194, 204)
 
-[node name="MiningSpot2" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(650, 533)
+[node name="MiningSpot" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 
-[node name="MiningSpot3" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-282, 271)
+[node name="MiningSpot2" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(456, 329)
 
-[node name="MiningSpot4" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(174, 600)
+[node name="MiningSpot3" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-476, 67)
 
-[node name="MiningSpot5" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(3253, 2186)
+[node name="MiningSpot4" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-20, 396)
 
-[node name="MiningSpot6" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(3709, 2515)
+[node name="MiningSpot5" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(3059, 1982)
 
-[node name="MiningSpot7" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(2777, 2253)
+[node name="MiningSpot6" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(3515, 2311)
 
-[node name="MiningSpot8" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(3233, 2582)
+[node name="MiningSpot7" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(2583, 2049)
 
-[node name="MiningSpot9" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-3177, 4141)
+[node name="MiningSpot8" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(3039, 2378)
 
-[node name="MiningSpot10" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-2721, 4470)
+[node name="MiningSpot9" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-3371, 3937)
 
-[node name="MiningSpot11" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-3653, 4208)
+[node name="MiningSpot10" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-2915, 4266)
 
-[node name="MiningSpot12" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-3197, 4537)
+[node name="MiningSpot11" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-3847, 4004)
 
-[node name="MiningSpot13" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-4035, -1701)
+[node name="MiningSpot12" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-3391, 4333)
 
-[node name="MiningSpot14" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-3579, -1372)
+[node name="MiningSpot13" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-4229, -1905)
 
-[node name="MiningSpot15" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-4511, -1634)
+[node name="MiningSpot14" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-3773, -1576)
 
-[node name="MiningSpot16" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-4055, -1305)
+[node name="MiningSpot15" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-4705, -1838)
 
-[node name="MiningSpot17" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(1371, -1538)
+[node name="MiningSpot16" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-4249, -1509)
 
-[node name="MiningSpot18" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(1827, -1209)
+[node name="MiningSpot17" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1177, -1742)
 
-[node name="MiningSpot19" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(895, -1471)
+[node name="MiningSpot18" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1633, -1413)
 
-[node name="MiningSpot20" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(1351, -1142)
+[node name="MiningSpot19" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(701, -1675)
 
-[node name="MiningSpot21" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(3730, -1302)
+[node name="MiningSpot20" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1157, -1346)
+RESOURCE_YIELD = 5
+MINERAL_TYPE = "Gadolinium"
 
-[node name="MiningSpot22" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(4186, -973)
+[node name="MiningSpot21" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(3536, -1506)
 
-[node name="MiningSpot23" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(3254, -1235)
+[node name="MiningSpot22" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(3992, -1177)
 
-[node name="MiningSpot24" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(3710, -906)
+[node name="MiningSpot23" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(3060, -1439)
 
-[node name="MiningSpot25" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-2000, 2399)
+[node name="MiningSpot24" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(3516, -1110)
+MINERAL_TYPE = "Gadolinium"
 
-[node name="MiningSpot26" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-1544, 2728)
+[node name="MiningSpot25" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-2194, 2195)
 
-[node name="MiningSpot27" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-2476, 2466)
+[node name="MiningSpot26" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-1738, 2524)
 
-[node name="MiningSpot28" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-2020, 2795)
+[node name="MiningSpot27" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-2670, 2262)
 
-[node name="MiningSpot29" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-2858, -3443)
+[node name="MiningSpot28" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-2214, 2591)
 
-[node name="MiningSpot30" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-2402, -3114)
+[node name="MiningSpot29" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-3052, -3647)
 
-[node name="MiningSpot31" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-3334, -3376)
+[node name="MiningSpot30" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-2596, -3318)
 
-[node name="MiningSpot32" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-2878, -3047)
+[node name="MiningSpot31" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-3528, -3580)
 
-[node name="MiningSpot33" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(274, -26)
+[node name="MiningSpot32" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-3072, -3251)
 
-[node name="MiningSpot34" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(730, 303)
+[node name="MiningSpot33" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(80, -230)
 
-[node name="MiningSpot35" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-202, 41)
+[node name="MiningSpot34" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(536, 99)
 
-[node name="MiningSpot36" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(254, 370)
+[node name="MiningSpot35" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-396, -163)
 
-[node name="MiningSpot37" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(3333, 1956)
+[node name="MiningSpot36" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(60, 166)
 
-[node name="MiningSpot38" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(3789, 2285)
+[node name="MiningSpot37" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(3139, 1752)
 
-[node name="MiningSpot39" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(2857, 2023)
+[node name="MiningSpot38" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(3595, 2081)
 
-[node name="MiningSpot40" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(3313, 2352)
+[node name="MiningSpot39" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(2663, 1819)
 
-[node name="MiningSpot41" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-3097, 3911)
+[node name="MiningSpot40" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(3119, 2148)
 
-[node name="MiningSpot42" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-2641, 4240)
+[node name="MiningSpot41" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-3291, 3707)
 
-[node name="MiningSpot43" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-3573, 3978)
+[node name="MiningSpot42" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-2835, 4036)
 
-[node name="MiningSpot44" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-3117, 4307)
+[node name="MiningSpot43" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-3767, 3774)
 
-[node name="MiningSpot45" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-3955, -1931)
+[node name="MiningSpot44" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-3311, 4103)
 
-[node name="MiningSpot46" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-3499, -1602)
+[node name="MiningSpot45" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-4149, -2135)
 
-[node name="MiningSpot47" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-4431, -1864)
+[node name="MiningSpot46" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-3693, -1806)
 
-[node name="MiningSpot48" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-3975, -1535)
+[node name="MiningSpot47" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-4625, -2068)
 
-[node name="MiningSpot49" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(1451, -1768)
+[node name="MiningSpot48" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-4169, -1739)
 
-[node name="MiningSpot50" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(1907, -1439)
+[node name="MiningSpot49" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1257, -1972)
 
-[node name="MiningSpot51" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(975, -1701)
+[node name="MiningSpot50" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1713, -1643)
 
-[node name="MiningSpot52" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(1431, -1372)
+[node name="MiningSpot51" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(781, -1905)
 
-[node name="MiningSpot53" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(3810, -1532)
+[node name="MiningSpot52" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1237, -1576)
 
-[node name="MiningSpot54" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(4266, -1203)
+[node name="MiningSpot53" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(3616, -1736)
 
-[node name="MiningSpot55" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(3334, -1465)
+[node name="MiningSpot54" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(4072, -1407)
 
-[node name="MiningSpot56" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(3790, -1136)
+[node name="MiningSpot55" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(3140, -1669)
 
-[node name="MiningSpot57" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-1920, 2169)
+[node name="MiningSpot56" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(3596, -1340)
 
-[node name="MiningSpot58" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-1464, 2498)
+[node name="MiningSpot57" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-2114, 1965)
 
-[node name="MiningSpot59" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-2396, 2236)
+[node name="MiningSpot58" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-1658, 2294)
 
-[node name="MiningSpot60" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-1940, 2565)
+[node name="MiningSpot59" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-2590, 2032)
 
-[node name="MiningSpot61" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-2778, -3673)
+[node name="MiningSpot60" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-2134, 2361)
 
-[node name="MiningSpot62" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-2322, -3344)
+[node name="MiningSpot61" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-2972, -3877)
 
-[node name="MiningSpot63" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-3254, -3606)
+[node name="MiningSpot62" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-2516, -3548)
 
-[node name="MiningSpot64" parent="." instance=ExtResource("13_3leab")]
-position = Vector2(-2798, -3277)
+[node name="MiningSpot63" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-3448, -3810)
+
+[node name="MiningSpot64" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(-2992, -3481)
+
+[node name="MiningSpot65" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1151, 4323)
+
+[node name="MiningSpot66" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1607, 4652)
+
+[node name="MiningSpot67" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(675, 4390)
+
+[node name="MiningSpot68" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1131, 4719)
+
+[node name="MiningSpot69" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1241, 4142)
+
+[node name="MiningSpot70" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1697, 4471)
+
+[node name="MiningSpot71" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(765, 4209)
+
+[node name="MiningSpot72" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1221, 4538)
+
+[node name="Cluster" type="Node2D" parent="2DRoot/MiningSpots"]
+
+[node name="MiningSpot73" parent="2DRoot/MiningSpots/Cluster" instance=ExtResource("13_3leab")]
+position = Vector2(295, 21)
+MINERAL_TYPE = "Gadolinium"
+
+[node name="MiningSpot74" parent="2DRoot/MiningSpots/Cluster" instance=ExtResource("13_3leab")]
+position = Vector2(353, 72)
+
+[node name="MiningSpot75" parent="2DRoot/MiningSpots/Cluster" instance=ExtResource("13_3leab")]
+position = Vector2(228, 2)
+
+[node name="MiningSpot76" parent="2DRoot/MiningSpots/Cluster" instance=ExtResource("13_3leab")]
+position = Vector2(257, 89)
+
+[node name="MiningSpot77" parent="2DRoot/MiningSpots/Cluster" instance=ExtResource("13_3leab")]
+position = Vector2(370, -42)
+
+[node name="MiningSpot78" parent="2DRoot/MiningSpots/Cluster" instance=ExtResource("13_3leab")]
+position = Vector2(281, -71)
+
+[node name="Cluster2" type="Node2D" parent="2DRoot/MiningSpots"]
+position = Vector2(2996, -1471)
+
+[node name="MiningSpot73" parent="2DRoot/MiningSpots/Cluster2" instance=ExtResource("13_3leab")]
+position = Vector2(295, 21)
+RESOURCE_YIELD = 3
+MINERAL_TYPE = "Terbium"
+
+[node name="MiningSpot74" parent="2DRoot/MiningSpots/Cluster2" instance=ExtResource("13_3leab")]
+position = Vector2(353, 72)
+RESOURCE_YIELD = 3
+MINERAL_TYPE = "Gadolinium"
+
+[node name="MiningSpot75" parent="2DRoot/MiningSpots/Cluster2" instance=ExtResource("13_3leab")]
+position = Vector2(228, 2)
+RESOURCE_YIELD = 3
+MINERAL_TYPE = "Gadolinium"
+
+[node name="MiningSpot76" parent="2DRoot/MiningSpots/Cluster2" instance=ExtResource("13_3leab")]
+position = Vector2(257, 89)
+RESOURCE_YIELD = 3
+MINERAL_TYPE = "Gadolinium"
+
+[node name="MiningSpot77" parent="2DRoot/MiningSpots/Cluster2" instance=ExtResource("13_3leab")]
+position = Vector2(370, -42)
+RESOURCE_YIELD = 3
+MINERAL_TYPE = "Gadolinium"
+
+[node name="MiningSpot78" parent="2DRoot/MiningSpots/Cluster2" instance=ExtResource("13_3leab")]
+position = Vector2(281, -71)
+RESOURCE_YIELD = 3
+MINERAL_TYPE = "Gadolinium"

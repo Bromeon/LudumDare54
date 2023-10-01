@@ -1,17 +1,16 @@
 [gd_scene load_steps=6 format=3 uid="uid://c4rgrpq3etg1w"]
 
 [ext_resource type="Script" path="res://Scenes/MiningSpot/MiningSpot.gd" id="1_bjivk"]
-[ext_resource type="Texture2D" uid="uid://d0f5n2rab2le8" path="res://Assets/Sprites/Blob.png" id="2_x3624"]
+[ext_resource type="Texture2D" uid="uid://beqq3ofee57d6" path="res://Assets/Sprites/Blob.png" id="2_x3624"]
 [ext_resource type="Texture2D" uid="uid://d346v7etxrbwk" path="res://Assets/Sprites/Mineral.png" id="3_iu7wr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4nl41"]
-size = Vector2(22, 27.5)
+size = Vector2(55, 103)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6rkg"]
-size = Vector2(35, 20.5)
+size = Vector2(92, 33)
 
 [node name="MiningSpot" type="StaticBody2D"]
-scale = Vector2(3, 3)
 collision_layer = 4
 script = ExtResource("1_bjivk")
 ROTATION_SPEED = 0.25
@@ -20,7 +19,7 @@ MINERAL_TYPE = "Samarium"
 
 [node name="Mining1" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(1.30469, 1.32813)
+scale = Vector2(3.915, 3.984)
 texture = ExtResource("2_x3624")
 
 [node name="Mineral1" type="Sprite2D" parent="Mining1"]
@@ -28,11 +27,11 @@ texture_filter = 1
 texture = ExtResource("3_iu7wr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -3.5)
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_4nl41")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 8.25)
+position = Vector2(0, 21.5)
 shape = SubResource("RectangleShape2D_h6rkg")
 metadata/_edit_lock_ = true

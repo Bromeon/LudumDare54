@@ -26,6 +26,8 @@ var MINERAL_TYPE_COLORS = {
 
 func _ready():
 	$Mining1/Mineral1.modulate = MINERAL_TYPE_COLORS[MINERAL_TYPE]
+	self.rotation_degrees = randf_range(0, 360)
+
 
 func _physics_process(delta):
 	self.rotate(delta * ROTATION_SPEED)
