@@ -14,13 +14,17 @@ gradient = SubResource("Gradient_rxlim")
 emission_shape = 3
 emission_box_extents = Vector3(100, 1, 1)
 particle_flag_disable_z = true
-spread = 180.0
+direction = Vector3(-1, 0, 0)
+spread = 0.0
 gravity = Vector3(0, 0, 0)
-initial_velocity_max = 33.67
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
 angular_velocity_min = -100.0
 angular_velocity_max = 100.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
+scale_min = 1.8
+scale_max = 2.2
 color_ramp = SubResource("GradientTexture1D_axka1")
 
 [node name="Laser" type="Node2D"]
