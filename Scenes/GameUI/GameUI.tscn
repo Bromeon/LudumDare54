@@ -1,0 +1,472 @@
+[gd_scene load_steps=10 format=3 uid="uid://b87xo21ajrno2"]
+
+[ext_resource type="Texture2D" uid="uid://dmfyo8ydveg77" path="res://Assets/Sprites/InfoIcon_Normal.png" id="1_ctcy2"]
+[ext_resource type="Texture2D" uid="uid://da01pmom8oygm" path="res://Assets/Sprites/Frame2.png" id="1_v8fmv"]
+[ext_resource type="Texture2D" uid="uid://ursl61a2tfyd" path="res://Assets/Sprites/InfoIcon_Press.png" id="2_tvpoo"]
+[ext_resource type="Texture2D" uid="uid://e0t76ic5kfix" path="res://Assets/Sprites/UI_Slot.png" id="2_vn2xi"]
+[ext_resource type="Texture2D" uid="uid://cogtt1j3xluwq" path="res://Assets/Sprites/InfoIcon_Hover.png" id="3_pgeta"]
+[ext_resource type="Script" path="res://Scenes/GameUI/InfoButton.gd" id="4_ed4rg"]
+[ext_resource type="FontFile" uid="uid://csw5vgwfq0i2u" path="res://Assets/Fonts/Plavsky-oORo.ttf" id="5_5sxrv"]
+[ext_resource type="Texture2D" uid="uid://ri64wkcjxcnn" path="res://Assets/Sprites/Mineral_drop.png" id="7_xpiwf"]
+[ext_resource type="FontFile" uid="uid://c4pj7uyt6yom4" path="res://Assets/Fonts/PlavskyBold-0B8G.ttf" id="8_h55pp"]
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InfoButton" type="TextureButton" parent="."]
+layout_mode = 1
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 54.0
+offset_bottom = 54.0
+texture_normal = ExtResource("1_ctcy2")
+texture_pressed = ExtResource("2_tvpoo")
+texture_hover = ExtResource("3_pgeta")
+script = ExtResource("4_ed4rg")
+
+[node name="QuestPanel" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -240.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 200.0
+grow_horizontal = 0
+texture = ExtResource("1_v8fmv")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="QuestPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="QuestPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_h55pp")
+text = "QUEST:"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="QuestPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_xpiwf")
+
+[node name="Label" type="Label" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_h55pp")
+text = "x 99"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("7_xpiwf")
+
+[node name="Label" type="Label" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_h55pp")
+text = "x 99"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("7_xpiwf")
+
+[node name="Label" type="Label" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_h55pp")
+text = "x 99"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("7_xpiwf")
+
+[node name="Label" type="Label" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_h55pp")
+text = "x 99"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_xpiwf")
+
+[node name="Label" type="Label" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_h55pp")
+text = "x 99"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("7_xpiwf")
+
+[node name="Label" type="Label" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_h55pp")
+text = "x 99"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("7_xpiwf")
+
+[node name="Label" type="Label" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_h55pp")
+text = "x 99"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("7_xpiwf")
+
+[node name="Label" type="Label" parent="QuestPanel/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2/HBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_h55pp")
+text = "x 99"
+
+[node name="HelpPanel" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 288.0
+offset_bottom = 613.0
+texture = ExtResource("1_v8fmv")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="HelpPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpPanel/MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_5sxrv")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "
+[url][center]SPACE MINING GAME[/center][/url]
+
+  Your mission is to collect the required mineral amounts
+
+  Good Luck Commander!
+
+[url][center]CONTROLS[/center][/url]
+
+  WASD / Left joystick
+     movement
+  LMB / RT
+     shoot tether
+  RMB / LT
+     mining laser
+  CTRL / B
+     brake
+  
+ Press the info button or gamepad Y to close this message
+
+
+MADE with ♥️ FOR LD54
+
+    @bromeon
+    @kathee_hds
+    @setzer22"
+scroll_active = false
+
+[node name="ToolBar" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -244.5
+offset_top = -120.0
+offset_right = 244.5
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_v8fmv")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="ToolBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.225
+offset_bottom = -4.225
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_vn2xi")
+stretch_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 2
+
+[node name="Control" type="Control" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.290196, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("8_h55pp")
+theme_override_font_sizes/font_size = 24
+text = "99"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("2_vn2xi")
+stretch_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 2
+
+[node name="Control" type="Control" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.290196, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("8_h55pp")
+theme_override_font_sizes/font_size = 24
+text = "99"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("2_vn2xi")
+stretch_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 2
+
+[node name="Control" type="Control" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer3/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.290196, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("8_h55pp")
+theme_override_font_sizes/font_size = 24
+text = "99"
+horizontal_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("2_vn2xi")
+stretch_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 2
+
+[node name="Control" type="Control" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer4/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.290196, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("8_h55pp")
+theme_override_font_sizes/font_size = 24
+text = "99"
+horizontal_alignment = 1
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("2_vn2xi")
+stretch_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 2
+
+[node name="Control" type="Control" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer5/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer5/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.290196, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("8_h55pp")
+theme_override_font_sizes/font_size = 24
+text = "99"
+horizontal_alignment = 1
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer6"]
+layout_mode = 2
+texture = ExtResource("2_vn2xi")
+stretch_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 2
+
+[node name="Control" type="Control" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer6/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer6/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.290196, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("8_h55pp")
+theme_override_font_sizes/font_size = 24
+text = "99"
+horizontal_alignment = 1
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer7"]
+layout_mode = 2
+texture = ExtResource("2_vn2xi")
+stretch_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 2
+
+[node name="Control" type="Control" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer7/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer7/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.290196, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("8_h55pp")
+theme_override_font_sizes/font_size = 24
+text = "99"
+horizontal_alignment = 1
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer8"]
+layout_mode = 2
+texture = ExtResource("2_vn2xi")
+stretch_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 2
+
+[node name="Control" type="Control" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer8/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer8/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.290196, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("8_h55pp")
+theme_override_font_sizes/font_size = 24
+text = "99"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="InfoButton" to="InfoButton" method="_on_pressed"]
