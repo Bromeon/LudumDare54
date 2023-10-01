@@ -18,7 +18,6 @@ unique_name_in_owner = true
 [node name="GPUParticles2D" parent="PathFollow2D/Ship" instance=ExtResource("3_8nn3u")]
 position = Vector2(0.000179291, 50)
 rotation = -1.5708
-amount = 100
 
 [node name="Area2D" type="Area2D" parent="PathFollow2D"]
 
