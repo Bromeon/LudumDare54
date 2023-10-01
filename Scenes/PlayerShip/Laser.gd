@@ -51,7 +51,8 @@ func _process(delta):
 	particles.rotation = angle
 	particles.position = start_ + rotated_offset
 	
-	particles.amount = DENSITY * beam_length
+	# can't dynamically change amount: https://github.com/godotengine/godot/issues/16352
+	#particles.amount = DENSITY * beam_length
 	particle_material.emission_box_extents.x = beam_length / 2
 #	print("beam: ", start_.round(), " -> ", end_.round())
 	

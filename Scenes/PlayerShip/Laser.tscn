@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://eiaskvfbs5lx" path="res://Assets/Sprites/Particles/Laser.png" id="2_wtf1c"]
 
 [sub_resource type="Gradient" id="Gradient_rxlim"]
-offsets = PackedFloat32Array(0, 0.038961, 0.456401, 1)
-colors = PackedColorArray(0.999607, 0.292002, 0.419534, 0.0166976, 0.976471, 0.109852, 0.248918, 1, 0.632813, 0.528237, 0.241217, 0.717647, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.038961, 0.638743, 0.793194, 1)
+colors = PackedColorArray(0.999607, 0.292002, 0.419534, 0.0166976, 0.976471, 0.109852, 0.248918, 1, 0.486275, 0.0666667, 0.12549, 0.768627, 0.56, 0.3136, 0.346453, 0.662745, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_axka1"]
 gradient = SubResource("Gradient_rxlim")
@@ -33,6 +33,9 @@ color_ramp = SubResource("GradientTexture1D_axka1")
 script = ExtResource("1_su6c4")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = -1
+amount = 400
 process_material = SubResource("ParticleProcessMaterial_ia2is")
 texture = ExtResource("2_wtf1c")
+lifetime = 0.2
 visibility_rect = Rect2(-1000, -1000, 2000, 2000)
