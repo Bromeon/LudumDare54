@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var player_cheat: bool = false
+
 @onready var sprite := $Icon 
 @onready var supply_paths := $SupplyPaths
 @onready var camera = $Camera2D
@@ -23,8 +25,9 @@ func _ready():
 	camera_should.global_position = player.position
 	camera_should.modulate = Color(1.0, 1.0, 1.0, 0.3)
 	
-	# NOTE: Change Supply2 below with the actual initial ship the player starts attached to
-	$PlayerShip.setup_initial_tether($SupplyPaths/Supply2.get_node("%Ship"))
+	if not player_cheat:
+		# NOTE: Change Supply2 below with the actual initial ship the player starts attached to
+		$PlayerShip.setup_initial_tether($SupplyPaths/Supply2.get_node("%Ship"))
 	
 #	debug.top_level = true
 	var rect = camera.get_viewport_rect()
