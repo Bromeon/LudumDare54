@@ -40,7 +40,8 @@ func deal_damage_tick(hit_pos: Vector2, hit_normal: Vector2, strength: float):
 			drop_resource(hit_pos, hit_normal)
 			resource_count -= 1
 			hp = HP_PER_DROP
-		else:
+
+		if resource_count <= 0:
 			# TODO: Juice explode
 			queue_free()
 
