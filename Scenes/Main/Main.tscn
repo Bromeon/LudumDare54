@@ -98,7 +98,7 @@ text = "
 
 [node name="Camera2D" type="Camera2D" parent="2DRoot"]
 unique_name_in_owner = true
-zoom = Vector2(0.2, 0.2)
+zoom = Vector2(0.5, 0.5)
 
 [node name="Debug" type="Label" parent="2DRoot/Camera2D"]
 offset_right = 40.0

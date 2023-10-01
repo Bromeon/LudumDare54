@@ -33,3 +33,16 @@ var QUEST_REQUIREMENTS = {
 	"Gadolinium": 30,
 }
 
+var MINERAL_DESCRIPTIONS = {
+	"Samarium": 
+"One of the rarest minerals in the galaxy, it is not only rare, but extremely expensive!
+
+[right]- Some dude  [/right]",
+	"Lanthanum": "TODO",
+	"Yttrium": "TODO",
+	"Cerium": "TODO",
+	"Praseodymium": "TODO",
+	"Europium": "TODO",
+	"Terbium": "TODO",
+	"Gadolinium": "TODO",
+}
