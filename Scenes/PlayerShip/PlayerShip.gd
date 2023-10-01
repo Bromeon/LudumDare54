@@ -2,7 +2,8 @@ extends RigidBody2D
 
 var Tether = preload("res://Scenes/PlayerShip/Tether.tscn")
 
-@export var THRUSTER_FORCE = 200
+@export var THRUSTER_FORCE = 800
+@export var MAX_VELOCITY = 300
 @export var ROTATION_SPEED = 1.0
 @export var BRAKE_FACTOR = 0.05
 @export var TETHER_SHOOT_COOLDOWN = 3.0
@@ -94,6 +95,8 @@ func _physics_process(delta):
 	
 	
 	apply_force(move_dir * THRUSTER_FORCE)
+	if self.linear_velocity.length() > MAX_VELOCITY:
+		self.linear_velocity = self.linear_velocity.normalized() * MAX_VELOCITY
 	
 	if Input.is_action_pressed("Brake"):
 		apply_central_impulse(-linear_velocity * BRAKE_FACTOR)
@@ -162,6 +165,7 @@ func do_aim():
 	$AimPivot.rotation = Vector2.RIGHT.angle_to(aim_dir)
 
 func player_uses_mouse() -> bool:
+	print("USES MOUSE", last_mouse_aim >= last_controller_aim)
 	return last_mouse_aim >= last_controller_aim
 
 func shoot_tether():
@@ -212,3 +216,8 @@ func _on_tether_attached(attached_tether, attch):
 func _input(event):
 	if event is InputEventMouseMotion:
 		last_mouse_aim = Time.get_ticks_msec()
+	if event is InputEventJoypadMotion:
+		if event.axis_value > 0.1:
+			last_controller_aim = Time.get_ticks_msec()
+	if event is InputEventMouseButton:
+		last_controller_aim = Time.get_ticks_msec()
