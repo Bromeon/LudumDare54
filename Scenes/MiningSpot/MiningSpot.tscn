@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4rgrpq3etg1w"]
+
+[ext_resource type="Texture2D" uid="uid://c28ubs8imcpor" path="res://Assets/Sprites/Mining_1.png" id="1_1fk45"]
+[ext_resource type="Script" path="res://Scenes/MiningSpot/MiningSpot.gd" id="1_bjivk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4nl41"]
+size = Vector2(22, 27.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6rkg"]
+size = Vector2(35, 20.5)
+
+[node name="MiningSpot" type="StaticBody2D"]
+position = Vector2(39, 34)
+collision_layer = 4
+script = ExtResource("1_bjivk")
+ROTATION_SPEED = 0.25
+RESOURCE_SPREAD = 0.5
+
+[node name="Mining1" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.30469, 1.32813)
+texture = ExtResource("1_1fk45")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -3.5)
+shape = SubResource("RectangleShape2D_4nl41")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 8.25)
+shape = SubResource("RectangleShape2D_h6rkg")
