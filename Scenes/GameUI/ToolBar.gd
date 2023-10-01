@@ -18,6 +18,7 @@ func set_ui_slot_info(i, mineral, amount):
 	var slot = slot_list.get_child(i)
 	
 	if mineral != null:
+		slot.get_node("TextureRect").mineral = mineral # Sets the tooltip
 		slot.get_node("TextureRect/Icon").visible = true
 		slot.get_node("TextureRect/Icon").modulate = GameConstants.MINERAL_TYPE_COLORS[mineral]
 		var text_str = ""
@@ -27,6 +28,7 @@ func set_ui_slot_info(i, mineral, amount):
 			text_str = str(amount)
 		slot.get_node("HBoxContainer/Label").text = text_str
 	else:
+		slot.get_node("TextureRect").mineral = "" # Clears the tooltip
 		slot.get_node("TextureRect/Icon").visible = false
 		slot.get_node("HBoxContainer/Label").text = "--"
 

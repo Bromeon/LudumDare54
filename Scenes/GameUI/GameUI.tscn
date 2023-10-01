@@ -316,6 +316,7 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("2_vn2xi")
 stretch_mode = 2
+script = ExtResource("12_qewlj")
 
 [node name="Icon" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer2/TextureRect"]
 layout_mode = 1
@@ -350,6 +351,7 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("2_vn2xi")
 stretch_mode = 2
+script = ExtResource("12_qewlj")
 
 [node name="Icon" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer3/TextureRect"]
 layout_mode = 1
@@ -384,6 +386,7 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("2_vn2xi")
 stretch_mode = 2
+script = ExtResource("12_qewlj")
 
 [node name="Icon" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer4/TextureRect"]
 layout_mode = 1
@@ -418,6 +421,7 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("2_vn2xi")
 stretch_mode = 2
+script = ExtResource("12_qewlj")
 
 [node name="Icon" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer5/TextureRect"]
 layout_mode = 1
@@ -452,6 +456,7 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("2_vn2xi")
 stretch_mode = 2
+script = ExtResource("12_qewlj")
 
 [node name="Icon" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer6/TextureRect"]
 layout_mode = 1
@@ -486,6 +491,8 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("2_vn2xi")
 stretch_mode = 2
+script = ExtResource("12_qewlj")
+mineral = "Lanthanum"
 
 [node name="Icon" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer7/TextureRect"]
 layout_mode = 1
@@ -520,6 +527,7 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("2_vn2xi")
 stretch_mode = 2
+script = ExtResource("12_qewlj")
 
 [node name="Icon" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer8/TextureRect"]
 layout_mode = 1
