@@ -8,11 +8,24 @@ var MinedResource = preload("res://Scenes/MiningSpot/MinedResource.tscn")
 @export var RESOURCE_YIELD: int = 5
 @export_enum("Lanthanum", "Yttrium", "Cerium", "Praseodymium", "Europium", "Terbium", "Samarium", "Gadolinium") var MINERAL_TYPE = "Lanthanum"
 
+var MINERAL_TYPE_COLORS = {
+	"Lanthanum": Color(0.9, 0.5, 0.5),
+	"Yttrium": Color(0.5, 0.9, 0.5),
+	"Cerium": Color(0.5, 0.5, 0.9),
+	"Praseodymium": Color(0.9, 0.9, 0.5),
+	"Europium": Color(0.9, 0.5, 0.9),
+	"Terbium": Color(0.5, 0.9, 0.9),
+	"Samarium": Color(0.9, 0.7, 0.5),
+	"Gadolinium": Color(0.7, 0.7, 0.7)
+}
+
 # The asteroid will drop one mineral each time its HP reaches zero.
 # After dropping `RESOURCE_YIELD` minerals it is destroyed.
 @onready var hp: float = HP_PER_DROP
 @onready var resource_count: int = RESOURCE_YIELD
 
+func _ready():
+	$Mining1/Mineral1.modulate = MINERAL_TYPE_COLORS[MINERAL_TYPE]
 
 func _physics_process(delta):
 	self.rotate(delta * ROTATION_SPEED)
