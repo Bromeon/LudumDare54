@@ -9,6 +9,7 @@ radius = 11.5079
 height = 59.5798
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1fd7g"]
+radius = 6.0
 height = 32.0
 
 [node name="PlayerShip" type="RigidBody2D"]

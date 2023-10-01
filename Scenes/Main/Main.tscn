@@ -37,6 +37,10 @@ text = "
 [node name="Camera2D" type="Camera2D" parent="2DRoot"]
 unique_name_in_owner = true
 
+[node name="Debug" type="Label" parent="2DRoot/Camera2D"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="Icon" type="Sprite2D" parent="2DRoot"]
 scale = Vector2(0.203125, 0.203125)
 texture = ExtResource("2_kqnnd")
@@ -65,7 +69,6 @@ curve = ExtResource("7_t62cn")
 color = Color(0.827451, 0.752941, 0.247059, 1)
 effect_radius = 250.0
 speed = 300.0
-metadata/_edit_group_ = true
 
 [node name="Supply4" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
 curve = ExtResource("8_b64bo")
