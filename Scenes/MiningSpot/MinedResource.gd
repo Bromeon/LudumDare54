@@ -6,6 +6,10 @@ var elapsed_since_collected = 0.0
 
 @export var mineral_type = "Lanthanum"
 
+func set_mineral_type(type, color):
+	mineral_type = type
+	$Mineral1.modulate = color
+
 func _physics_process(delta):
 	$Mineral1.rotate(rotation_speed * delta)
 	

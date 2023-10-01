@@ -52,4 +52,4 @@ func drop_resource(hit_pos: Vector2, hit_normal: Vector2):
 	resource.apply_impulse(shoot_direction * 50)
 	resource.rotation_speed = randf_range(-1, 1) * 2
 	resource.rotation_degrees = randf_range(0, 360)
-	resource.mineral_type = MINERAL_TYPE
+	resource.set_mineral_type(MINERAL_TYPE, MINERAL_TYPE_COLORS[MINERAL_TYPE])
