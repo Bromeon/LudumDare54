@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7d2qrc31gp5s"]
+[gd_scene load_steps=9 format=3 uid="uid://c7d2qrc31gp5s"]
 
 [ext_resource type="Script" path="res://Scenes/PlayerShip/Laser.gd" id="1_su6c4"]
 [ext_resource type="Texture2D" uid="uid://eiaskvfbs5lx" path="res://Assets/Sprites/Particles/Laser.png" id="2_wtf1c"]
@@ -28,6 +28,33 @@ angle_max = 180.0
 scale_min = 1.8
 scale_max = 2.2
 color_ramp = SubResource("GradientTexture1D_axka1")
+collision_mode = 1
+collision_friction = 0.1
+collision_bounce = 0.75
+
+[sub_resource type="Gradient" id="Gradient_qxh4a"]
+offsets = PackedFloat32Array(0, 0.038961, 0.638743, 0.793194, 1)
+colors = PackedColorArray(0.999607, 0.292002, 0.419534, 0.0166976, 0.976471, 0.109852, 0.248918, 1, 0.486275, 0.0666667, 0.12549, 0.768627, 0.56, 0.3136, 0.346453, 0.662745, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sdwjd"]
+gradient = SubResource("Gradient_qxh4a")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r0e02"]
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 55.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 250.18
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -180.0
+angle_max = 180.0
+scale_min = 1.8
+scale_max = 2.2
+color_ramp = SubResource("GradientTexture1D_sdwjd")
 
 [node name="Laser" type="Node2D"]
 script = ExtResource("1_su6c4")
@@ -38,4 +65,12 @@ amount = 400
 process_material = SubResource("ParticleProcessMaterial_ia2is")
 texture = ExtResource("2_wtf1c")
 lifetime = 0.2
+visibility_rect = Rect2(-1000, -1000, 2000, 2000)
+
+[node name="Impact" type="GPUParticles2D" parent="."]
+z_index = 1
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_r0e02")
+texture = ExtResource("2_wtf1c")
+lifetime = 0.5
 visibility_rect = Rect2(-1000, -1000, 2000, 2000)

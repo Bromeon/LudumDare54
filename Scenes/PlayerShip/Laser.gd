@@ -5,29 +5,31 @@ var end: Vector2
 
 const DENSITY = 10
 
-var active: bool = false
-
 @onready var beam := $Beam
 @onready var beam_material: ParticleProcessMaterial = $Beam.process_material
+@onready var impact := $Impact
+@onready var impact_material: ParticleProcessMaterial = $Impact.process_material
+
 
 func deactivate():
-	active = false
 	beam.emitting = false
+	impact.emitting = false
 	start = Vector2.ZERO
 	end = Vector2.ZERO
 
-func activate(start_: Vector2, end_: Vector2):
-	active = true
+func activate(start: Vector2, end: Vector2, hits_target: bool):
 	beam.emitting = true
-	start = start_
-	end = end_
+	impact.emitting = hits_target
+	self.start = start
+	self.end = end
 	
 func _ready():
 	beam.top_level = true
+	impact.top_level = true
 
 func _process(delta):
-	if active:
-		queue_redraw()
+	if beam.emitting:
+		queue_redraw() # only needed if _draw() active
 	else:
 		return
 		
@@ -50,6 +52,10 @@ func _process(delta):
 	
 	beam.rotation = angle
 	beam.position = start_ + rotated_offset
+	
+	if impact.emitting:
+		impact.position = end
+		impact.rotation = angle #+ PI
 	
 	# can't dynamically change amount: https://github.com/godotengine/godot/issues/16352
 	#beam.amount = DENSITY * beam_length
