@@ -6,9 +6,9 @@ var elapsed_since_collected = 0.0
 
 @export var mineral_type = "Lanthanum"
 
-func set_mineral_type(type, color):
+func set_mineral_type(type):
 	mineral_type = type
-	$Mineral1.modulate = color
+	$Mineral1.modulate = GameConstants.MINERAL_TYPE_COLORS[type]
 
 func _physics_process(delta):
 	$Mineral1.rotate(rotation_speed * delta)
@@ -30,6 +30,7 @@ func _physics_process(delta):
 		$Mineral1.modulate.a = $Mineral1.modulate.a * 0.99
 		
 		if elapsed_since_collected > 1.0:
-			print("Collected a piece of", mineral_type)
+			print("Collected a piece of ", mineral_type)
+			GameData.notify_mineral_collected(mineral_type, 1)
 			queue_free()
 

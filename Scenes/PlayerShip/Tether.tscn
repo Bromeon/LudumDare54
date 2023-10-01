@@ -4,3 +4,4 @@
 
 [node name="Tether" type="Node2D"]
 script = ExtResource("1_vd614")
+SHOOT_FORCE = 500.0
