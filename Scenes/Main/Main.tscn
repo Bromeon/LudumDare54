@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cu50tbbse7fvj"]
+[gd_scene load_steps=23 format=3 uid="uid://cu50tbbse7fvj"]
 
 [ext_resource type="Script" path="res://Scenes/Main/MainGame.gd" id="1_2w541"]
 [ext_resource type="PackedScene" uid="uid://txa8ubm7w8ew" path="res://Scenes/Universe/Background.tscn" id="1_vmh7m"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d1fv40ekxbg68" path="res://Scenes/PlayerShip/PlayerShip.tscn" id="8_tj2rl"]
 [ext_resource type="PackedScene" uid="uid://bwg30iyu41llj" path="res://Scenes/Environment/WorldEnvironment.tscn" id="12_kye5b"]
 [ext_resource type="PackedScene" uid="uid://c4rgrpq3etg1w" path="res://Scenes/MiningSpot/MiningSpot.tscn" id="13_3leab"]
+[ext_resource type="PackedScene" uid="uid://b87xo21ajrno2" path="res://Scenes/GameUI/GameUI.tscn" id="13_hc38s"]
 
 [sub_resource type="Curve2D" id="Curve2D_hkf7s"]
 _data = {
@@ -79,7 +80,6 @@ script = ExtResource("1_2w541")
 
 [node name="Background" parent="." instance=ExtResource("1_vmh7m")]
 unique_name_in_owner = true
-visible = false
 offset_left = -7208.0
 offset_top = -6826.0
 offset_right = 1291.0
@@ -748,3 +748,7 @@ RESOURCE_YIELD = 3
 position = Vector2(281, -71)
 RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="GameUI" parent="HUD" instance=ExtResource("13_hc38s")]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb0eeuyf57qrn"]
+
+[ext_resource type="Script" path="res://Autoloads/GameConstants.gd" id="1_r4elb"]
+
+[node name="GameConstants" type="Node"]
+script = ExtResource("1_r4elb")
