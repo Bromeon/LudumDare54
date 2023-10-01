@@ -1,15 +1,10 @@
 extends HBoxContainer
 	
-var mineral_amounts = {}
-
 func _ready():
 	update_mineral_amounts()
 	GameData.register_mineral_observer(on_mineral_added)
 	
-func on_mineral_added(mineral_type: String, amount: int):
-	if not mineral_amounts.has(mineral_type):
-		mineral_amounts[mineral_type] = 0
-	mineral_amounts[mineral_type] += amount
+func on_mineral_added(_mineral_type: String, _amount: int):
 	update_mineral_amounts()
 	
 func update_mineral_amounts():
@@ -21,7 +16,7 @@ func update_mineral_amounts():
 			row.get_node("Label").set_text("x " + str(required_amt))
 			row.get_node("TextureRect").modulate = GameConstants.MINERAL_TYPE_COLORS[mineral]
 			row.get_node("TextureRect").mineral = mineral # Set tooltip
-			if mineral_amounts.has(mineral) and mineral_amounts[mineral] >= required_amt:
+			if GameData.mineral_amounts[mineral] >= required_amt:
 				row.get_node("Label").set_text("OK")
 			
 			i += 1
