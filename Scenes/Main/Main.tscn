@@ -1,9 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://cu50tbbse7fvj"]
+[gd_scene load_steps=22 format=3 uid="uid://cu50tbbse7fvj"]
 
 [ext_resource type="Script" path="res://Scenes/Main/MainGame.gd" id="1_2w541"]
 [ext_resource type="PackedScene" uid="uid://txa8ubm7w8ew" path="res://Scenes/Universe/Background.tscn" id="1_vmh7m"]
 [ext_resource type="Texture2D" uid="uid://bj1vd0ditgkx5" path="res://Assets/Textures/icon.svg" id="2_kqnnd"]
-[ext_resource type="PackedScene" uid="uid://dyn6k0po4fgge" path="res://Scenes/Universe/Universe.tscn" id="2_sb0dw"]
 [ext_resource type="Script" path="res://Scenes/Main/2dRoot.gd" id="2_vx87s"]
 [ext_resource type="PackedScene" uid="uid://bk47qpmiqsfv5" path="res://Scenes/SupplyShip/SupplyShip.tscn" id="4_6dkld"]
 [ext_resource type="Curve2D" uid="uid://ddcukk4djcpb8" path="res://Scenes/Universe/Paths/Path1.tres" id="5_kkofb"]
@@ -86,9 +85,6 @@ scale = Vector2(1.41709, 1.41709)
 
 [node name="2DRoot" type="Node2D" parent="."]
 script = ExtResource("2_vx87s")
-
-[node name="Universe" parent="2DRoot" instance=ExtResource("2_sb0dw")]
-position = Vector2(192, -320)
 
 [node name="Label" type="Label" parent="2DRoot"]
 offset_right = 672.0
