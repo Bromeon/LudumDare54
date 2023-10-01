@@ -9,6 +9,8 @@ var Tether = preload("res://Scenes/PlayerShip/Tether.tscn")
 
 @export var MAX_TETHER_LENGTH = 500.0
 
+@onready var particles := $GPUParticles2D
+
 # A ship can have at most two tethers. One of them will be attached to another #
 # ship, and the second one will be used when trying to reattach the ship to #
 # another object.
@@ -32,6 +34,7 @@ func attach_to(attachment_):
 	
 func _ready():
 	$AimPivot.top_level = true
+
 	
 func current_attachment_position():
 	if current_attachment != null:
@@ -49,7 +52,10 @@ func cleanup_dead_tethers():
 func _physics_process(delta):
 	# When mouse is used, the thrust force is relative to orientation
 	if player_uses_mouse():
-		move_dir = Input.get_vector("Down", "Up", "Left", "Right").rotated(rotation_angle)
+		var input = Input.get_vector("Down", "Up", "Left", "Right")
+		particles.emitting = input.x > 0
+			
+		move_dir = input.rotated(rotation_angle)
 	
 	else:	
 		move_dir = Input.get_vector("Left", "Right", "Up", "Down")
