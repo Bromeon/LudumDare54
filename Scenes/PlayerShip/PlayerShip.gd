@@ -151,7 +151,6 @@ func shoot_laser_tick(delta):
 		$Laser.set_endpoints(self.global_position, result.position)
 	else:
 		$Laser.set_endpoints(self.global_position, params.to)
-		
 	
 func setup_initial_tether(other_ship):
 	var tether = Tether.instantiate()
