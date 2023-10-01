@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cu50tbbse7fvj"]
+[gd_scene load_steps=19 format=3 uid="uid://cu50tbbse7fvj"]
 
 [ext_resource type="Script" path="res://Scenes/Main/MainGame.gd" id="1_2w541"]
 [ext_resource type="PackedScene" uid="uid://txa8ubm7w8ew" path="res://Scenes/Universe/Background.tscn" id="1_vmh7m"]
@@ -8,9 +8,42 @@
 [ext_resource type="PackedScene" uid="uid://bk47qpmiqsfv5" path="res://Scenes/SupplyShip/SupplyShip.tscn" id="4_6dkld"]
 [ext_resource type="Curve2D" uid="uid://ddcukk4djcpb8" path="res://Scenes/Universe/Paths/Path1.tres" id="5_kkofb"]
 [ext_resource type="Curve2D" uid="uid://bjwvxslxdup66" path="res://Scenes/Universe/Paths/Path2.tres" id="6_rjk23"]
+[ext_resource type="Texture2D" uid="uid://cq7rs1xmf34tu" path="res://Assets/Sprites/Aim.png" id="6_txt7n"]
 [ext_resource type="Curve2D" uid="uid://cpyrsyofnhv3w" path="res://Scenes/Universe/Paths/Path3.tres" id="7_t62cn"]
-[ext_resource type="Curve2D" uid="uid://b7xc2mjrkjyrv" path="res://Scenes/Universe/Paths/Path4.tres" id="8_b64bo"]
+[ext_resource type="Curve2D" uid="uid://bg4ovmglkq2kl" path="res://Scenes/Universe/Paths/Path4.tres" id="8_b64bo"]
 [ext_resource type="PackedScene" uid="uid://d1fv40ekxbg68" path="res://Scenes/PlayerShip/PlayerShip.tscn" id="8_tj2rl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7f26y"]
+
+[sub_resource type="Curve2D" id="Curve2D_hkf7s"]
+_data = {
+"points": PackedVector2Array(-111, 177, 111, -177, -239, -263, -113, 22, 113, -22, -319, -847, 0, 0, 0, 0, 92, -851, -146, -76, 146, 76, 1181, -593, 51, -87, -51, 87, 528, 204, 106, -20, -106, 20, 260, 374, 441, -16, -441, 16, -219, 396, 0, 0, 0, 0, -385, -17, -72.3065, 121.007, 72.3065, -121.007, -239, -263)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_iyvpy"]
+_data = {
+"points": PackedVector2Array(526.415, -127.437, -526.415, 127.437, 1496, 235, 492.496, 102.629, -492.496, -102.629, 430, 439, 28.541, 694.497, -28.541, -694.497, -450, -792, -799.62, 399.595, 799.62, -399.595, 629, -3543, -688.393, 863.008, 688.393, -863.008, 7052, -4282, 755.482, 413.377, -755.482, -413.377, 7375, -7552, 1341.54, -1050.66, -1341.54, 1050.66, 4503, -7146, -7.55099, -732.447, 7.55099, 732.447, 2443, -4823, -117.466, -469.864, 117.466, 469.864, 3477, -1986, 224.253, -266.968, -224.253, 266.968, 3219, -787, 113.871, -71.9187, -113.871, 71.9187, 2228, -13, 0, 0, 0, 0, 1496, 235)
+}
+point_count = 12
+
+[sub_resource type="Curve2D" id="Curve2D_tcef8"]
+_data = {
+"points": PackedVector2Array(526.415, -127.437, -526.415, 127.437, 1496, 235, 492.496, 102.629, -492.496, -102.629, 430, 439, 28.541, 694.497, -28.541, -694.497, -450, -792, -799.62, 399.595, 799.62, -399.595, 629, -3543, -688.393, 863.008, 688.393, -863.008, 7052, -4282, 755.482, 413.377, -755.482, -413.377, 7375, -7552, 1341.54, -1050.66, -1341.54, 1050.66, 4503, -7146, -7.55099, -732.447, 7.55099, 732.447, 2443, -4823, -117.466, -469.864, 117.466, 469.864, 3477, -1986, 224.253, -266.968, -224.253, 266.968, 3219, -787, 113.871, -71.9187, -113.871, 71.9187, 2228, -13, 0, 0, 0, 0, 1496, 235)
+}
+point_count = 12
+
+[sub_resource type="Curve2D" id="Curve2D_lkgte"]
+_data = {
+"points": PackedVector2Array(-111, 177, 111, -177, -239, -263, -113, 22, 113, -22, -319, -847, 0, 0, 0, 0, 92, -851, -146, -76, 146, 76, 1181, -593, 288.841, -258.246, -288.841, 258.246, 528, 204, 106, -20, -106, 20, 260, 374, 441, -16, -441, 16, -219, 396, 0, 0, 0, 0, -385, -17, -72.3065, 121.007, 72.3065, -121.007, -239, -263)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_x4e4n"]
+_data = {
+"points": PackedVector2Array(-111, 177, 111, -177, -239, -263, -148.919, 156.695, 148.919, -156.695, -319, -847, 0, 0, 0, 0, 376, -829, -28.4014, -165.09, 28.4014, 165.09, 942, -497, 100.388, -118.429, -100.388, 118.429, 403, -155, 195.797, -28.9797, -195.797, 28.9797, 457, 339, 441, -16, -441, 16, -219, 396, 0, 0, 0, 0, -385, -17, -72.3065, 121.007, 72.3065, -121.007, -239, -263)
+}
+point_count = 9
 
 [node name="Main" type="Node"]
 script = ExtResource("1_2w541")
@@ -36,6 +69,7 @@ text = "
 
 [node name="Camera2D" type="Camera2D" parent="2DRoot"]
 unique_name_in_owner = true
+zoom = Vector2(0.5, 0.5)
 
 [node name="Icon" type="Sprite2D" parent="2DRoot"]
 scale = Vector2(0.203125, 0.203125)
@@ -45,9 +79,26 @@ texture = ExtResource("2_kqnnd")
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_kqnnd")
 
+[node name="TextureRect" type="TextureRect" parent="2DRoot"]
+visible = false
+material = SubResource("ShaderMaterial_7f26y")
+offset_left = -2730.0
+offset_top = -3802.0
+offset_right = -2690.0
+offset_bottom = -3762.0
+scale = Vector2(39.8215, 31.9343)
+texture = ExtResource("6_txt7n")
+
+[node name="ColorRect" type="ColorRect" parent="2DRoot/TextureRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.188235, 0, 0.313726, 1)
+
 [node name="SupplyPaths" type="Node2D" parent="2DRoot"]
 
 [node name="Supply1" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(-2369, -2087)
 curve = ExtResource("5_kkofb")
 color = Color(0.141176, 0.533333, 0.933333, 1)
 effect_radius = 200.0
@@ -60,7 +111,7 @@ effect_radius = 250.0
 speed = 100.0
 
 [node name="Supply3" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
-position = Vector2(-12, 23)
+position = Vector2(2276, -2070)
 curve = ExtResource("7_t62cn")
 color = Color(0.827451, 0.752941, 0.247059, 1)
 effect_radius = 250.0
@@ -68,9 +119,38 @@ speed = 300.0
 metadata/_edit_group_ = true
 
 [node name="Supply4" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(-2170, 2370)
 curve = ExtResource("8_b64bo")
 color = Color(0.556863, 0.211765, 0.505882, 1)
 effect_radius = 400.0
 speed = 40.0
 
+[node name="Supply5" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(1409, 1712)
+curve = SubResource("Curve2D_hkf7s")
+
+[node name="Rocket1" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(-3267, 4277)
+curve = SubResource("Curve2D_iyvpy")
+color = Color(1, 0, 0, 1)
+effect_radius = 500.0
+speed = 1000.0
+
+[node name="Rocket2" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(-3753, -2658)
+rotation = 1.57079
+curve = SubResource("Curve2D_tcef8")
+color = Color(1, 0, 0, 1)
+effect_radius = 500.0
+speed = 1000.0
+
+[node name="SupplyShip" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(3264, -2619)
+curve = SubResource("Curve2D_lkgte")
+
+[node name="SupplyShip2" parent="2DRoot/SupplyPaths" instance=ExtResource("4_6dkld")]
+position = Vector2(-3770, -2907)
+curve = SubResource("Curve2D_x4e4n")
+
 [node name="PlayerShip" parent="2DRoot" instance=ExtResource("8_tj2rl")]
+MAX_TETHER_LENGTH = 1000.0

@@ -18,9 +18,10 @@ func _ready():
 	
 	
 	graphics.modulate = color
+	var global_tr = self.global_transform
 	
-	var cur = self.curve.get_point_position(0)
-	var next = self.curve.sample(0, 0.01)
+	var cur = global_tr * self.curve.get_point_position(0)
+	var next = global_tr * self.curve.sample(0, 0.01)
 	
 	var direction = (next - cur).angle() + deg_to_rad(90)
 	
