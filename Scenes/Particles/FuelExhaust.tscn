@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://du272ta22heks"]
+
+[ext_resource type="Texture2D" uid="uid://bs2rgajkf8udq" path="res://Assets/Sprites/Particles/Spark.png" id="1_kl3tp"]
+
+[sub_resource type="Gradient" id="Gradient_wd0dm"]
+offsets = PackedFloat32Array(0, 0.0518519, 0.237037, 1)
+colors = PackedColorArray(0.470588, 0.470588, 0.470588, 0, 0.47, 0.47, 0.47, 1, 0.460878, 0.460878, 0.460878, 0.882813, 0.392157, 0.392157, 0.392157, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xw3h1"]
+gradient = SubResource("Gradient_wd0dm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c30dl"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 10, 1)
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 7.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 410.53
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -85.26
+linear_accel_max = -85.26
+color_ramp = SubResource("GradientTexture1D_xw3h1")
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_c30dl")
+texture = ExtResource("1_kl3tp")
