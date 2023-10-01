@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b87xo21ajrno2"]
+[gd_scene load_steps=13 format=3 uid="uid://b87xo21ajrno2"]
 
 [ext_resource type="Texture2D" uid="uid://dmfyo8ydveg77" path="res://Assets/Sprites/InfoIcon_Normal.png" id="1_ctcy2"]
 [ext_resource type="Texture2D" uid="uid://da01pmom8oygm" path="res://Assets/Sprites/Frame2.png" id="1_v8fmv"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ri64wkcjxcnn" path="res://Assets/Sprites/Mineral_drop.png" id="7_xpiwf"]
 [ext_resource type="FontFile" uid="uid://c4pj7uyt6yom4" path="res://Assets/Fonts/PlavskyBold-0B8G.ttf" id="8_h55pp"]
 [ext_resource type="Script" path="res://Scenes/GameUI/ToolBar.gd" id="10_5ql54"]
+[ext_resource type="Script" path="res://Scenes/GameUI/IconTooltip.gd" id="12_qewlj"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -280,6 +281,7 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("2_vn2xi")
 stretch_mode = 2
+script = ExtResource("12_qewlj")
 
 [node name="Icon" type="TextureRect" parent="ToolBar/MarginContainer/VBoxContainer/VBoxContainer/TextureRect"]
 layout_mode = 1
