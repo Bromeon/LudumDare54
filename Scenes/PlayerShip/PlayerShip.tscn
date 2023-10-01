@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1fv40ekxbg68"]
+[gd_scene load_steps=18 format=3 uid="uid://d1fv40ekxbg68"]
 
 [ext_resource type="Script" path="res://Scenes/PlayerShip/PlayerShip.gd" id="1_7ccbx"]
 [ext_resource type="Texture2D" uid="uid://cq7rs1xmf34tu" path="res://Assets/Sprites/Aim.png" id="2_k584m"]
 [ext_resource type="Texture2D" uid="uid://3cdvaycogfao" path="res://Assets/Sprites/Player_V1.png" id="3_cfrxs"]
 [ext_resource type="PackedScene" uid="uid://du272ta22heks" path="res://Scenes/Particles/FuelExhaust.tscn" id="4_q3lfr"]
-[ext_resource type="PackedScene" uid="uid://b7w7gp4xklp85" path="res://Scenes/PlayerShip/Laser.tscn" id="5_4wjfk"]
+[ext_resource type="PackedScene" path="res://Scenes/PlayerShip/Laser.tscn" id="5_4wjfk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w5qtl"]
 radius = 11.5079
@@ -35,6 +35,58 @@ orbit_velocity_max = 0.0
 linear_accel_min = -85.26
 linear_accel_max = -85.26
 color_ramp = SubResource("GradientTexture1D_305x4")
+
+[sub_resource type="Gradient" id="Gradient_q5sew"]
+offsets = PackedFloat32Array(0, 0.0666667, 0.140741, 1)
+colors = PackedColorArray(0.74744, 0.749025, 0.508608, 0.640625, 0.742188, 0.706107, 0.330342, 1, 0.894752, 0.896994, 0.556892, 0.90625, 0.392157, 0.392157, 0.392157, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ti7wb"]
+gradient = SubResource("Gradient_q5sew")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w47kb"]
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 7.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 410.53
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -85.26
+linear_accel_max = -85.26
+color_ramp = SubResource("GradientTexture1D_ti7wb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ns2lm"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 7.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 410.53
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -85.26
+linear_accel_max = -85.26
+color_ramp = SubResource("GradientTexture1D_ti7wb")
+
+[sub_resource type="Gradient" id="Gradient_hivvw"]
+offsets = PackedFloat32Array(0, 0.0666667, 0.140741, 1)
+colors = PackedColorArray(0.74744, 0.749025, 0.508608, 0.640625, 0.742188, 0.706107, 0.330342, 1, 0.894752, 0.896994, 0.556892, 0.90625, 0.392157, 0.392157, 0.392157, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_768ep"]
+gradient = SubResource("Gradient_hivvw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u705f"]
+particle_flag_disable_z = true
+spread = 7.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 410.53
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -85.26
+linear_accel_max = -85.26
+color_ramp = SubResource("GradientTexture1D_768ep")
 
 [node name="PlayerShip" type="RigidBody2D" groups=["Player"]]
 gravity_scale = 0.0
@@ -74,8 +126,28 @@ position = Vector2(-11, 21)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_1fd7g")
 
-[node name="GPUParticles2D" parent="." instance=ExtResource("4_q3lfr")]
+[node name="MainThrust" parent="." instance=ExtResource("4_q3lfr")]
 position = Vector2(-23, 0)
 process_material = SubResource("ParticleProcessMaterial_5nfy1")
+
+[node name="RightThrust" parent="." instance=ExtResource("4_q3lfr")]
+position = Vector2(10, 13)
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_w47kb")
+
+[node name="LeftThrust" parent="." instance=ExtResource("4_q3lfr")]
+position = Vector2(10, -13)
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_ns2lm")
+
+[node name="ReverseThrust" parent="." instance=ExtResource("4_q3lfr")]
+position = Vector2(4, -20)
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_u705f")
+
+[node name="ReverseThrust2" parent="." instance=ExtResource("4_q3lfr")]
+position = Vector2(4, 20)
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_u705f")
 
 [node name="Laser" parent="." instance=ExtResource("5_4wjfk")]

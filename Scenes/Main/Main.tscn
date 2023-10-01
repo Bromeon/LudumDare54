@@ -10,7 +10,7 @@
 [ext_resource type="Curve2D" uid="uid://bjwvxslxdup66" path="res://Scenes/Universe/Paths/Path2.tres" id="6_rjk23"]
 [ext_resource type="Texture2D" uid="uid://cq7rs1xmf34tu" path="res://Assets/Sprites/Aim.png" id="6_txt7n"]
 [ext_resource type="Curve2D" uid="uid://cpyrsyofnhv3w" path="res://Scenes/Universe/Paths/Path3.tres" id="7_t62cn"]
-[ext_resource type="Curve2D" uid="uid://bg4ovmglkq2kl" path="res://Scenes/Universe/Paths/Path4.tres" id="8_b64bo"]
+[ext_resource type="Curve2D" uid="uid://b7xc2mjrkjyrv" path="res://Scenes/Universe/Paths/Path4.tres" id="8_b64bo"]
 [ext_resource type="PackedScene" uid="uid://d1fv40ekxbg68" path="res://Scenes/PlayerShip/PlayerShip.tscn" id="8_tj2rl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7f26y"]
