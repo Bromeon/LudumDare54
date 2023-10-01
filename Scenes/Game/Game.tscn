@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgy4t7rn02uaf"]
+
+[ext_resource type="PackedScene" uid="uid://b87xo21ajrno2" path="res://Scenes/GameUI/GameUI.tscn" id="1_md047"]
+[ext_resource type="Script" path="res://Scenes/Game/SubViewportContainer.gd" id="2_owjf0"]
+[ext_resource type="PackedScene" uid="uid://cu50tbbse7fvj" path="res://Scenes/Main/Main.tscn" id="2_t7nev"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+script = ExtResource("2_owjf0")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+size = Vector2i(1600, 1280)
+
+[node name="Main" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_t7nev")]
+
+[node name="GameUI" parent="." instance=ExtResource("1_md047")]
+layout_mode = 1
