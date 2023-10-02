@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b87xo21ajrno2"]
+[gd_scene load_steps=18 format=3 uid="uid://b87xo21ajrno2"]
 
 [ext_resource type="Texture2D" uid="uid://dmfyo8ydveg77" path="res://Assets/Sprites/InfoIcon_Normal.png" id="1_ctcy2"]
 [ext_resource type="Texture2D" uid="uid://da01pmom8oygm" path="res://Assets/Sprites/Frame2.png" id="1_v8fmv"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Scenes/GameUI/ToolBar.gd" id="10_5ql54"]
 [ext_resource type="Script" path="res://Scenes/GameUI/VictoryPanel.gd" id="11_x1wij"]
 [ext_resource type="Script" path="res://Scenes/GameUI/IconTooltip.gd" id="12_qewlj"]
+[ext_resource type="Script" path="res://Scenes/GameUI/Credits.gd" id="12_xiluy"]
 
 [sub_resource type="Gradient" id="Gradient_e2coj"]
 interpolation_mode = 1
@@ -228,7 +229,7 @@ layout_mode = 1
 offset_left = 8.0
 offset_top = 64.0
 offset_right = 288.0
-offset_bottom = 730.0
+offset_bottom = 800.0
 texture = ExtResource("1_v8fmv")
 patch_margin_left = 12
 patch_margin_top = 12
@@ -285,7 +286,10 @@ MADE with ♥️ FOR LD54
 
     @bromeon
     @kathee_hds
-    @setzer22"
+    @setzer22
+
+ Music by Kevin MacLeod
+  (Incompetech.com)"
 scroll_active = false
 
 [node name="VictoryPanel" type="NinePatchRect" parent="."]
@@ -345,6 +349,83 @@ MADE with ♥️ FOR Ludum Dare 54[/center]
                                                      @bromeon
                                                    @kathee_hds
                                                      @setzer22
+
+  Music credits
+  
+BGM:
+\"Envision\" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+Victory:
+\"Neon Laser Horizon\" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+SFX:
+Sound Effect from Pixabay:
+flash-laser-gun-84914 - Tether sling
+laser-weld-103309 - Laser mining
+laser_gun_sound-40813 - Asteroid explosion
+
+"
+scroll_active = false
+
+[node name="Credits" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -399.0
+offset_top = -393.0
+offset_right = -2.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_v8fmv")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+script = ExtResource("12_xiluy")
+
+[node name="MarginContainer" type="MarginContainer" parent="Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits/MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_5sxrv")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "Music credits:
+
+BGM:
+\"Envision\" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+Victory:
+\"Neon Laser Horizon\" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+SFX:
+Sound Effect from Pixabay:
+flash-laser-gun-84914 - Tether sling
+laser-weld-103309 - Laser mining
+laser_gun_sound-40813 - Asteroid explosion
 "
 scroll_active = false
 
