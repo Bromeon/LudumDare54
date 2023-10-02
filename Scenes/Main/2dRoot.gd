@@ -2,12 +2,10 @@ extends Node2D
 
 @export var player_cheat: bool = false
 
-@onready var sprite := $Icon 
 @onready var supply_paths := $SupplyPaths
 @onready var camera = $Camera2D
 @onready var camera_should = $CameraShould
 @onready var player = $PlayerShip
-@onready var debug = $Camera2D/Debug
 
 # Camera: how much direction (forward vector) and velocity vector contribute
 const WEIGHT_FORWARD = 30
