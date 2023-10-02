@@ -677,41 +677,6 @@ position = Vector2(2278, 237)
 RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
 
-[node name="SAMPLES" type="Node2D" parent="2DRoot/MiningSpots"]
-visible = false
-position = Vector2(-630, 462)
-
-[node name="SAMPLE" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]
-position = Vector2(-202, -140)
-
-[node name="SAMPLE2" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]
-position = Vector2(-32, -144)
-MINERAL_TYPE = "Gadolinium"
-
-[node name="SAMPLE3" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]
-position = Vector2(153, -144)
-MINERAL_TYPE = "Terbium"
-
-[node name="SAMPLE4" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]
-position = Vector2(-202, -14)
-MINERAL_TYPE = "Europium"
-
-[node name="SAMPLE5" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]
-position = Vector2(153, 4)
-MINERAL_TYPE = "Praseodymium"
-
-[node name="SAMPLE6" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]
-position = Vector2(-184, 134)
-MINERAL_TYPE = "Cerium"
-
-[node name="SAMPLE7" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]
-position = Vector2(-36, 139)
-MINERAL_TYPE = "Yttrium"
-
-[node name="SAMPLE8" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]
-position = Vector2(135, 121)
-MINERAL_TYPE = "Lanthanum"
-
 [node name="Cluster4" type="Node2D" parent="2DRoot/MiningSpots"]
 position = Vector2(-5185, 3613)
 
