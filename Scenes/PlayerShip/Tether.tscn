@@ -10,6 +10,8 @@ SHOOT_FORCE = 500.0
 
 [node name="SFX_Tether" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_brlvv")
+volume_db = -10.0
 
 [node name="SFX_Attach" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_aqeyo")
+volume_db = -10.0
