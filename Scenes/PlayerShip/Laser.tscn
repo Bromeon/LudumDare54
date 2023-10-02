@@ -60,7 +60,7 @@ color_ramp = SubResource("GradientTexture1D_sdwjd")
 script = ExtResource("1_su6c4")
 
 [node name="Beam" type="GPUParticles2D" parent="."]
-z_index = 1
+z_index = -1
 amount = 400
 process_material = SubResource("ParticleProcessMaterial_ia2is")
 texture = ExtResource("2_wtf1c")
