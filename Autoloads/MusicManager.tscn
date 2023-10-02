@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://da1re3w5f3ye5"]
+
+[ext_resource type="AudioStream" uid="uid://cscdhylm2qkkp" path="res://Assets/Audio/Envision.mp3" id="1_nypyu"]
+[ext_resource type="Script" path="res://Autoloads/MusicManager.gd" id="1_q4fku"]
+
+[node name="MusicManager" type="Node"]
+script = ExtResource("1_q4fku")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_nypyu")
+autoplay = true

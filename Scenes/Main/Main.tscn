@@ -88,7 +88,6 @@ scale = Vector2(1.41709, 1.41709)
 
 [node name="2DRoot" type="Node2D" parent="."]
 script = ExtResource("2_vx87s")
-player_cheat = true
 
 [node name="Label" type="Label" parent="2DRoot"]
 offset_right = 672.0
@@ -224,11 +223,6 @@ effect_radius = 500.0
 speed = 100.0
 
 [node name="PlayerShip" parent="2DRoot" instance=ExtResource("8_tj2rl")]
-THRUSTER_FORCE = 800
-MAX_VELOCITY = 300
-ROTATION_SPEED = 1.0
-BRAKE_FACTOR = 0.05
-TETHER_SHOOT_COOLDOWN = 3.0
 MAX_TETHER_LENGTH = 1000.0
 
 [node name="MiningSpots" type="Node2D" parent="2DRoot"]
@@ -248,6 +242,7 @@ position = Vector2(-20, 396)
 
 [node name="MiningSpot5" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(3059, 1982)
+MINERAL_TYPE = "Cerium"
 
 [node name="MiningSpot6" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(3515, 2311)
@@ -255,9 +250,11 @@ MINERAL_TYPE = "Yttrium"
 
 [node name="MiningSpot7" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(2583, 2049)
+MINERAL_TYPE = "Europium"
 
 [node name="MiningSpot8" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(3039, 2378)
+MINERAL_TYPE = "Europium"
 
 [node name="MiningSpot73" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(-3133, 4864)
@@ -378,6 +375,7 @@ position = Vector2(60, 166)
 
 [node name="MiningSpot37" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(3139, 1752)
+MINERAL_TYPE = "Europium"
 
 [node name="MiningSpot38" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(3595, 2081)
@@ -608,6 +606,36 @@ position = Vector2(3411, 3960)
 RESOURCE_YIELD = 3
 MINERAL_TYPE = "Terbium"
 
+[node name="MiningSpot99" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1719, 2703)
+RESOURCE_YIELD = 3
+MINERAL_TYPE = "Praseodymium"
+
+[node name="MiningSpot100" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1777, 2754)
+RESOURCE_YIELD = 3
+MINERAL_TYPE = "Praseodymium"
+
+[node name="MiningSpot101" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1652, 2684)
+RESOURCE_YIELD = 3
+MINERAL_TYPE = "Praseodymium"
+
+[node name="MiningSpot102" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1681, 2771)
+RESOURCE_YIELD = 3
+MINERAL_TYPE = "Praseodymium"
+
+[node name="MiningSpot103" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1794, 2640)
+RESOURCE_YIELD = 3
+MINERAL_TYPE = "Praseodymium"
+
+[node name="MiningSpot104" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
+position = Vector2(1705, 2611)
+RESOURCE_YIELD = 3
+MINERAL_TYPE = "Praseodymium"
+
 [node name="MiningSpot82" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(3469, 4011)
 RESOURCE_YIELD = 3
@@ -660,6 +688,7 @@ RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
 
 [node name="SAMPLES" type="Node2D" parent="2DRoot/MiningSpots"]
+visible = false
 position = Vector2(-630, 462)
 
 [node name="SAMPLE" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]

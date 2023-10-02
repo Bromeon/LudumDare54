@@ -1,0 +1,15 @@
+BGM:
+"Envision" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+Victory:
+"Neon Laser Horizon" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+SFX:
+Sound Effect from Pixabay:
+flash-laser-gun-84914 - Tether sling
+laser-weld-103309 - Laser mining
+laser_gun_sound-40813 - Asteroid explosion

@@ -19,6 +19,7 @@ config/icon="res://Assets/Textures/icon.svg"
 
 GameConstants="*res://Autoloads/GameConstants.tscn"
 GameData="*res://Autoloads/GameData.tscn"
+MusicManager="*res://Autoloads/MusicManager.tscn"
 
 [display]
 
