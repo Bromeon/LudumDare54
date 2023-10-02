@@ -2,10 +2,11 @@ extends StaticBody2D
 
 var MinedResource = preload("res://Scenes/MiningSpot/MinedResource.tscn")
 
-@export var ROTATION_SPEED: float = 0.5
-@export var RESOURCE_SPREAD: float = 0.1
-@export var HP_PER_DROP: float = 2
-@export var RESOURCE_YIELD: int = 5
+const ROTATION_SPEED: float = 0.25
+const RESOURCE_SPREAD: float = 0.5
+const HP_PER_DROP: float = .8
+const RESOURCE_YIELD: int = 5
+
 @export_enum("Lanthanum", "Yttrium", "Cerium", "Praseodymium", "Europium", "Terbium", "Samarium", "Gadolinium") var MINERAL_TYPE = "Lanthanum"
 
 # The asteroid will drop one mineral each time its HP reaches zero.

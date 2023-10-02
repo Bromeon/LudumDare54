@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c4rgrpq3etg1w"]
 
 [ext_resource type="Script" path="res://Scenes/MiningSpot/MiningSpot.gd" id="1_bjivk"]
-[ext_resource type="Texture2D" uid="uid://beqq3ofee57d6" path="res://Assets/Sprites/Blob.png" id="2_x3624"]
+[ext_resource type="Texture2D" uid="uid://cvf7xpicqulv5" path="res://Assets/Sprites/Blob.png" id="2_x3624"]
 [ext_resource type="Texture2D" uid="uid://d346v7etxrbwk" path="res://Assets/Sprites/Mineral.png" id="3_iu7wr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4nl41"]
@@ -13,8 +13,6 @@ size = Vector2(92, 33)
 [node name="MiningSpot" type="StaticBody2D"]
 collision_layer = 4
 script = ExtResource("1_bjivk")
-ROTATION_SPEED = 0.25
-RESOURCE_SPREAD = 0.5
 MINERAL_TYPE = "Samarium"
 
 [node name="Mining1" type="Sprite2D" parent="."]
