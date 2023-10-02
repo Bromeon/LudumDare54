@@ -6,6 +6,7 @@ extends Path2D
 @export var hue: float = 0.0
 @export var effect_radius: float
 @export var speed: float
+@export var is_rocket: bool
 
 @onready var follow := $PathFollow2D
 @onready var graphics := $PathFollow2D/Ship
@@ -30,6 +31,20 @@ func _ready():
 	graphics.global_rotation = direction
 	
 	follow.progress_ratio = 0.9
+	
+	# HACK: We do some Scene tree surgery to change the Ship
+	# sprite scene with an inherited version, but taking care
+	# to keep the GpuParticles2D as is.
+	if is_rocket:
+		var gpu_particles = $PathFollow2D/Ship/GPUParticles2D
+		gpu_particles.get_parent().remove_child(gpu_particles)
+		var old_ship = $PathFollow2D/Ship
+		old_ship.queue_free()
+		var rocket_ship_scn = preload("res://Scenes/SupplyShip/SupplyRocket.tscn")
+		var rocket_ship = rocket_ship_scn.instantiate()
+		$PathFollow2D.add_child(rocket_ship)
+		rocket_ship.add_child(gpu_particles)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

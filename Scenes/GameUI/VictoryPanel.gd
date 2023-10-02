@@ -6,6 +6,7 @@ func _ready():
 
 func on_quest_complete():
 	$"../VictoryParticles".emitting = true
+	$"../Credits".visible = true
 	self.visible = true
 	MusicManager.play_victory_music()
 	
