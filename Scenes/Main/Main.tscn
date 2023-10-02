@@ -215,6 +215,9 @@ speed = 100.0
 [node name="PlayerShip" parent="2DRoot" instance=ExtResource("8_tj2rl")]
 MAX_TETHER_LENGTH = 1000.0
 
+[node name="OneShotParticles" type="Node2D" parent="2DRoot"]
+unique_name_in_owner = true
+
 [node name="MiningSpots" type="Node2D" parent="2DRoot"]
 position = Vector2(194, 204)
 

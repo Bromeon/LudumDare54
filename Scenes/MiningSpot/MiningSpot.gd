@@ -34,11 +34,13 @@ func deal_damage_tick(hit_pos: Vector2, hit_normal: Vector2, strength: float):
 			# TODO: Juice explode
 			var expl = $Explosion
 			remove_child(expl)
-			get_parent().add_child(expl)
+			get_node("%OneShotParticles").add_child(expl)
 			
 			expl.top_level = true
 			expl.emitting = true
 			expl.position = self.global_position
+			
+			get_tree().create_timer(2 * expl.lifetime, false).connect("timeout", Callable(expl, "queue_free"))
 			queue_free()
 
 # Drop a resource 
