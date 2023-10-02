@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ci31wbu1otvju"]
 
 [ext_resource type="Shader" path="res://Scenes/SupplyShip/SupplyShipSprite.gdshader" id="1_owvj0"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Station_V2.png" id="2_x2tow"]
+[ext_resource type="Texture2D" uid="uid://c6fnda8fdtefv" path="res://Assets/Sprites/Station_V2.png" id="2_x2tow"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ktr5l"]
 shader = ExtResource("1_owvj0")

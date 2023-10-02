@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bk47qpmiqsfv5" path="res://Scenes/SupplyShip/SupplyShip.tscn" id="4_6dkld"]
 [ext_resource type="Curve2D" uid="uid://bjwvxslxdup66" path="res://Scenes/Universe/Paths/Path2.tres" id="6_rjk23"]
 [ext_resource type="Curve2D" uid="uid://cpyrsyofnhv3w" path="res://Scenes/Universe/Paths/Path3.tres" id="7_t62cn"]
-[ext_resource type="Curve2D" uid="uid://bg4ovmglkq2kl" path="res://Scenes/Universe/Paths/Path4.tres" id="8_b64bo"]
+[ext_resource type="Curve2D" uid="uid://b7xc2mjrkjyrv" path="res://Scenes/Universe/Paths/Path4.tres" id="8_b64bo"]
 [ext_resource type="PackedScene" uid="uid://d1fv40ekxbg68" path="res://Scenes/PlayerShip/PlayerShip.tscn" id="8_tj2rl"]
 [ext_resource type="PackedScene" uid="uid://bwg30iyu41llj" path="res://Scenes/Environment/WorldEnvironment.tscn" id="12_kye5b"]
 [ext_resource type="PackedScene" uid="uid://c4rgrpq3etg1w" path="res://Scenes/MiningSpot/MiningSpot.tscn" id="13_3leab"]
@@ -89,23 +89,9 @@ scale = Vector2(1.41709, 1.41709)
 [node name="2DRoot" type="Node2D" parent="."]
 script = ExtResource("2_vx87s")
 
-[node name="Label" type="Label" parent="2DRoot"]
-offset_right = 672.0
-offset_bottom = 309.0
-text = "
-^ the center of the universe"
-
 [node name="Camera2D" type="Camera2D" parent="2DRoot"]
 unique_name_in_owner = true
 zoom = Vector2(0.5, 0.5)
-
-[node name="Debug" type="Label" parent="2DRoot/Camera2D"]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="Icon" type="Sprite2D" parent="2DRoot"]
-scale = Vector2(0.203125, 0.203125)
-texture = ExtResource("2_kqnnd")
 
 [node name="CameraShould" type="Sprite2D" parent="2DRoot"]
 scale = Vector2(0.1, 0.1)
