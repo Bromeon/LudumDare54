@@ -267,10 +267,10 @@ text = "
      movement*
   Mouse / Right joystick
      aim
-  LMB / RT
-     shoot tether
-  RMB / LT
+  LMB / LT
      mining laser
+  RMB / RT
+     shoot tether
   CTRL / B
      brake
   Mouse over mineral
