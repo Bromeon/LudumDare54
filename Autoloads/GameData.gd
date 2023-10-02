@@ -1,5 +1,7 @@
 extends Node
 
+var is_using_bloom_hack: bool = false
+
 var mineral_amounts = {}
 
 signal mineral_collected(mineral_type: String, amount: int)
