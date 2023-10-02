@@ -4,8 +4,8 @@ var MinedResource = preload("res://Scenes/MiningSpot/MinedResource.tscn")
 
 const ROTATION_SPEED: float = 0.25
 const RESOURCE_SPREAD: float = 0.5
-const HP_PER_DROP: float = .2
-const RESOURCE_YIELD: int = 5
+const HP_PER_DROP: float = .5
+const RESOURCE_YIELD: int = 3
 
 @export_enum("Lanthanum", "Yttrium", "Cerium", "Praseodymium", "Europium", "Terbium", "Samarium", "Gadolinium") var MINERAL_TYPE = "Lanthanum"
 
