@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7d2qrc31gp5s"]
+[gd_scene load_steps=10 format=3 uid="uid://c7d2qrc31gp5s"]
 
 [ext_resource type="Script" path="res://Scenes/PlayerShip/Laser.gd" id="1_su6c4"]
 [ext_resource type="Texture2D" uid="uid://eiaskvfbs5lx" path="res://Assets/Sprites/Particles/Laser.png" id="2_wtf1c"]
+[ext_resource type="AudioStream" uid="uid://sj0ptaoysk2" path="res://Assets/Audio/laser-weld-103309.mp3" id="3_kun3p"]
 
 [sub_resource type="Gradient" id="Gradient_rxlim"]
 offsets = PackedFloat32Array(0, 0.038961, 0.638743, 0.793194, 1)
@@ -74,3 +75,7 @@ process_material = SubResource("ParticleProcessMaterial_r0e02")
 texture = ExtResource("2_wtf1c")
 lifetime = 0.5
 visibility_rect = Rect2(-1000, -1000, 2000, 2000)
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kun3p")
+volume_db = 7.495

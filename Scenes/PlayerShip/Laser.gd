@@ -16,12 +16,15 @@ func deactivate():
 	impact.emitting = false
 	start = Vector2.ZERO
 	end = Vector2.ZERO
+	$SFX.playing = false
 
 func activate(start: Vector2, end: Vector2, hits_target: bool):
 	beam.emitting = true
 	impact.emitting = hits_target
 	self.start = start
 	self.end = end
+	if not $SFX.playing: 
+		$SFX.playing = true
 	
 func _ready():
 	beam.top_level = true

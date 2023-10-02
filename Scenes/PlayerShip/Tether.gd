@@ -47,6 +47,10 @@ func current_attachment_position():
 func init(sh_dir, at_final_target = null):
 	self.shoot_dir = sh_dir
 	var global_pos = get_global_position()
+	
+	if at_final_target == null:
+		$SFX_Tether.playing = true
+	
 	for i in range(TETHER_SEGMENTS):
 		var pos 
 		if at_final_target != null:
@@ -135,6 +139,7 @@ func update_physics(delta):
 				offset = check_pos - result.collider.global_position,
 			}
 			emit_signal("attached_to", self, current_attachment)
+			$SFX_Attach.playing = true
 
 	# Redraw the rope.
 	update_draw()

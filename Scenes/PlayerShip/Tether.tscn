@@ -1,7 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://qwovduorj0de"]
+[gd_scene load_steps=4 format=3 uid="uid://qwovduorj0de"]
 
 [ext_resource type="Script" path="res://Scenes/PlayerShip/Tether.gd" id="1_vd614"]
+[ext_resource type="AudioStream" uid="uid://dgmp07443wvxq" path="res://Assets/Audio/flash-laser-gun-84914.mp3" id="2_brlvv"]
+[ext_resource type="AudioStream" uid="uid://dhyldfi5vn3th" path="res://Assets/Audio/laser_gun_sound-40813.mp3" id="3_aqeyo"]
 
 [node name="Tether" type="Node2D"]
 script = ExtResource("1_vd614")
 SHOOT_FORCE = 500.0
+
+[node name="SFX_Tether" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_brlvv")
+
+[node name="SFX_Attach" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_aqeyo")
