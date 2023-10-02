@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Godot"
-run/main_scene="res://Scenes/Main/Main.tscn"
+config/name="Stardust Slingshots"
+run/main_scene="res://Scenes/GameViewport/GameViewport.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://Assets/Sprites/Player_V1.png"
 

@@ -8,8 +8,8 @@
 script = ExtResource("1_vd614")
 SHOOT_FORCE = 500.0
 
-[node name="SFX_Tether" type="AudioStreamPlayer2D" parent="."]
+[node name="SFX_Tether" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_brlvv")
 
-[node name="SFX_Attach" type="AudioStreamPlayer2D" parent="."]
+[node name="SFX_Attach" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_aqeyo")

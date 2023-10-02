@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cu50tbbse7fvj"]
+[gd_scene load_steps=25 format=3 uid="uid://cu50tbbse7fvj"]
 
 [ext_resource type="Script" path="res://Scenes/Main/MainGame.gd" id="1_2w541"]
 [ext_resource type="PackedScene" uid="uid://txa8ubm7w8ew" path="res://Scenes/Universe/Background.tscn" id="1_vmh7m"]
@@ -9,9 +9,11 @@
 [ext_resource type="Curve2D" uid="uid://cpyrsyofnhv3w" path="res://Scenes/Universe/Paths/Path3.tres" id="7_t62cn"]
 [ext_resource type="Curve2D" uid="uid://bg4ovmglkq2kl" path="res://Scenes/Universe/Paths/Path4.tres" id="8_b64bo"]
 [ext_resource type="PackedScene" uid="uid://d1fv40ekxbg68" path="res://Scenes/PlayerShip/PlayerShip.tscn" id="8_tj2rl"]
+[ext_resource type="Texture2D" uid="uid://xgso7nkp4gw" path="res://Assets/Sprites/Galaxy.png" id="12_5mj2f"]
 [ext_resource type="PackedScene" uid="uid://bwg30iyu41llj" path="res://Scenes/Environment/WorldEnvironment.tscn" id="12_kye5b"]
 [ext_resource type="PackedScene" uid="uid://c4rgrpq3etg1w" path="res://Scenes/MiningSpot/MiningSpot.tscn" id="13_3leab"]
 [ext_resource type="PackedScene" uid="uid://b87xo21ajrno2" path="res://Scenes/GameUI/GameUI.tscn" id="13_hc38s"]
+[ext_resource type="Script" path="res://Scenes/Main/GodotAlaxy.gd" id="13_p2t2p"]
 
 [sub_resource type="Curve2D" id="Curve2D_hkf7s"]
 _data = {
@@ -675,41 +677,6 @@ position = Vector2(2278, 237)
 RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
 
-[node name="SAMPLES" type="Node2D" parent="2DRoot/MiningSpots"]
-visible = false
-position = Vector2(-630, 462)
-
-[node name="SAMPLE" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]
-position = Vector2(-202, -140)
-
-[node name="SAMPLE2" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]
-position = Vector2(-32, -144)
-MINERAL_TYPE = "Gadolinium"
-
-[node name="SAMPLE3" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]
-position = Vector2(153, -144)
-MINERAL_TYPE = "Terbium"
-
-[node name="SAMPLE4" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]
-position = Vector2(-202, -14)
-MINERAL_TYPE = "Europium"
-
-[node name="SAMPLE5" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]
-position = Vector2(153, 4)
-MINERAL_TYPE = "Praseodymium"
-
-[node name="SAMPLE6" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]
-position = Vector2(-184, 134)
-MINERAL_TYPE = "Cerium"
-
-[node name="SAMPLE7" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]
-position = Vector2(-36, 139)
-MINERAL_TYPE = "Yttrium"
-
-[node name="SAMPLE8" parent="2DRoot/MiningSpots/SAMPLES" instance=ExtResource("13_3leab")]
-position = Vector2(135, 121)
-MINERAL_TYPE = "Lanthanum"
-
 [node name="Cluster4" type="Node2D" parent="2DRoot/MiningSpots"]
 position = Vector2(-5185, 3613)
 
@@ -771,6 +738,18 @@ RESOURCE_YIELD = 3
 position = Vector2(281, -71)
 RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
+
+[node name="GodotAlaxy" type="Sprite2D" parent="2DRoot"]
+modulate = Color(0.360784, 0.435294, 1, 0.894118)
+texture_filter = 1
+position = Vector2(-261, -325)
+scale = Vector2(3.09375, 3.09375)
+texture = ExtResource("12_5mj2f")
+script = ExtResource("13_p2t2p")
+
+[node name="Sprite2D" type="Sprite2D" parent="2DRoot/GodotAlaxy"]
+scale = Vector2(0.121212, 0.121212)
+texture = ExtResource("2_kqnnd")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

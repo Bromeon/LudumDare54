@@ -29,9 +29,7 @@ angle_max = 180.0
 scale_min = 1.8
 scale_max = 2.2
 color_ramp = SubResource("GradientTexture1D_axka1")
-collision_mode = 1
-collision_friction = 0.1
-collision_bounce = 0.75
+attractor_interaction_enabled = false
 
 [sub_resource type="Gradient" id="Gradient_qxh4a"]
 offsets = PackedFloat32Array(0, 0.038961, 0.638743, 0.793194, 1)
@@ -56,6 +54,7 @@ angle_max = 180.0
 scale_min = 1.8
 scale_max = 2.2
 color_ramp = SubResource("GradientTexture1D_sdwjd")
+attractor_interaction_enabled = false
 
 [node name="Laser" type="Node2D"]
 script = ExtResource("1_su6c4")
@@ -66,7 +65,6 @@ amount = 400
 process_material = SubResource("ParticleProcessMaterial_ia2is")
 texture = ExtResource("2_wtf1c")
 lifetime = 0.2
-visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 
 [node name="Impact" type="GPUParticles2D" parent="."]
 z_index = 1
@@ -74,8 +72,7 @@ amount = 100
 process_material = SubResource("ParticleProcessMaterial_r0e02")
 texture = ExtResource("2_wtf1c")
 lifetime = 0.5
-visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 
-[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+[node name="SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_kun3p")
 volume_db = 7.495
