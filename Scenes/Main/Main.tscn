@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bk47qpmiqsfv5" path="res://Scenes/SupplyShip/SupplyShip.tscn" id="4_6dkld"]
 [ext_resource type="Curve2D" uid="uid://bjwvxslxdup66" path="res://Scenes/Universe/Paths/Path2.tres" id="6_rjk23"]
 [ext_resource type="Curve2D" uid="uid://cpyrsyofnhv3w" path="res://Scenes/Universe/Paths/Path3.tres" id="7_t62cn"]
-[ext_resource type="Curve2D" uid="uid://bg4ovmglkq2kl" path="res://Scenes/Universe/Paths/Path4.tres" id="8_b64bo"]
+[ext_resource type="Curve2D" uid="uid://b7xc2mjrkjyrv" path="res://Scenes/Universe/Paths/Path4.tres" id="8_b64bo"]
 [ext_resource type="PackedScene" uid="uid://d1fv40ekxbg68" path="res://Scenes/PlayerShip/PlayerShip.tscn" id="8_tj2rl"]
 [ext_resource type="Texture2D" uid="uid://xgso7nkp4gw" path="res://Assets/Sprites/Galaxy.png" id="12_5mj2f"]
 [ext_resource type="PackedScene" uid="uid://bwg30iyu41llj" path="res://Scenes/Environment/WorldEnvironment.tscn" id="12_kye5b"]
