@@ -10,8 +10,9 @@ const DENSITY = 10
 @onready var impact := $Impact
 @onready var impact_material: ParticleProcessMaterial = $Impact.process_material
 
+var ticks = 0
 
-func deactivate():
+func deactivate():	
 	beam.emitting = false
 	impact.emitting = false
 	start = Vector2.ZERO
@@ -25,15 +26,25 @@ func activate(start: Vector2, end: Vector2, hits_target: bool):
 	self.end = end
 	if not $SFX.playing: 
 		$SFX.playing = true
+		
+		
+# Fun workaround: on Web, particle system takes time to initialize. So pre-warm it
+func warmup():
+	activate(Vector2(0, 0), Vector2(100, 0), true)
+	await get_tree().process_frame
+	deactivate()
 	
 func _ready():
 	beam.top_level = true
 	impact.top_level = true
-
+	
 func _process(delta):
-	if beam.emitting:
-		queue_redraw() # only needed if _draw() active
-	else:
+	# not in ready(), because process_frame waits for NEXT frame, so we need 2
+	if ticks == 0:
+		warmup()
+	ticks += 1
+	
+	if not beam.emitting:
 		return
 		
 #	print("beam_len: ", beam_length, "   box:  ", beam_material.emission_box_extents)
