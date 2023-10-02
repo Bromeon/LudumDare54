@@ -23,14 +23,14 @@ var MINERAL_TYPE_COLORS = {
 }
 
 var QUEST_REQUIREMENTS = {
-	"Samarium": 50,
-	"Lanthanum": 10,
-	"Yttrium": 10,
-	"Cerium": 30,
-	"Praseodymium": 10,
-	"Europium": 30,
-	"Terbium": 10,
-	"Gadolinium": 30,
+	"Samarium": 30,
+	"Lanthanum": 5,
+	"Yttrium": 5,
+	"Cerium": 15,
+	"Praseodymium": 5,
+	"Europium": 15,
+	"Terbium": 5,
+	"Gadolinium": 15,
 }
 
 var MINERAL_DESCRIPTIONS = {
@@ -55,7 +55,7 @@ var MINERAL_DESCRIPTIONS = {
 
 [right]- A Neodymium hater  [/right]",
 	"Europium": 
-"At first I thought my assistant contaminated my samples, but it was a new element in its own right! 
+"At first I thought my assistant contaminated my Sm samples, but it was a new element in its own right! 
 
 [right]- Sm (and Eu!) discoverer [/right]",
 	"Terbium": 
