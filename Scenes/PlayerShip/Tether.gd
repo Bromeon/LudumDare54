@@ -20,6 +20,10 @@ var time_since_detached : float = 0.0
 
 var current_attachment = null
 
+const OLD_TETHER_LIFETIME = 2.0
+const NEW_TETHER_LIFETIME = 2.0
+
+
 var sprite_pool = []
 func _ready():
 	for i in range(TETHER_SEGMENTS-1):
@@ -145,9 +149,9 @@ func update_physics(delta):
 	# Redraw the rope.
 	update_draw()
 	
-	if time_since_detached > 3.0:
+	if time_since_detached > OLD_TETHER_LIFETIME:
 		queue_free()
-	if elapsed > 5 and current_attachment == null:
+	if elapsed > NEW_TETHER_LIFETIME and current_attachment == null:
 		queue_free()
 		
 func update_draw():
@@ -169,8 +173,8 @@ func update_draw():
 		
 		if time_since_detached > 0:
 			sprite_pool[i].modulate = Color(1.0, 1.0, 1.0, 1.0 - time_since_detached / 1.0)
-		elif elapsed > 4.5 and current_attachment == null:
-			sprite_pool[i].modulate = Color(1.0, 1.0, 1.0, 1.0 - (elapsed - 4.5) / 0.5)
+		elif elapsed > NEW_TETHER_LIFETIME * 0.8 and current_attachment == null:
+			sprite_pool[i].modulate = Color(1.0, 1.0, 1.0, 1.0 - (elapsed - NEW_TETHER_LIFETIME * 0.8) / 0.5)
 		else:
 			sprite_pool[i].modulate = Color(1.0, 1.0, 1.0, 1.0)
 		
