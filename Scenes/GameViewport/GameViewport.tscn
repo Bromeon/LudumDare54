@@ -5,9 +5,9 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_70scv"]
 shader = ExtResource("1_6kcds")
-shader_parameter/bloomRadius = 4.955
-shader_parameter/bloomThreshold = 0.285
-shader_parameter/bloomIntensity = 0.855
+shader_parameter/bloomRadius = 1.505
+shader_parameter/bloomThreshold = 1.0
+shader_parameter/bloomIntensity = 0.285
 
 [node name="GameViewport" type="SubViewportContainer"]
 material = SubResource("ShaderMaterial_70scv")

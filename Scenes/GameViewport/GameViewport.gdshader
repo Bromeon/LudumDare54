@@ -19,19 +19,21 @@ vec3 GetBloomPixel(sampler2D tex, vec2 uv, vec2 texPixelSize) {
 	return mix( tA, tB, f.y );
 }
 
+vec3 applyGaussianBlur(sampler2D tex, vec2 uv, vec2 texPixelSize) {
+    float weights[5] = float[](0.227027, 0.1945946, 0.1216216, 0.054054, 0.016216);
+    vec3 color = texture(tex, uv).rgb * weights[0];
+    for (int i = 1; i < 5; ++i) {
+		float ii = float(i);
+        color += texture(tex, uv + vec2(texPixelSize.x * ii, 0.0)).rgb * weights[i];
+        color += texture(tex, uv - vec2(texPixelSize.x * ii, 0.0)).rgb * weights[i];
+        color += texture(tex, uv + vec2(0.0, texPixelSize.y * ii)).rgb * weights[i];
+        color += texture(tex, uv - vec2(0.0, texPixelSize.y * ii)).rgb * weights[i];
+    }
+    return color;
+}
+
 vec3 GetBloom(sampler2D tex, vec2 uv, vec2 texPixelSize) {
-	vec3 bloom = vec3(0.0);
-	vec2 off = vec2(1) * texPixelSize * bloomRadius;
-	bloom += GetBloomPixel(tex, uv + off * vec2(-1, -1), texPixelSize * bloomRadius) * 0.292893;
-	bloom += GetBloomPixel(tex, uv + off * vec2(-1, 0), texPixelSize * bloomRadius) * 0.5;
-	bloom += GetBloomPixel(tex, uv + off * vec2(-1, 1), texPixelSize * bloomRadius) * 0.292893;
-	bloom += GetBloomPixel(tex, uv + off * vec2(0, -1), texPixelSize * bloomRadius) * 0.5;
-	bloom += GetBloomPixel(tex, uv + off * vec2(0, 0), texPixelSize * bloomRadius) * 1.0;
-	bloom += GetBloomPixel(tex, uv + off * vec2(0, 1), texPixelSize * bloomRadius) * 0.5;
-	bloom += GetBloomPixel(tex, uv + off * vec2(1, -1), texPixelSize * bloomRadius) * 0.292893;
-	bloom += GetBloomPixel(tex, uv + off * vec2(1, 0), texPixelSize * bloomRadius) * 0.5;
-	bloom += GetBloomPixel(tex, uv + off * vec2(1, 1), texPixelSize * bloomRadius) * 0.292893;
-	bloom /= 4.171573f;
+	vec3 bloom = applyGaussianBlur(tex, uv, texPixelSize * bloomRadius);
 	return bloom;
 }
 
@@ -47,7 +49,6 @@ void fragment() {
     vec4 col = texture(TEXTURE, UV);
     vec3 bloom = GetBloom(TEXTURE, UV, TEXTURE_PIXEL_SIZE);
     bloom *= bloomIntensity;
-    col.rgb = col.rgb + softLightVec(col.rgb, bloom); 
+    col.rgb = col.rgb + softLightVec(col.rgb, bloom);
     COLOR = col;
 }
-

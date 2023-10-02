@@ -76,6 +76,6 @@ texture = ExtResource("2_wtf1c")
 lifetime = 0.5
 visibility_rect = Rect2(-1000, -1000, 2000, 2000)
 
-[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+[node name="SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_kun3p")
 volume_db = 7.495
