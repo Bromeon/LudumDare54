@@ -24,13 +24,13 @@ func activate(start: Vector2, end: Vector2, hits_target: bool):
 	impact.emitting = hits_target
 	self.start = start
 	self.end = end
-	if not $SFX.playing: 
+	if not $SFX.playing and not ticks == 0: 
 		$SFX.playing = true
 		
 		
 # Fun workaround: on Web, particle system takes time to initialize. So pre-warm it
 func warmup():
-	activate(Vector2(0, 0), Vector2(100, 0), true)
+	activate(Vector2(2000, 2000), Vector2(2100, 2000), true)
 	await get_tree().process_frame
 	deactivate()
 	
