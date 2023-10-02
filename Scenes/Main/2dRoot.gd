@@ -32,7 +32,7 @@ func _ready():
 #	debug.top_level = true
 	var rect = camera.get_viewport_rect()
 #	debug.position = rect.position - rect.size / 2
-	debug.position = rect.position + Vector2(0, 300)
+	#debug.position = rect.position + Vector2(0, 300)
 
 	
 func _process(delta):
@@ -40,7 +40,6 @@ func _process(delta):
 		get_tree().quit()
 		return
 	
-	sprite.rotate(delta * 1.5)
 	
 	var forward = Vector2.RIGHT.rotated(player.rotation_angle)
 	camera_should.position = player.position + WEIGHT_FORWARD * forward + WEIGHT_VELOCITY * player.linear_velocity
