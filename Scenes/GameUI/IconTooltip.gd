@@ -50,6 +50,12 @@ func custom_tooltip():
 	return tooltip
 	
 func _process(_delta):
+	if self.get_global_rect().has_point(get_global_mouse_position()):
+		is_mouse_over = true
+	else:
+		is_mouse_over = false
+		_on_mouse_exited()
+
 	if not is_mouse_over or mineral == "" or mineral == null:
 		return
 	else:

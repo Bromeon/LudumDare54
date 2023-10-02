@@ -224,6 +224,11 @@ effect_radius = 500.0
 speed = 100.0
 
 [node name="PlayerShip" parent="2DRoot" instance=ExtResource("8_tj2rl")]
+THRUSTER_FORCE = 800
+MAX_VELOCITY = 300
+ROTATION_SPEED = 1.0
+BRAKE_FACTOR = 0.05
+TETHER_SHOOT_COOLDOWN = 3.0
 MAX_TETHER_LENGTH = 1000.0
 
 [node name="MiningSpots" type="Node2D" parent="2DRoot"]
