@@ -4,7 +4,7 @@ var MinedResource = preload("res://Scenes/MiningSpot/MinedResource.tscn")
 
 const ROTATION_SPEED: float = 0.25
 const RESOURCE_SPREAD: float = 0.5
-const HP_PER_DROP: float = .8
+const HP_PER_DROP: float = .2
 const RESOURCE_YIELD: int = 5
 
 @export_enum("Lanthanum", "Yttrium", "Cerium", "Praseodymium", "Europium", "Terbium", "Samarium", "Gadolinium") var MINERAL_TYPE = "Lanthanum"
@@ -32,6 +32,13 @@ func deal_damage_tick(hit_pos: Vector2, hit_normal: Vector2, strength: float):
 
 		if resource_count <= 0:
 			# TODO: Juice explode
+			var expl = $Explosion
+			remove_child(expl)
+			get_parent().add_child(expl)
+			
+			expl.top_level = true
+			expl.emitting = true
+			expl.position = self.global_position
 			queue_free()
 
 # Drop a resource 
