@@ -34,7 +34,7 @@ color_ramp = SubResource("GradientTexture1D_axka1")
 offsets = PackedFloat32Array(0, 0.038961, 0.638743, 0.793194, 1)
 colors = PackedColorArray(0.999607, 0.292002, 0.419534, 0.0166976, 0.976471, 0.109852, 0.248918, 1, 0.486275, 0.0666667, 0.12549, 0.768627, 0.56, 0.3136, 0.346453, 0.662745, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_sdwjd"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kwg04"]
 gradient = SubResource("Gradient_qxh4a")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r0e02"]
@@ -52,7 +52,7 @@ angle_min = -180.0
 angle_max = 180.0
 scale_min = 1.8
 scale_max = 2.2
-color_ramp = SubResource("GradientTexture1D_sdwjd")
+color_ramp = SubResource("GradientTexture1D_kwg04")
 
 [node name="Laser" type="Node2D"]
 script = ExtResource("1_su6c4")

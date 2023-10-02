@@ -2,10 +2,11 @@ extends StaticBody2D
 
 var MinedResource = preload("res://Scenes/MiningSpot/MinedResource.tscn")
 
-@export var ROTATION_SPEED: float = 0.5
-@export var RESOURCE_SPREAD: float = 0.1
-@export var HP_PER_DROP: float = 2
-@export var RESOURCE_YIELD: int = 5
+const ROTATION_SPEED: float = 0.25
+const RESOURCE_SPREAD: float = 0.5
+const HP_PER_DROP: float = .5
+const RESOURCE_YIELD: int = 3
+
 @export_enum("Lanthanum", "Yttrium", "Cerium", "Praseodymium", "Europium", "Terbium", "Samarium", "Gadolinium") var MINERAL_TYPE = "Lanthanum"
 
 # The asteroid will drop one mineral each time its HP reaches zero.
@@ -31,6 +32,13 @@ func deal_damage_tick(hit_pos: Vector2, hit_normal: Vector2, strength: float):
 
 		if resource_count <= 0:
 			# TODO: Juice explode
+			var expl = $Explosion
+			remove_child(expl)
+			get_parent().add_child(expl)
+			
+			expl.top_level = true
+			expl.emitting = true
+			expl.position = self.global_position
 			queue_free()
 
 # Drop a resource 

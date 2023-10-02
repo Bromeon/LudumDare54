@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4rgrpq3etg1w"]
+[gd_scene load_steps=10 format=3 uid="uid://c4rgrpq3etg1w"]
 
 [ext_resource type="Script" path="res://Scenes/MiningSpot/MiningSpot.gd" id="1_bjivk"]
-[ext_resource type="Texture2D" uid="uid://beqq3ofee57d6" path="res://Assets/Sprites/Blob.png" id="2_x3624"]
+[ext_resource type="Texture2D" uid="uid://cvf7xpicqulv5" path="res://Assets/Sprites/Blob.png" id="2_x3624"]
 [ext_resource type="Texture2D" uid="uid://d346v7etxrbwk" path="res://Assets/Sprites/Mineral.png" id="3_iu7wr"]
+[ext_resource type="Texture2D" uid="uid://eiaskvfbs5lx" path="res://Assets/Sprites/Particles/Laser.png" id="4_qua4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4nl41"]
 size = Vector2(55, 103)
@@ -10,11 +11,33 @@ size = Vector2(55, 103)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6rkg"]
 size = Vector2(92, 33)
 
+[sub_resource type="Gradient" id="Gradient_drs5t"]
+offsets = PackedFloat32Array(0.0229885, 0.639847, 1)
+colors = PackedColorArray(0.621094, 0.367937, 0.24508, 1, 0.52, 0.461067, 0.4316, 0.898039, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x5dom"]
+gradient = SubResource("Gradient_drs5t")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5f1nm"]
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 130.37
+initial_velocity_max = 314.22
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -180.0
+angle_max = 180.0
+scale_min = 1.8
+scale_max = 2.2
+color_ramp = SubResource("GradientTexture1D_x5dom")
+
 [node name="MiningSpot" type="StaticBody2D"]
 collision_layer = 4
 script = ExtResource("1_bjivk")
-ROTATION_SPEED = 0.25
-RESOURCE_SPREAD = 0.5
 MINERAL_TYPE = "Samarium"
 
 [node name="Mining1" type="Sprite2D" parent="."]
@@ -35,3 +58,12 @@ metadata/_edit_lock_ = true
 position = Vector2(0, 21.5)
 shape = SubResource("RectangleShape2D_h6rkg")
 metadata/_edit_lock_ = true
+
+[node name="Explosion" type="GPUParticles2D" parent="."]
+z_index = 1
+emitting = false
+amount = 300
+process_material = SubResource("ParticleProcessMaterial_5f1nm")
+texture = ExtResource("4_qua4f")
+lifetime = 0.25
+one_shot = true

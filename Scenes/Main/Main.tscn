@@ -509,29 +509,23 @@ position = Vector2(2996, -1471)
 
 [node name="MiningSpot73" parent="2DRoot/MiningSpots/Cluster2" instance=ExtResource("13_3leab")]
 position = Vector2(295, 21)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Lanthanum"
 
 [node name="MiningSpot74" parent="2DRoot/MiningSpots/Cluster2" instance=ExtResource("13_3leab")]
 position = Vector2(353, 72)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
 
 [node name="MiningSpot75" parent="2DRoot/MiningSpots/Cluster2" instance=ExtResource("13_3leab")]
 position = Vector2(228, 2)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot76" parent="2DRoot/MiningSpots/Cluster2" instance=ExtResource("13_3leab")]
 position = Vector2(257, 89)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot77" parent="2DRoot/MiningSpots/Cluster2" instance=ExtResource("13_3leab")]
 position = Vector2(370, -42)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot78" parent="2DRoot/MiningSpots/Cluster2" instance=ExtResource("13_3leab")]
 position = Vector2(281, -71)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
 
 [node name="Cluster3" type="Node2D" parent="2DRoot/MiningSpots"]
@@ -539,142 +533,112 @@ position = Vector2(-3549, -3554)
 
 [node name="MiningSpot73" parent="2DRoot/MiningSpots/Cluster3" instance=ExtResource("13_3leab")]
 position = Vector2(295, 21)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Praseodymium"
 
 [node name="MiningSpot74" parent="2DRoot/MiningSpots/Cluster3" instance=ExtResource("13_3leab")]
 position = Vector2(353, 72)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
 
 [node name="MiningSpot75" parent="2DRoot/MiningSpots/Cluster3" instance=ExtResource("13_3leab")]
 position = Vector2(228, 2)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot76" parent="2DRoot/MiningSpots/Cluster3" instance=ExtResource("13_3leab")]
 position = Vector2(257, 89)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot77" parent="2DRoot/MiningSpots/Cluster3" instance=ExtResource("13_3leab")]
 position = Vector2(370, -42)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot78" parent="2DRoot/MiningSpots/Cluster3" instance=ExtResource("13_3leab")]
 position = Vector2(281, -71)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
 
 [node name="MiningSpot85" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(-324, -2482)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Yttrium"
 
 [node name="MiningSpot86" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(-266, -2431)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
 
 [node name="MiningSpot87" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(-391, -2501)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot88" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(-362, -2414)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot89" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(-249, -2545)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot90" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(-338, -2574)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
 
 [node name="MiningSpot81" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(3411, 3960)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Terbium"
 
 [node name="MiningSpot99" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(1719, 2703)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Praseodymium"
 
 [node name="MiningSpot100" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(1777, 2754)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Praseodymium"
 
 [node name="MiningSpot101" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(1652, 2684)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Praseodymium"
 
 [node name="MiningSpot102" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(1681, 2771)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Praseodymium"
 
 [node name="MiningSpot103" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(1794, 2640)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Praseodymium"
 
 [node name="MiningSpot104" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(1705, 2611)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Praseodymium"
 
 [node name="MiningSpot82" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(3469, 4011)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
 
 [node name="MiningSpot83" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(3344, 3941)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot84" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(3373, 4028)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Europium"
 
 [node name="MiningSpot91" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(3486, 3897)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Europium"
 
 [node name="MiningSpot92" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(3397, 3868)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Terbium"
 
 [node name="MiningSpot93" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(2292, 329)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Yttrium"
 
 [node name="MiningSpot94" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(2350, 380)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
 
 [node name="MiningSpot95" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(2225, 310)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot96" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(2254, 397)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot97" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(2367, 266)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot98" parent="2DRoot/MiningSpots" instance=ExtResource("13_3leab")]
 position = Vector2(2278, 237)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
 
 [node name="Cluster4" type="Node2D" parent="2DRoot/MiningSpots"]
@@ -682,31 +646,25 @@ position = Vector2(-5185, 3613)
 
 [node name="MiningSpot73" parent="2DRoot/MiningSpots/Cluster4" instance=ExtResource("13_3leab")]
 position = Vector2(295, 21)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Terbium"
 
 [node name="MiningSpot74" parent="2DRoot/MiningSpots/Cluster4" instance=ExtResource("13_3leab")]
 position = Vector2(353, 72)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
 
 [node name="MiningSpot75" parent="2DRoot/MiningSpots/Cluster4" instance=ExtResource("13_3leab")]
 position = Vector2(228, 2)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot76" parent="2DRoot/MiningSpots/Cluster4" instance=ExtResource("13_3leab")]
 position = Vector2(257, 89)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Europium"
 
 [node name="MiningSpot77" parent="2DRoot/MiningSpots/Cluster4" instance=ExtResource("13_3leab")]
 position = Vector2(370, -42)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Europium"
 
 [node name="MiningSpot78" parent="2DRoot/MiningSpots/Cluster4" instance=ExtResource("13_3leab")]
 position = Vector2(281, -71)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Terbium"
 
 [node name="Cluster5" type="Node2D" parent="2DRoot/MiningSpots"]
@@ -714,29 +672,23 @@ position = Vector2(96, 4816)
 
 [node name="MiningSpot73" parent="2DRoot/MiningSpots/Cluster5" instance=ExtResource("13_3leab")]
 position = Vector2(295, 21)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Yttrium"
 
 [node name="MiningSpot74" parent="2DRoot/MiningSpots/Cluster5" instance=ExtResource("13_3leab")]
 position = Vector2(353, 72)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
 
 [node name="MiningSpot75" parent="2DRoot/MiningSpots/Cluster5" instance=ExtResource("13_3leab")]
 position = Vector2(228, 2)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot76" parent="2DRoot/MiningSpots/Cluster5" instance=ExtResource("13_3leab")]
 position = Vector2(257, 89)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot77" parent="2DRoot/MiningSpots/Cluster5" instance=ExtResource("13_3leab")]
 position = Vector2(370, -42)
-RESOURCE_YIELD = 3
 
 [node name="MiningSpot78" parent="2DRoot/MiningSpots/Cluster5" instance=ExtResource("13_3leab")]
 position = Vector2(281, -71)
-RESOURCE_YIELD = 3
 MINERAL_TYPE = "Gadolinium"
 
 [node name="GodotAlaxy" type="Sprite2D" parent="2DRoot"]
