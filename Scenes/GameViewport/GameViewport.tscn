@@ -5,10 +5,8 @@
 [ext_resource type="Script" path="res://Scenes/GameViewport/GameViewport.gd" id="2_4v7x4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_70scv"]
+render_priority = 0
 shader = ExtResource("1_6kcds")
-shader_parameter/bloomRadius = 1.505
-shader_parameter/bloomThreshold = 1.0
-shader_parameter/bloomIntensity = 0.285
 
 [node name="GameViewport" type="SubViewportContainer"]
 material = SubResource("ShaderMaterial_70scv")

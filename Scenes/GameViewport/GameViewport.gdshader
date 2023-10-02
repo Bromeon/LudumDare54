@@ -1,5 +1,3 @@
-shader_type canvas_item;
-
 uniform float bloomRadius = 1.0;
 uniform float bloomThreshold = 1.0;
 uniform float bloomIntensity = 1.0;
@@ -19,22 +17,22 @@ vec3 GetBloomPixel(sampler2D tex, vec2 uv, vec2 texPixelSize) {
 	return mix( tA, tB, f.y );
 }
 
-vec3 applyGaussianBlur(sampler2D tex, vec2 uv, vec2 texPixelSize) {
-    float weights[5] = float[](0.227027, 0.1945946, 0.1216216, 0.054054, 0.016216);
-    vec3 color = texture(tex, uv).rgb * weights[0];
-    for (int i = 1; i < 5; ++i) {
-		float ii = float(i);
-        color += texture(tex, uv + vec2(texPixelSize.x * ii, 0.0)).rgb * weights[i];
-        color += texture(tex, uv - vec2(texPixelSize.x * ii, 0.0)).rgb * weights[i];
-        color += texture(tex, uv + vec2(0.0, texPixelSize.y * ii)).rgb * weights[i];
-        color += texture(tex, uv - vec2(0.0, texPixelSize.y * ii)).rgb * weights[i];
+vec3 applyGaussianBlur(sampler2D tex, vec2 uv, vec2 texPixelSize, float blurScale) {
+    float weights[9] = float[](0.000229, 0.005977, 0.060598, 0.241732, 0.382928, 0.241732, 0.060598, 0.005977, 0.000229);
+    vec3 color = texture(tex, uv).rgb * weights[4]; // Center weight
+    for (int i = 1; i <= 4; ++i) {
+        float ii = float(i) * blurScale; // Multiply the index by the blur scale
+        color += texture(tex, uv + vec2(texPixelSize.x * ii, 0.0)).rgb * weights[4 + i];
+        color += texture(tex, uv - vec2(texPixelSize.x * ii, 0.0)).rgb * weights[4 - i];
+        color += texture(tex, uv + vec2(0.0, texPixelSize.y * ii)).rgb * weights[4 + i];
+        color += texture(tex, uv - vec2(0.0, texPixelSize.y * ii)).rgb * weights[4 - i];
     }
     return color;
 }
 
 vec3 GetBloom(sampler2D tex, vec2 uv, vec2 texPixelSize) {
-	vec3 bloom = applyGaussianBlur(tex, uv, texPixelSize * bloomRadius);
-	return bloom;
+    vec3 bloom = applyGaussianBlur(tex, uv, texPixelSize, bloomRadius);
+    return bloom;
 }
 
 float softLight(float a, float b) {

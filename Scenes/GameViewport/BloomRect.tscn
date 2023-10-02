@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ujotw1ow1oxc"]
+
+[ext_resource type="Shader" path="res://Scenes/GameViewport/GameViewport2.gdshader" id="1_4lavi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3e0jf"]
+shader = ExtResource("1_4lavi")
+shader_parameter/bloomRadius = 2.0
+shader_parameter/level1Scale = 1.0
+shader_parameter/level2Scale = 2.18
+shader_parameter/level3Scale = 2.7
+shader_parameter/level4Scale = 3.05
+shader_parameter/level5Scale = 0.425
+
+[node name="BloomRect" type="ColorRect"]
+z_index = 4096
+material = SubResource("ShaderMaterial_3e0jf")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
