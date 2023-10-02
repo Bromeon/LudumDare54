@@ -40,7 +40,8 @@ func detach():
 
 func current_attachment_position():
 	if current_attachment != null:
-		return current_attachment.node.global_position + current_attachment.offset
+		var offset = Transform2D(current_attachment.node.rotation, Vector2.ZERO) * current_attachment.offset
+		return current_attachment.node.global_position + offset
 	else:
 		return null
 
